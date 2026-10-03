@@ -6,6 +6,8 @@ on:
     paths:
       - 'lottery_assistant/**'
       - 'tests/**'
+      - 'chatgpt_bridge.py'
+      - 'pyproject.toml'
       - 'config/**'
       - 'requirements.txt'
       - '.github/workflows/**'
@@ -19,6 +21,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

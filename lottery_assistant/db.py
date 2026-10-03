@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json, sqlite3
+from .lifecycle import digest
 from pathlib import Path
 from typing import Iterable
 
@@ -91,8 +92,27 @@ class DB:
         self.conn = sqlite3.connect(self.path)
         self.conn.row_factory = sqlite3.Row
         self.conn.executescript(SCHEMA)
+        self.conn.execute('PRAGMA foreign_keys=ON')
+        # Additive migration preserves existing predictions and reviews.
+        for table, column, kind in [('draws','prize_data','TEXT'),
+                                    ('prediction_results','details','TEXT')]:
+            if column not in {r[1] for r in self.conn.execute(f'PRAGMA table_info({table})')}:
+                self.conn.execute(f'ALTER TABLE {table} ADD COLUMN {column} {kind}')
+        self.conn.executescript("""
+        CREATE TRIGGER IF NOT EXISTS freeze_no_update BEFORE UPDATE ON prediction_freezes
+        BEGIN SELECT RAISE(ABORT, 'prediction freeze is immutable'); END;
+        CREATE TRIGGER IF NOT EXISTS freeze_no_delete BEFORE DELETE ON prediction_freezes
+        BEGIN SELECT RAISE(ABORT, 'prediction freeze is immutable'); END;
+        CREATE TRIGGER IF NOT EXISTS frozen_prediction_no_update BEFORE UPDATE ON predictions
+        WHEN EXISTS(SELECT 1 FROM prediction_freezes WHERE prediction_id=OLD.id)
+        BEGIN SELECT RAISE(ABORT, 'frozen prediction is immutable'); END;
+        CREATE TRIGGER IF NOT EXISTS frozen_prediction_no_delete BEFORE DELETE ON predictions
+        WHEN EXISTS(SELECT 1 FROM prediction_freezes WHERE prediction_id=OLD.id)
+        BEGIN SELECT RAISE(ABORT, 'frozen prediction is immutable'); END;
+        """)
+        self.conn.commit()
 
-    def upsert_draw(self, lottery, issue, draw_date, main, bonus, source):
+    def upsert_draw(self, lottery, issue, draw_date, main, bonus, source, prize_data=None):
         self.conn.execute(
             """INSERT INTO draws(lottery,issue,draw_date,main_numbers,bonus_numbers,source)
                VALUES(?,?,?,?,?,?) ON CONFLICT(lottery,issue) DO UPDATE SET
@@ -100,6 +120,9 @@ class DB:
                bonus_numbers=excluded.bonus_numbers,source=excluded.source""",
             (lottery, issue, draw_date, json.dumps(sorted(main)), json.dumps(sorted(bonus)), source),
         )
+        if prize_data is not None:
+            self.conn.execute('UPDATE draws SET prize_data=? WHERE lottery=? AND issue=?',
+                              (json.dumps(prize_data,ensure_ascii=False),lottery,issue))
         self.conn.commit()
 
     def get_draws(self, lottery):
@@ -108,7 +131,7 @@ class DB:
         ).fetchall()
         out=[]
         for r in rows:
-            d=dict(r); d['main_numbers']=json.loads(d['main_numbers']); d['bonus_numbers']=json.loads(d['bonus_numbers']); out.append(d)
+            d=dict(r); d['main_numbers']=json.loads(d['main_numbers']); d['bonus_numbers']=json.loads(d['bonus_numbers']); d['prize_data']=json.loads(d.get('prize_data') or '{}'); out.append(d)
         return out
 
     def add_prediction(self, lottery, issue, main, bonus, version, score, rationale):
@@ -118,20 +141,38 @@ class DB:
             (lottery,issue,json.dumps(sorted(main)),json.dumps(sorted(bonus)),version,float(score),json.dumps(rationale, ensure_ascii=False)),
         )
         self.conn.commit()
-        if cur.lastrowid:
+        if cur.rowcount:
             return cur.lastrowid
         row=self.conn.execute("""SELECT id FROM predictions WHERE lottery=? AND issue IS ? AND main_numbers=? AND bonus_numbers=? AND model_version=?""",
                               (lottery,issue,json.dumps(sorted(main)),json.dumps(sorted(bonus)),version)).fetchone()
         return row['id'] if row else None
 
 
-    def freeze_prediction(self, prediction_id, payload_sha256, payload, target_draw_date=None, basis_issue=None):
+    def freeze_prediction(self, prediction_id, payload_sha256, payload, target_draw_date=None, basis_issue=None, frozen_at=None):
+        if digest(payload) != payload_sha256:
+            raise ValueError('freeze hash does not match payload')
+        existing = self.get_prediction_freeze(prediction_id)
+        if existing:
+            if existing['payload_sha256'] != payload_sha256:
+                raise ValueError('cannot replace a frozen prediction')
+            return existing
         self.conn.execute(
-            """INSERT OR IGNORE INTO prediction_freezes(prediction_id,target_draw_date,basis_issue,payload_sha256,payload_json)
-               VALUES(?,?,?,?,?)""",
-            (prediction_id,target_draw_date,basis_issue,payload_sha256,json.dumps(payload,ensure_ascii=False,sort_keys=True)),
+            """INSERT INTO prediction_freezes(prediction_id,target_draw_date,basis_issue,payload_sha256,payload_json,frozen_at)
+               VALUES(?,?,?,?,?,COALESCE(?,CURRENT_TIMESTAMP))""",
+            (prediction_id,target_draw_date,basis_issue,payload_sha256,json.dumps(payload,ensure_ascii=False,sort_keys=True),frozen_at),
         )
         self.conn.commit()
+        return self.get_prediction_freeze(prediction_id)
+
+    def get_frozen_recommendation(self, lottery, target_draw_date):
+        row=self.conn.execute("""SELECT f.payload_json FROM prediction_freezes f
+            JOIN predictions p ON p.id=f.prediction_id WHERE p.lottery=? AND f.target_draw_date=?
+            ORDER BY p.id LIMIT 1""",(lottery,target_draw_date)).fetchone()
+        return json.loads(row['payload_json']) if row else None
+
+    def checkpoint(self):
+        self.conn.commit()
+        self.conn.execute('PRAGMA wal_checkpoint(TRUNCATE)')
 
     def get_prediction_freeze(self, prediction_id):
         row=self.conn.execute("SELECT * FROM prediction_freezes WHERE prediction_id=?",(prediction_id,)).fetchone()
@@ -163,16 +204,16 @@ class DB:
         ).fetchall()
         return [dict(r) for r in rows]
 
-    def add_prediction_result(self, prediction_id, actual_issue, main_hits, bonus_hits):
+    def add_prediction_result(self, prediction_id, actual_issue, main_hits, bonus_hits, details=None):
         self.conn.execute(
-            """INSERT OR REPLACE INTO prediction_results(prediction_id,actual_issue,main_hits,bonus_hits)
-               VALUES(?,?,?,?)""",
-            (prediction_id,actual_issue,int(main_hits),int(bonus_hits)),
+            """INSERT OR IGNORE INTO prediction_results(prediction_id,actual_issue,main_hits,bonus_hits,details)
+               VALUES(?,?,?,?,?)""",
+            (prediction_id,actual_issue,int(main_hits),int(bonus_hits),json.dumps(details or {},ensure_ascii=False)),
         )
         self.conn.commit()
 
     def job_has_run(self, job_key):
-        row=self.conn.execute("SELECT 1 FROM cloud_job_runs WHERE job_key=?",(job_key,)).fetchone()
+        row=self.conn.execute("SELECT 1 FROM cloud_job_runs WHERE job_key=? AND status='ok'",(job_key,)).fetchone()
         return row is not None
 
     def record_job_run(self, job_key, status, details):

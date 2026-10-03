@@ -1,55 +1,89 @@
 from __future__ import annotations
+import re
+from datetime import date, datetime
 import requests
-from datetime import datetime
+from .lifecycle import TZ
 
-UA = "Mozilla/5.0 lottery-research-assistant/1.0"
+UA='Mozilla/5.0 lottery-research-assistant/1.5'
 
 class FetchError(RuntimeError): pass
 
-def _ints(s):
-    if isinstance(s, list): return [int(x) for x in s]
-    for sep in [',',' ','+','-','|']:
-        if sep in str(s):
-            return [int(x) for x in str(s).replace('+',sep).split(sep) if str(x).strip().isdigit()]
-    return [int(s)] if str(s).isdigit() else []
+
+def _ints(value):
+    if isinstance(value,list): return [int(x) for x in value]
+    return [int(x) for x in re.split(r'[, +|\-]+',str(value).strip()) if x]
+
+
+def validate_archive(rows,lottery,periods):
+    from .rules import DRAW_DAYS, closure_reason
+    limits={'ssq':(33,16,6,1),'dlt':(35,12,5,2)}
+    max_m,max_b,mp,bp=limits[lottery]
+    unique={}
+    for row in rows:
+        issue=row['issue'];day=date.fromisoformat(row['draw_date'])
+        if not re.fullmatch(r'\d{5}|\d{7}',issue) or day>datetime.now(TZ).date():
+            raise FetchError('invalid issue/date in official archive')
+        if day.weekday() not in DRAW_DAYS[lottery] or closure_reason(day):
+            raise FetchError('official archive conflicts with draw calendar')
+        for numbers,maximum,pick in ((row['main'],max_m,mp),(row['bonus'],max_b,bp)):
+            if len(numbers)!=pick or len(set(numbers))!=pick or not all(1<=x<=maximum for x in numbers):
+                raise FetchError('invalid number count/range in official archive')
+        if issue in unique and (unique[issue]['main']!=row['main'] or unique[issue]['bonus']!=row['bonus'] or unique[issue]['draw_date']!=row['draw_date']):
+            raise FetchError('conflicting duplicate official issue')
+        unique[issue]=row
+    ordered=sorted(unique.values(),key=lambda r:(r['draw_date'],r['issue']))
+    if len(ordered)<periods: raise FetchError(f'官方历史不足：要求 {periods}，仅得到 {len(ordered)}；不降级为模拟数据')
+    ordered=ordered[-periods:]
+    for a,b in zip(ordered,ordered[1:]):
+        if a['draw_date']>=b['draw_date']: raise FetchError('duplicate/non-increasing draw dates')
+        if a['issue'][:-3]==b['issue'][:-3] and int(b['issue'][-3:])-int(a['issue'][-3:])!=1:
+            raise FetchError('issue gap in official archive')
+    return ordered
+
 
 def fetch_ssq(periods=100):
-    session=requests.Session(); session.headers.update({'User-Agent':UA,'Referer':'https://www.cwl.gov.cn/'})
-    try:
-        session.get('https://www.cwl.gov.cn/', timeout=15)
-        url='https://www.cwl.gov.cn/cwl_admin/kjxx/findDrawNotice'
-        r=session.get(url, params={'name':'ssq','issueCount':periods}, timeout=20); r.raise_for_status(); data=r.json()
-        rows=data.get('result') or []
-    except Exception as e: raise FetchError(f'SSQ official fetch failed: {e}')
+    if not 1<=periods<=5000: raise ValueError('invalid periods')
+    session=requests.Session()
+    session.headers.update({'User-Agent':UA,'Referer':'https://www.cwl.gov.cn/'})
     out=[]
-    for row in rows:
-        main=_ints(row.get('red','')); bonus=_ints(row.get('blue',''))
-        if len(main)!=6 or len(set(main))!=6 or not all(1<=x<=33 for x in main): continue
-        if len(bonus)!=1 or not 1<=bonus[0]<=16: continue
-        out.append({'lottery':'ssq','issue':str(row.get('code')),'draw_date':str(row.get('date'))[:10],
-                    'main':sorted(main),'bonus':sorted(bonus),'source':'cwl.gov.cn'})
-    if not out: raise FetchError('SSQ official endpoint returned no valid rows')
-    return out
+    try:
+        session.get('https://www.cwl.gov.cn/',timeout=15)
+        for page in range(1,(periods+99)//100+1):
+            response=session.get('https://www.cwl.gov.cn/cwl_admin/kjxx/findDrawNotice',
+                params={'name':'ssq','issueCount':periods,'pageNo':page,'pageSize':100,'systemType':'PC'},timeout=20)
+            response.raise_for_status()
+            rows=response.json().get('result') or []
+            if not rows: break
+            for row in rows:
+                out.append({'lottery':'ssq','issue':str(row.get('code') or ''),
+                            'draw_date':str(row.get('date') or '')[:10],
+                            'main':sorted(_ints(row.get('red',''))),'bonus':sorted(_ints(row.get('blue',''))),
+                            'source':'cwl.gov.cn','prize_data':{'official_record':row}})
+            if len({r['issue'] for r in out})>=periods: break
+        return validate_archive(out,'ssq',periods)
+    except Exception as e:
+        raise FetchError(f'SSQ official fetch failed: {e}') from e
+    finally: session.close()
+
 
 def fetch_dlt(periods=100):
-    url='https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry'
-    headers={'User-Agent':UA,'Referer':'https://www.lottery.gov.cn/'}
-    try:
-        r=requests.get(url, params={'gameNo':'85','provinceId':'0','pageSize':periods,'isVerify':'1','pageNo':'1'}, headers=headers, timeout=20)
-        r.raise_for_status(); data=r.json()
-        rows=((data.get('value') or {}).get('list') or [])
-    except Exception as e: raise FetchError(f'DLT official fetch failed: {e}')
+    if not 1<=periods<=5000: raise ValueError('invalid periods')
     out=[]
-    for row in rows:
-        # Official payloads have varied field names over time; accept known forms conservatively.
-        code=str(row.get('lotteryDrawNum') or row.get('drawNum') or row.get('issue') or '')
-        date=str(row.get('lotteryDrawTime') or row.get('drawTime') or row.get('date') or '')[:10]
-        raw=str(row.get('lotteryDrawResult') or row.get('drawResult') or row.get('result') or '')
-        nums=[int(x) for x in raw.replace('+',' ').replace('|',' ').replace(',',' ').split() if x.isdigit()]
-        if len(nums) < 7: continue
-        main,bonus=nums[:5],nums[5:7]
-        if len(set(main))!=5 or not all(1<=x<=35 for x in main): continue
-        if len(set(bonus))!=2 or not all(1<=x<=12 for x in bonus): continue
-        out.append({'lottery':'dlt','issue':code,'draw_date':date,'main':sorted(main),'bonus':sorted(bonus),'source':'sporttery.cn'})
-    if not out: raise FetchError('DLT official endpoint returned no valid rows')
-    return out
+    try:
+        for page in range(1,(periods+99)//100+1):
+            response=requests.get('https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry',
+                params={'gameNo':'85','provinceId':'0','pageSize':100,'isVerify':'1','pageNo':page},
+                headers={'User-Agent':UA,'Referer':'https://www.lottery.gov.cn/'},timeout=20)
+            response.raise_for_status()
+            rows=(response.json().get('value') or {}).get('list') or []
+            if not rows: break
+            for row in rows:
+                nums=_ints(row.get('lotteryDrawResult') or row.get('drawResult') or row.get('result') or '')
+                if len(nums)!=7: raise FetchError('invalid DLT result field')
+                out.append({'lottery':'dlt','issue':str(row.get('lotteryDrawNum') or row.get('drawNum') or row.get('issue') or ''),
+                    'draw_date':str(row.get('lotteryDrawTime') or row.get('drawTime') or row.get('date') or '')[:10],
+                    'main':sorted(nums[:5]),'bonus':sorted(nums[5:]),'source':'sporttery.cn',
+                    'prize_data':{'official_record':row}})
+            if len({r['issue'] for r in out})>=periods: break
+        return validate_archive(out,'dlt',periods)
+    except Exception as e: raise FetchError(f'DLT official fetch failed: {e}') from e

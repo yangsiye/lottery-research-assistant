@@ -6,9 +6,9 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/lottery-cloud.yml'
-      - 'lottery_assistant/cloud.py'
-      - 'lottery_assistant/rules.py'
-      - 'lottery_assistant/evaluator.py'
+      - 'lottery_assistant/**'
+      - 'config/**'
+      - 'requirements.txt'
       - 'chatgpt_bridge.py'
   schedule:
     - cron: '30 8 * * *'
@@ -33,6 +33,9 @@ jobs:
       TZ: Asia/Shanghai
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       PYTHONUNBUFFERED: '1'
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
       PYTHONPATH: ${{ github.workspace }}
 
     steps:
@@ -57,16 +60,31 @@ jobs:
         run: python -m lottery_assistant.cli init-db
 
       - name: Run due six-module cloud cycle
+        id: cloud
         run: python -m lottery_assistant.cli cloud
 
       - name: Build ChatGPT bridge payload
+        if: always() && steps.cloud.outcome != 'skipped'
         run: python chatgpt_bridge.py
 
+      - name: Save inspectable cloud artifacts
+        if: always() && steps.cloud.outcome != 'skipped'
+        uses: actions/upload-artifact@v4
+        with:
+          name: lottery-state-${{ github.run_id }}
+          path: |
+            data/lottery.db
+            reports/
+            bridge/
+          retention-days: 14
+
       - name: Persist database, reports and research state
+        if: always() && steps.cloud.outcome != 'skipped'
         run: |
           git config user.name "lottery-research-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/lottery.db reports bridge research || true
+          git add -f data/lottery.db reports/latest_cloud_run.json
+          git add reports bridge research
           if git diff --cached --quiet; then
             echo "No state changes to commit"
             exit 0

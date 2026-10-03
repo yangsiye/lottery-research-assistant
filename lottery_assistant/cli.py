@@ -18,6 +18,7 @@ def main():
     elif a.cmd=='cloud':
         from .cloud import run_due
         res=run_due(); print(json.dumps({'now':res.now,'actions':res.actions},ensure_ascii=False,indent=2))
+        if any(a['status'] in ('error','partial') for a in res.actions): raise SystemExit(1)
     elif a.cmd=='daily':
         out={}
         for lot in ('ssq','dlt'):

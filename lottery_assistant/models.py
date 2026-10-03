@@ -31,8 +31,8 @@ def build_dataset(draw_sets, max_n, pick_n, min_history=40):
     return np.asarray(X,float), np.asarray(y,int)
 
 
-def fit_models(draw_sets,max_n,pick_n):
-    X,y=build_dataset(draw_sets,max_n,pick_n)
+def fit_models(draw_sets,max_n,pick_n,dataset=None):
+    X,y=dataset if dataset is not None else build_dataset(draw_sets,max_n,pick_n)
     models={}
     if len(y)<200 or len(np.unique(y))<2:
         return models

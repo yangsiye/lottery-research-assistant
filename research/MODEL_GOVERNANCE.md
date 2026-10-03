@@ -26,3 +26,8 @@ Failure path:
 `candidate/shadow -> rejected` or `production -> reduced -> retired`
 
 Every transition must be written to the evolution log with the evidence window and model version.
+
+
+## 当前1.5实现
+
+实际门槛和状态以 `ACCEPTANCE_V1_5.md` 及 `backtest.py` 为准。深度模型仍在候选池，未自动上线；holdout不用于调参或增加融合权重。通过验证时最多5%小权重，缺证据回退Uniform。

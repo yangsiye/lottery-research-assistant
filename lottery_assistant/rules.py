@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, timedelta
 from math import comb
 
 DRAW_DAYS = {"dlt": {0, 2, 5}, "ssq": {1, 3, 6}}
@@ -24,6 +24,9 @@ def closure_reason(day: date) -> str | None:
 def draw_status(lottery: str, day: date) -> dict:
     if lottery not in DRAW_DAYS:
         raise ValueError(f"unknown lottery: {lottery}")
+    if day.year not in CLOSURES:
+        return {"status":"RULES_UNVERIFIED", "scheduled_weekday":day.weekday() in DRAW_DAYS[lottery],
+                "reason":"尚未核验该年度官方休市公告，暂停推荐"}
     reason = closure_reason(day)
     scheduled = day.weekday() in DRAW_DAYS[lottery]
     if reason:
@@ -32,16 +35,30 @@ def draw_status(lottery: str, day: date) -> dict:
         return {"status": "NO_DRAW_TODAY", "scheduled_weekday": False, "reason": "非该彩种常规开奖日"}
     return {"status": "WAITING_DRAW", "scheduled_weekday": True, "reason": "常规开奖日，等待官方开奖结果"}
 
+def previous_draw_day(lottery, target):
+    day=target-timedelta(days=1)
+    for _ in range(30):
+        if draw_status(lottery,day)['status']=='WAITING_DRAW': return day
+        day-=timedelta(days=1)
+    raise ValueError('cannot verify preceding scheduled draw')
+
 def bet_count(lottery: str, main_count: int, bonus_count: int) -> int:
+    if not isinstance(main_count,int) or not isinstance(bonus_count,int): raise ValueError('counts must be integers')
+    if main_count<0 or bonus_count<0: raise ValueError('counts must be nonnegative')
     if lottery == "dlt":
+        if main_count>35 or bonus_count>12: raise ValueError('count exceeds number pool')
         if main_count < 5 or bonus_count < 2: return 0
         return comb(main_count, 5) * comb(bonus_count, 2)
     if lottery == "ssq":
+        if main_count>33 or bonus_count>16: raise ValueError('count exceeds number pool')
         if main_count < 6 or bonus_count < 1: return 0
         return comb(main_count, 6) * bonus_count
     raise ValueError(f"unknown lottery: {lottery}")
 
 def bet_cost(lottery: str, main_count: int, bonus_count: int, multiplier: int = 1, additional: bool = False) -> int:
+    if not isinstance(multiplier,int) or isinstance(multiplier,bool) or not 1<=multiplier<=99:
+        raise ValueError('multiplier must be an integer from 1 to 99')
+    if additional and lottery!='dlt': raise ValueError('双色球不支持追加投注')
     n = bet_count(lottery, main_count, bonus_count)
     unit = 3 if lottery == "dlt" and additional else 2
     return n * unit * multiplier

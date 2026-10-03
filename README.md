@@ -1,4 +1,4 @@
-# 彩票研究助理（双色球 + 大乐透）· Evolution v1.2 Cloud Edition
+# 彩票研究助理（双色球 + 大乐透）· 彩票1.5版
 
 这是为 Codex / Python 准备的长期彩票研究工程。**原先确认的六块能力全部保留**，`ssq-fusion` / `dlt-fusion` 只作为规律实验室和验证体系的增强来源，不替代主架构。
 
@@ -70,6 +70,11 @@ python -m lottery_assistant.cli recommend dlt
 ## GitHub Actions Cloud Edition v1.3
 
 本版本不需要 PythonAnywhere，也不依赖 ChatGPT 的 GitHub Connector。
-只要把仓库内容上传到 GitHub，`.github/workflows/lottery-cloud.yml` 会在北京时间 08:30 / 18:30 / 23:30 自动运行六模块系统并持久化 SQLite 状态。
+只要把仓库内容上传到 GitHub，`.github/workflows/lottery-cloud.yml` 会在北京时间 08:30 / 15:30 / 23:00 自动运行六模块系统并持久化 SQLite 状态。
 
 详见 `GITHUB_ACTIONS_DEPLOY.md`。
+
+
+## 1.5 冻结与复盘闭环
+
+规则依据见 `research/RULES_REFERENCE.md`，验收协议见 `research/ACCEPTANCE_V1_5.md`。官方数据不足时停止推荐；同一开奖日保持同一份冻结记录。bridge 1.2 区分休市、未开奖、数据错误和过期。
