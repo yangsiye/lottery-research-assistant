@@ -1,4 +1,21 @@
 {
-  "now": "2026-10-04T00:39:47.021884+08:00",
-  "actions": []
+  "now": "2026-10-04T01:03:50.431327+08:00",
+  "actions": [
+    {
+      "job": "calendar-status",
+      "status": "ok",
+      "details": {
+        "ssq": {
+          "status": "HOLIDAY_SUSPENDED",
+          "scheduled_weekday": true,
+          "reason": "国庆休市"
+        },
+        "dlt": {
+          "status": "HOLIDAY_SUSPENDED",
+          "scheduled_weekday": false,
+          "reason": "国庆休市"
+        }
+      }
+    }
+  ]
 }
