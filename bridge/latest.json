@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-03T18:46:48.916538+08:00",
+  "ssq": null,
+  "dlt": null,
+  "latest_review": null,
+  "latest_cloud_run": {
+    "now": "2026-10-03T13:26:33.417785+08:00",
+    "actions": []
+  },
+  "recent_reviews": [],
+  "research_candidates": [],
+  "frontend_instruction": "This file is for ChatGPT automation consumption. Present results in ChatGPT; do not direct the user to a web dashboard."
+}

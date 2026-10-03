@@ -1,0 +1,22 @@
+{
+  "ssq": {
+    "name": "福彩双色球",
+    "main_max": 33,
+    "main_pick": 6,
+    "bonus_max": 16,
+    "bonus_pick": 1,
+    "draw_days": [1, 3, 6],
+    "draw_time": "21:15",
+    "timezone": "Asia/Shanghai"
+  },
+  "dlt": {
+    "name": "体彩大乐透",
+    "main_max": 35,
+    "main_pick": 5,
+    "bonus_max": 12,
+    "bonus_pick": 2,
+    "draw_days": [0, 2, 5],
+    "draw_time": "21:10",
+    "timezone": "Asia/Shanghai"
+  }
+}
