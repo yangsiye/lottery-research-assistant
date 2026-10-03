@@ -1,0 +1,32 @@
+name: Unpack Lottery 1.5
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Unpack project
+        run: |
+          unzip -o lottery_research_assistant_chatgpt_frontend_v1.5.zip
+          cp -a lottery_research_assistant/. .
+          rm -rf lottery_research_assistant
+          rm -f lottery_research_assistant_chatgpt_frontend_v1.5.zip
+          find . -type d -name "__pycache__" -prune -exec rm -rf {} +
+          find . -type d -name ".pytest_cache" -prune -exec rm -rf {} +
+
+      - name: Commit project files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Deploy 彩票1.5版" || exit 0
+          git push
