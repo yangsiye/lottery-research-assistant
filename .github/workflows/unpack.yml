@@ -17,12 +17,14 @@ jobs:
       - name: Unpack project
         run: |
           unzip -o lottery_research_assistant_chatgpt_frontend_v1.5.zip
-          cp -a lottery_research_assistant/. .
-          rm -rf lottery_research_assistant
-          rm -f lottery_research_assistant_chatgpt_frontend_v1.5.zip
-          rm -f .github/workflows/lottery-cloud.ymlfind . -type d -name "__pycache__" -prune -exec rm -rf {} +
-          find . -type d -name ".pytest_cache" -prune -exec rm -rf {} +
 
+          cp -a lottery_research_assistant/. .
+
+          rm -rf lottery_research_assistant
+
+          rm -f lottery_research_assistant_chatgpt_frontend_v1.5.zip
+
+          rm -f .github/workflows/lottery-cloud.yml
       - name: Commit project files
         run: |
           git config user.name "github-actions[bot]"
