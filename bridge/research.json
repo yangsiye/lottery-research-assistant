@@ -1,4 +1,69 @@
 {
-  "generated_at": "2026-10-04T01:17:31.038963+08:00",
-  "candidates": []
+  "generated_at": "2026-10-04T02:00:26.904089+08:00",
+  "candidates": [
+    {
+      "discovered_at": "2026-10-03 18:00:24",
+      "name": "Tony0726/daletou_yuce",
+      "source_url": "https://github.com/Tony0726/daletou_yuce",
+      "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+      "decision": "pending"
+    },
+    {
+      "discovered_at": "2026-10-03 18:00:23",
+      "name": "awslew/lottery-one-pick",
+      "source_url": "https://github.com/awslew/lottery-one-pick",
+      "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+      "decision": "pending"
+    },
+    {
+      "discovered_at": "2026-10-03 18:00:23",
+      "name": "QJHWC/football-prediction",
+      "source_url": "https://github.com/QJHWC/football-prediction",
+      "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+      "decision": "pending"
+    },
+    {
+      "discovered_at": "2026-10-03 18:00:22",
+      "name": "lrwei91/Lottery",
+      "source_url": "https://github.com/lrwei91/Lottery",
+      "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+      "decision": "pending"
+    },
+    {
+      "discovered_at": "2026-10-03 18:00:21",
+      "name": "dumbledoredengswufe-lang/lottery-prediction-bot",
+      "source_url": "https://github.com/dumbledoredengswufe-lang/lottery-prediction-bot",
+      "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+      "decision": "pending"
+    },
+    {
+      "discovered_at": "2026-10-03 18:00:21",
+      "name": "jiyan1989/Lottery_Prediction",
+      "source_url": "https://github.com/jiyan1989/Lottery_Prediction",
+      "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+      "decision": "pending"
+    },
+    {
+      "discovered_at": "2026-10-03 18:00:21",
+      "name": "longgeyyds/ssq-fusion",
+      "source_url": "https://github.com/longgeyyds/ssq-fusion",
+      "hypothesis": "Candidate methods: bayesian, lstm_gru, reinforcement_learning",
+      "decision": "pending"
+    },
+    {
+      "discovered_at": "2026-10-03 18:00:20",
+      "name": "hansonDing/shuangseqiu-prediction",
+      "source_url": "https://github.com/hansonDing/shuangseqiu-prediction",
+      "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+      "decision": "pending"
+    },
+    {
+      "discovered_at": "2026-10-03 18:00:20",
+      "name": "zhhyowner-arch/AI-Powered-Lottery-Prediction",
+      "source_url": "https://github.com/zhhyowner-arch/AI-Powered-Lottery-Prediction",
+      "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+      "decision": "pending"
+    }
+  ],
+  "model_states": []
 }
