@@ -27,6 +27,15 @@ CREATE TABLE IF NOT EXISTS predictions(
   rationale TEXT,
   UNIQUE(lottery, issue, main_numbers, bonus_numbers, model_version)
 );
+CREATE TABLE IF NOT EXISTS prediction_freezes(
+  prediction_id INTEGER PRIMARY KEY,
+  frozen_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  target_draw_date TEXT,
+  basis_issue TEXT,
+  payload_sha256 TEXT NOT NULL,
+  payload_json TEXT NOT NULL,
+  FOREIGN KEY(prediction_id) REFERENCES predictions(id)
+);
 CREATE TABLE IF NOT EXISTS prediction_results(
   prediction_id INTEGER PRIMARY KEY,
   actual_issue TEXT NOT NULL,
@@ -108,9 +117,26 @@ class DB:
                VALUES(?,?,?,?,?,?,?)""",
             (lottery,issue,json.dumps(sorted(main)),json.dumps(sorted(bonus)),version,float(score),json.dumps(rationale, ensure_ascii=False)),
         )
-        self.conn.commit(); return cur.lastrowid
+        self.conn.commit()
+        if cur.lastrowid:
+            return cur.lastrowid
+        row=self.conn.execute("""SELECT id FROM predictions WHERE lottery=? AND issue IS ? AND main_numbers=? AND bonus_numbers=? AND model_version=?""",
+                              (lottery,issue,json.dumps(sorted(main)),json.dumps(sorted(bonus)),version)).fetchone()
+        return row['id'] if row else None
 
 
+    def freeze_prediction(self, prediction_id, payload_sha256, payload, target_draw_date=None, basis_issue=None):
+        self.conn.execute(
+            """INSERT OR IGNORE INTO prediction_freezes(prediction_id,target_draw_date,basis_issue,payload_sha256,payload_json)
+               VALUES(?,?,?,?,?)""",
+            (prediction_id,target_draw_date,basis_issue,payload_sha256,json.dumps(payload,ensure_ascii=False,sort_keys=True)),
+        )
+        self.conn.commit()
+
+    def get_prediction_freeze(self, prediction_id):
+        row=self.conn.execute("SELECT * FROM prediction_freezes WHERE prediction_id=?",(prediction_id,)).fetchone()
+        if not row: return None
+        d=dict(row); d['payload_json']=json.loads(d['payload_json']); return d
 
     def upsert_research_candidate(self, name, source_url, hypothesis, json_meta=None):
         row=self.conn.execute("SELECT id FROM research_candidates WHERE source_url=?",(source_url,)).fetchone()
