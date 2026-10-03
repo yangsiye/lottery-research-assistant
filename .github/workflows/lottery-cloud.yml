@@ -2,6 +2,14 @@ name: Lottery Research Assistant Cloud
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/lottery-cloud.yml'
+      - 'lottery_assistant/cloud.py'
+      - 'lottery_assistant/rules.py'
+      - 'lottery_assistant/evaluator.py'
+      - 'chatgpt_bridge.py'
   schedule:
     - cron: '30 8 * * *'
       timezone: 'Asia/Shanghai'
