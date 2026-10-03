@@ -40,3 +40,13 @@ bridge 1.2含 `bridge_health`、`data_health`、`draw_states`、当日冻结推�
 甘肃第25092期摘要日期误写为2025-09-04；广东、江苏对应开奖公告均明确为2025-08-13且号码一致。`config/data_corrections.json`记录独立核对依据，只有来源、期号、原日期及全部号码精确匹配才修正日期；原始官方摘要和修正证据同存数据库。新增异常仍拒绝入库，不做通用推测式修补。
 
 省级摘要不保证完整奖级金额或奖池口径。奖金资料不足时保留待确认，不把未知金额或特别奖资格当作零。
+
+### 已执行结果（2026-10-04，北京时间）
+
+- 代码提交：`ce60d89`（冻结、复盘、留出治理）、`5fbe1dd`（官方备用源、审计纠错及迟到结果复盘）。
+- 本地及GitHub runner均28项测试通过。在线CI：[37143720165](https://github.com/yangsiye/lottery-research-assistant/actions/runs/37143720165)。
+- 云端同步与持久化：[37143720101](https://github.com/yangsiye/lottery-research-assistant/actions/runs/37143720101)成功，状态提交`327c880`；SQLite `integrity_check`为`ok`。
+- 双色球500期，2023067至2026113，最新开奖2026-09-29；大乐透500期，23065至26112，最新开奖2026-09-30。审计纠错记录1条，原值保留。
+- 从云端持久化数据库的独立副本运行两种彩票、主副区共4次完整训练和样本外回测，分别约10.64/6.28/10.50/5.81秒。四区均无候选通过门槛，权重为Uniform 100%；不能宣称已有模型优于基线。此验证未发布推荐、未产生生产预测。
+- Pages状态部署：[37143767155](https://github.com/yangsiye/lottery-research-assistant/actions/runs/37143767155)成功。`latest/ssq/dlt/review/research.json`均实际HTTP200，时间一致为02:19:37+08:00；bridge 1.2为CURRENT、任务错误为空，两个数据表各500条，9项发现候选仍pending-validation。
+- 当日国庆休市，两种彩票均HOLIDAY_SUSPENDED，推荐为空。真实“新一期冻结→开奖→对奖”尚需恢复开奖后的自动运行；当前该分支已用隔离fixture验收，不冒称已完成真实新一期中奖验证。
