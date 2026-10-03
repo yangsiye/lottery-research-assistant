@@ -1,5 +1,5 @@
 {
-  "now": "2026-10-04T02:00:19.672209+08:00",
+  "now": "2026-10-04T02:19:23.950218+08:00",
   "actions": [
     {
       "job": "calendar-status",
@@ -19,7 +19,7 @@
     },
     {
       "job": "morning-sync",
-      "status": "partial",
+      "status": "ok",
       "details": {
         "research": {
           "github_candidates": [
@@ -27,7 +27,7 @@
               "name": "zhhyowner-arch/AI-Powered-Lottery-Prediction",
               "source_url": "https://github.com/zhhyowner-arch/AI-Powered-Lottery-Prediction",
               "stars": 2,
-              "updated_at": "2026-10-03T17:42:55Z",
+              "updated_at": "2026-10-03T18:07:23Z",
               "method_tags": [],
               "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
               "decision": "pending-validation"
@@ -111,10 +111,12 @@
           ]
         },
         "ssq": {
-          "error": "SSQ official fetch failed: 403 Client Error: Forbidden for url: https://www.cwl.gov.cn/cwl_admin/kjxx/findDrawNotice?name=ssq&issueCount=500&pageNo=1&pageSize=100&systemType=PC"
+          "synced": 500,
+          "reviews": []
         },
         "dlt": {
-          "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1"
+          "synced": 500,
+          "reviews": []
         }
       }
     }
