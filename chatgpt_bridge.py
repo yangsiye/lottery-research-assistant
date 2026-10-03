@@ -45,7 +45,9 @@ def build_bridge(root=ROOT,now=None):
         draws=db.get_draws(lot)
         data_health[lot]={'rows':len(draws),'latest_issue':draws[-1]['issue'] if draws else None,
                           'latest_draw_date':draws[-1]['draw_date'] if draws else None,
-                          'source_validation':'single-official-source' if draws else 'no-verified-data'}
+                          'source_validation':'single-official-source' if draws else 'no-verified-data',
+                          'sources':sorted({d['source'] for d in draws}),
+                          'primary_source_error':(draws[-1]['prize_data'].get('primary_source_error') if draws else None)}
         rec=db.get_frozen_recommendation(lot,now.date().isoformat())
         valid=False
         if rec:

@@ -1,0 +1,18 @@
+[
+  {
+    "source": "gstc.org.cn",
+    "lottery": "dlt",
+    "issue": "25092",
+    "original_date": "2025-09-04",
+    "corrected_date": "2025-08-13",
+    "main": [4, 10, 17, 25, 32],
+    "bonus": [5, 7],
+    "verified_on": "2026-10-04",
+    "reason": "甘肃历史摘要日期错误；广东与江苏第25092期开奖公告均明确为2025年8月13日，号码完全一致。",
+    "evidence_urls": [
+      "https://www.gdlottery.cn/f_html/kjgg/P085_25092.html",
+      "https://api.js-lottery.com/cms/post-145243.html",
+      "https://www.gstc.org.cn/newsDetail/070100/76204"
+    ]
+  }
+]

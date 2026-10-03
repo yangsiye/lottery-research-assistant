@@ -23,7 +23,7 @@ def sync(lottery,periods=200):
     db=DB(DB_PATH)
     for r in rows:
         db.upsert_draw(lottery,r['issue'],r['draw_date'],r['main'],r['bonus'],r['source'],r.get('prize_data'))
-    db.log('sync',{'rows':len(rows),'source':rows[0]['source'],'version':VERSION},lottery)
+    db.log('sync',{'rows':len(rows),'sources':sorted({r['source'] for r in rows}), 'latest_issue':rows[-1]['issue'],'version':VERSION},lottery)
     return len(rows)
 
 

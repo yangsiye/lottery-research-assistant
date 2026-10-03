@@ -41,7 +41,7 @@ def validate_archive(rows,lottery,periods):
     return ordered
 
 
-def fetch_ssq(periods=100):
+def _fetch_ssq_primary(periods=100):
     if not 1<=periods<=5000: raise ValueError('invalid periods')
     session=requests.Session()
     session.headers.update({'User-Agent':UA,'Referer':'https://www.cwl.gov.cn/'})
@@ -66,7 +66,7 @@ def fetch_ssq(periods=100):
     finally: session.close()
 
 
-def fetch_dlt(periods=100):
+def _fetch_dlt_primary(periods=100):
     if not 1<=periods<=5000: raise ValueError('invalid periods')
     out=[]
     try:
@@ -87,3 +87,25 @@ def fetch_dlt(periods=100):
             if len({r['issue'] for r in out})>=periods: break
         return validate_archive(out,'dlt',periods)
     except Exception as e: raise FetchError(f'DLT official fetch failed: {e}') from e
+
+
+def _with_official_fallback(primary,fallback,periods):
+    if not isinstance(periods,int) or not 1<=periods<=5000: raise ValueError('invalid periods')
+    try: return primary(periods)
+    except FetchError as primary_error:
+        try:
+            rows=fallback(periods)
+            for row in rows: row['prize_data']['primary_source_error']=str(primary_error)
+            return rows
+        except Exception as fallback_error:
+            raise FetchError(f'{primary_error}; provincial official fallback failed: {fallback_error}') from fallback_error
+
+
+def fetch_ssq(periods=100):
+    from .official_fallbacks import fetch_shanghai_ssq
+    return _with_official_fallback(_fetch_ssq_primary,fetch_shanghai_ssq,periods)
+
+
+def fetch_dlt(periods=100):
+    from .official_fallbacks import fetch_gansu_dlt
+    return _with_official_fallback(_fetch_dlt_primary,fetch_gansu_dlt,periods)

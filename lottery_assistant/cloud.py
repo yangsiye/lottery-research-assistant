@@ -84,8 +84,19 @@ def run_due(now=None,force=False):
             result['research']={'github_candidates':discover_github_candidates()}
         except Exception as e: result['research']={'error':str(e)}
         for lot in ('ssq','dlt'):
-            try: result[lot]={'synced':sync(lot,500)}
+            try:
+                result[lot]={'synced':sync(lot,500)}
+                result[lot]['reviews']=_review_new_predictions(db,lot,now)
             except Exception as e: result[lot]={'error':str(e)}
+        # A late official result is reviewed on the next successful sync, including non-draw days.
+        if any(result[lot].get('reviews') for lot in ('ssq','dlt')):
+            catchup={'as_of':now.isoformat(),'calendar':calendar}
+            for lot in ('ssq','dlt'):
+                completed=any(d['draw_date']==now.date().isoformat() for d in db.get_draws(lot))
+                state='DRAW_COMPLETED' if completed and calendar[lot]['status']=='WAITING_DRAW' else calendar[lot]['status']
+                catchup[lot]={'draw_state':state,'reviews':result[lot].get('reviews',[]),
+                              'reason':'补齐此前已冻结推荐的官方对奖；当日状态按实际开奖日历显示'}
+            _write_report('latest_review.json',catchup)
         status='ok' if all('synced' in result[l] for l in ('ssq','dlt')) else 'partial'
         db.record_job_run(key,status,result)
         actions.append({'job':'morning-sync','status':status,'details':result})

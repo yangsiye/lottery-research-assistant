@@ -42,7 +42,7 @@ def evaluate_official(lottery, main, bonus, actual):
     record=(actual.get('prize_data') or {}).get('official_record',{})
     table=record.get('prizegrades') if lottery=='ssq' else record.get('lotteryDrawPrize')
     table=table if isinstance(table,list) else []
-    names={1:'一等奖',2:'二等奖',3:'三等奖',4:'四等奖',5:'五等奖',6:'六等奖',7:'七等奖'}
+    names={1:'一等奖',2:'二等奖',3:'三等奖',4:'四等奖',5:'五等奖',6:'六等奖',7:'福运奖' if lottery=='ssq' else '七等奖'}
     prizes={}
     special=None
     for row in table:
@@ -55,7 +55,7 @@ def evaluate_official(lottery, main, bonus, actual):
         if label:
             value=row.get('typemoney') if lottery=='ssq' else row.get('stakeAmount')
             prizes[label]=_amount(value)
-    if lottery=='ssq' and table and special is None: special=False
+    if lottery=='ssq' and table and record.get('prize_table_complete',True) and special is None: special=False
     mh=len(set(main)&set(actual['main_numbers'])); bh=len(set(bonus)&set(actual['bonus_numbers']))
     cutoff='2026-02-02' if lottery=='dlt' else '2026-02-01'
     if actual['draw_date']<cutoff:

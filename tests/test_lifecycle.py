@@ -132,3 +132,22 @@ def test_failed_jobs_retry_and_delayed_schedule_runs(tmp_path,monkeypatch):
     assert second.actions[1]['status']=='ok'
     cloud.run_due(datetime(2026,10,4,9,15,tzinfo=TZ))
     assert len(calls)==4
+
+
+def test_morning_sync_catches_late_review_on_non_draw_day(tmp_path,monkeypatch):
+    path=tmp_path/'data/lottery.db';db=DB(path)
+    for lot in ('ssq','dlt'): seed_archive(db,lot)
+    pid,p=freeze_fixture(db)
+    db.upsert_draw('dlt','26113','2026-09-30',[6,7,8,9,10],[3,4],'TEST_FIXTURE')
+    db.upsert_draw('dlt','26114','2026-10-05',p['main'],p['bonus'],'TEST_FIXTURE')
+    monkeypatch.setattr(cloud,'DB_PATH',path)
+    monkeypatch.setattr(cloud,'REPORT_DIR',tmp_path/'reports')
+    monkeypatch.setattr(cloud,'sync',lambda lot,periods:500)
+    from lottery_assistant import cloud_research
+    monkeypatch.setattr(cloud_research,'discover_github_candidates',lambda:[])
+    run=cloud.run_due(datetime(2026,10,6,9,tzinfo=TZ))
+    reviews=run.actions[1]['details']['dlt']['reviews']
+    assert len(reviews)==1 and reviews[0]['prediction_id']==pid
+    report=json.loads((tmp_path/'reports/latest_review.json').read_text())
+    assert report['dlt']['draw_state']=='NO_DRAW_TODAY'
+    assert cloud._review_new_predictions(db,'dlt',datetime(2026,10,6,10,tzinfo=TZ))==[]
