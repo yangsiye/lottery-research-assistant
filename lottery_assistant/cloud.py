@@ -58,6 +58,9 @@ def _review_new_predictions(db: DB, lottery: str) -> list[dict]:
 def run_due(now: datetime | None = None, force: bool = False) -> RunResult:
     now=(now or datetime.now(TZ)).astimezone(TZ)
     db=DB(DB_PATH); actions=[]
+    # Calendar state is always emitted, even when this invocation is outside a heavy-job hour.
+    calendar_snapshot={lot:draw_status(lot,now.date()) for lot in ('ssq','dlt')}
+    actions.append({'job':'calendar-status','status':'ok','details':calendar_snapshot})
 
     if force or now.hour == 8:
         key=_job_key('morning-sync',now)
