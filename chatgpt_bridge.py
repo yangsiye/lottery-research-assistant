@@ -28,7 +28,16 @@ review=load_json('latest_review.json'); cloud=load_json('latest_cloud_run.json')
 research=rows("SELECT discovered_at,name,source_url,hypothesis,decision FROM research_candidates ORDER BY id DESC LIMIT 20")
 recent_reviews=rows("""SELECT p.lottery,p.issue,p.main_numbers,p.bonus_numbers,p.model_version,r.actual_issue,r.main_hits,r.bonus_hits,r.reviewed_at
 FROM prediction_results r JOIN predictions p ON p.id=r.prediction_id ORDER BY r.reviewed_at DESC LIMIT 20""")
-draw_states=(review or {}).get('calendar',{})
+draw_states={}
+# Always seed states from the latest cloud calendar snapshot so off-hour runs are meaningful.
+for action in (cloud or {}).get('actions',[]):
+    if action.get('job')=='calendar-status' and isinstance(action.get('details'),dict):
+        draw_states={k:dict(v) for k,v in action['details'].items() if isinstance(v,dict)}
+        break
+# A completed night review is more specific and may override WAITING_DRAW with DRAW_COMPLETED/BACKEND_ERROR.
+for lot,state in (review or {}).get('calendar',{}).items():
+    if isinstance(state,dict):
+        draw_states[lot]={**draw_states.get(lot,{}),**state}
 for lot in ('ssq','dlt'):
     if review and isinstance(review.get(lot),dict) and review[lot].get('draw_state'):
         draw_states[lot]={**draw_states.get(lot,{}),'status':review[lot]['draw_state'],'reason':review[lot].get('reason') or draw_states.get(lot,{}).get('reason')}
