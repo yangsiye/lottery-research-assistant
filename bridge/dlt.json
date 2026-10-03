@@ -1,5 +1,9 @@
 {
-  "generated_at": "2026-10-04T01:03:50.596123+08:00",
-  "draw_state": null,
+  "generated_at": "2026-10-04T01:17:31.038963+08:00",
+  "draw_state": {
+    "status": "HOLIDAY_SUSPENDED",
+    "scheduled_weekday": false,
+    "reason": "国庆休市"
+  },
   "recommendation": null
 }

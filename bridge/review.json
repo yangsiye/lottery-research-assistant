@@ -1,7 +1,18 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-10-04T01:03:50.596123+08:00",
-  "draw_states": {},
+  "generated_at": "2026-10-04T01:17:31.038963+08:00",
+  "draw_states": {
+    "ssq": {
+      "status": "HOLIDAY_SUSPENDED",
+      "scheduled_weekday": true,
+      "reason": "国庆休市"
+    },
+    "dlt": {
+      "status": "HOLIDAY_SUSPENDED",
+      "scheduled_weekday": false,
+      "reason": "国庆休市"
+    }
+  },
   "review": null,
   "recent_reviews": [],
   "frontend_instruction": "Use draw_states before interpreting null reviews. HOLIDAY_SUSPENDED/NO_DRAW_TODAY are normal states, not backend failures. DRAW_COMPLETED may be pushed; WAITING_DRAW means do not invent results; BACKEND_ERROR/BRIDGE_STALE must be reported explicitly. Present results in ChatGPT; do not direct the user to a web dashboard."

@@ -1,12 +1,23 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-10-04T01:03:50.596123+08:00",
-  "draw_states": {},
+  "generated_at": "2026-10-04T01:17:31.038963+08:00",
+  "draw_states": {
+    "ssq": {
+      "status": "HOLIDAY_SUSPENDED",
+      "scheduled_weekday": true,
+      "reason": "国庆休市"
+    },
+    "dlt": {
+      "status": "HOLIDAY_SUSPENDED",
+      "scheduled_weekday": false,
+      "reason": "国庆休市"
+    }
+  },
   "ssq": null,
   "dlt": null,
   "latest_review": null,
   "latest_cloud_run": {
-    "now": "2026-10-04T01:03:50.431327+08:00",
+    "now": "2026-10-04T01:17:30.841224+08:00",
     "actions": [
       {
         "job": "calendar-status",
