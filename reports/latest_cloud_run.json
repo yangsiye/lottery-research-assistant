@@ -1,19 +1,19 @@
 {
-  "now": "2026-10-04T21:23:23.931587+08:00",
+  "now": "2026-10-05T02:27:42.867663+08:00",
   "actions": [
     {
       "job": "calendar-status",
       "status": "ok",
       "details": {
         "ssq": {
-          "status": "HOLIDAY_SUSPENDED",
-          "scheduled_weekday": true,
-          "reason": "国庆休市"
+          "status": "NO_DRAW_TODAY",
+          "scheduled_weekday": false,
+          "reason": "非该彩种常规开奖日"
         },
         "dlt": {
-          "status": "HOLIDAY_SUSPENDED",
-          "scheduled_weekday": false,
-          "reason": "国庆休市"
+          "status": "WAITING_DRAW",
+          "scheduled_weekday": true,
+          "reason": "常规开奖日，等待官方开奖结果"
         }
       }
     }

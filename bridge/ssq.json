@@ -1,16 +1,16 @@
 {
   "schema_version": "1.2",
-  "generated_at": "2026-10-04T21:23:24.119723+08:00",
+  "generated_at": "2026-10-05T02:27:43.054265+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 0.188136,
+    "cloud_age_seconds": 0.186602,
     "job_errors": []
   },
   "draw_state": {
-    "status": "HOLIDAY_SUSPENDED",
-    "scheduled_weekday": true,
-    "reason": "国庆休市",
-    "as_of_date": "2026-10-04"
+    "status": "NO_DRAW_TODAY",
+    "scheduled_weekday": false,
+    "reason": "非该彩种常规开奖日",
+    "as_of_date": "2026-10-05"
   },
   "data_health": {
     "rows": 500,
