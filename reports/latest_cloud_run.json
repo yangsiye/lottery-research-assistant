@@ -1,5 +1,5 @@
 {
-  "now": "2026-10-07T03:54:31.154075+08:00",
+  "now": "2026-10-07T14:14:22.782647+08:00",
   "actions": [
     {
       "job": "calendar-status",
@@ -14,6 +14,109 @@
           "status": "WAITING_DRAW",
           "scheduled_weekday": true,
           "reason": "常规开奖日，等待官方开奖结果"
+        }
+      }
+    },
+    {
+      "job": "morning-sync",
+      "status": "ok",
+      "details": {
+        "research": {
+          "github_candidates": [
+            {
+              "name": "zhhyowner-arch/AI-Powered-Lottery-Prediction",
+              "source_url": "https://github.com/zhhyowner-arch/AI-Powered-Lottery-Prediction",
+              "stars": 2,
+              "updated_at": "2026-10-06T19:16:01Z",
+              "method_tags": [],
+              "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+              "decision": "pending-validation"
+            },
+            {
+              "name": "hansonDing/shuangseqiu-prediction",
+              "source_url": "https://github.com/hansonDing/shuangseqiu-prediction",
+              "stars": 0,
+              "updated_at": "2026-08-15T13:51:24Z",
+              "method_tags": [],
+              "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+              "decision": "pending-validation"
+            },
+            {
+              "name": "longgeyyds/ssq-fusion",
+              "source_url": "https://github.com/longgeyyds/ssq-fusion",
+              "stars": 1,
+              "updated_at": "2026-09-18T02:43:59Z",
+              "method_tags": [
+                "bayesian",
+                "lstm_gru",
+                "reinforcement_learning"
+              ],
+              "hypothesis": "Candidate methods: bayesian, lstm_gru, reinforcement_learning",
+              "decision": "pending-validation"
+            },
+            {
+              "name": "jiyan1989/Lottery_Prediction",
+              "source_url": "https://github.com/jiyan1989/Lottery_Prediction",
+              "stars": 0,
+              "updated_at": "2026-08-10T05:16:46Z",
+              "method_tags": [],
+              "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+              "decision": "pending-validation"
+            },
+            {
+              "name": "dumbledoredengswufe-lang/lottery-prediction-bot",
+              "source_url": "https://github.com/dumbledoredengswufe-lang/lottery-prediction-bot",
+              "stars": 1,
+              "updated_at": "2026-06-24T06:57:18Z",
+              "method_tags": [],
+              "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+              "decision": "pending-validation"
+            },
+            {
+              "name": "lrwei91/Lottery",
+              "source_url": "https://github.com/lrwei91/Lottery",
+              "stars": 1,
+              "updated_at": "2026-10-06T14:01:08Z",
+              "method_tags": [],
+              "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+              "decision": "pending-validation"
+            },
+            {
+              "name": "QJHWC/football-prediction",
+              "source_url": "https://github.com/QJHWC/football-prediction",
+              "stars": 2,
+              "updated_at": "2026-09-27T08:24:05Z",
+              "method_tags": [],
+              "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+              "decision": "pending-validation"
+            },
+            {
+              "name": "awslew/lottery-one-pick",
+              "source_url": "https://github.com/awslew/lottery-one-pick",
+              "stars": 1,
+              "updated_at": "2026-09-25T07:19:10Z",
+              "method_tags": [],
+              "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+              "decision": "pending-validation"
+            },
+            {
+              "name": "Tony0726/daletou_yuce",
+              "source_url": "https://github.com/Tony0726/daletou_yuce",
+              "stars": 0,
+              "updated_at": "2026-09-14T06:47:43Z",
+              "method_tags": [],
+              "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+              "decision": "pending-validation"
+            }
+          ]
+        },
+        "ssq": {
+          "synced": 500,
+          "reviews": []
+        },
+        "dlt": {
+          "synced": 500,
+          "reviews": []
         }
       }
     }
