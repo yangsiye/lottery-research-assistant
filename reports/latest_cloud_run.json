@@ -1,19 +1,19 @@
 {
-  "now": "2026-10-07T22:39:52.191550+08:00",
+  "now": "2026-10-08T04:18:37.806224+08:00",
   "actions": [
     {
       "job": "calendar-status",
       "status": "ok",
       "details": {
         "ssq": {
-          "status": "NO_DRAW_TODAY",
-          "scheduled_weekday": false,
-          "reason": "非该彩种常规开奖日"
-        },
-        "dlt": {
           "status": "WAITING_DRAW",
           "scheduled_weekday": true,
           "reason": "常规开奖日，等待官方开奖结果"
+        },
+        "dlt": {
+          "status": "NO_DRAW_TODAY",
+          "scheduled_weekday": false,
+          "reason": "非该彩种常规开奖日"
         }
       }
     }
