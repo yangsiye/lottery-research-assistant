@@ -13,7 +13,11 @@ on:
   schedule:
     - cron: '30 8 * * *'
       timezone: 'Asia/Shanghai'
-    - cron: '30 15 * * *'
+    - cron: '5 14 * * *'
+      timezone: 'Asia/Shanghai'
+    - cron: '30 14 * * *'
+      timezone: 'Asia/Shanghai'
+    - cron: '0 15 * * *'
       timezone: 'Asia/Shanghai'
     - cron: '45 18 * * *'
       timezone: 'Asia/Shanghai'
