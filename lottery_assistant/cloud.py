@@ -100,7 +100,7 @@ def run_due(now=None,force=False):
         status='ok' if all('synced' in result[l] for l in ('ssq','dlt')) else 'partial'
         db.record_job_run(key,status,result)
         actions.append({'job':'morning-sync','status':status,'details':result})
-    if force or time(15,30)<=local_time<time(20):
+    if force or time(14,0)<=local_time<time(20):
         for lot in ('ssq','dlt'):
             if calendar[lot]['status']!='WAITING_DRAW':
                 actions.append({'job':f'recommend-{lot}','status':'skipped','draw_state':calendar[lot]['status'],'details':calendar[lot]})
