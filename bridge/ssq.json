@@ -1,16 +1,16 @@
 {
   "schema_version": "1.2",
-  "generated_at": "2026-10-09T22:15:18.513050+08:00",
+  "generated_at": "2026-10-10T01:11:25.379693+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 0.238364,
+    "cloud_age_seconds": 0.203528,
     "job_errors": []
   },
   "draw_state": {
     "status": "NO_DRAW_TODAY",
     "scheduled_weekday": false,
     "reason": "非该彩种常规开奖日",
-    "as_of_date": "2026-10-09"
+    "as_of_date": "2026-10-10"
   },
   "data_health": {
     "rows": 502,
