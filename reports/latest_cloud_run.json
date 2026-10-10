@@ -1,151 +1,19 @@
 {
-  "now": "2026-10-10T23:57:52.707807+08:00",
+  "now": "2026-10-11T03:03:30.343852+08:00",
   "actions": [
     {
       "job": "calendar-status",
       "status": "ok",
       "details": {
         "ssq": {
-          "status": "NO_DRAW_TODAY",
-          "scheduled_weekday": false,
-          "reason": "非该彩种常规开奖日"
-        },
-        "dlt": {
           "status": "WAITING_DRAW",
           "scheduled_weekday": true,
           "reason": "常规开奖日，等待官方开奖结果"
-        }
-      }
-    },
-    {
-      "job": "night-review",
-      "status": "ok",
-      "details": {
-        "as_of": "2026-10-10T23:57:52.707807+08:00",
-        "calendar": {
-          "ssq": {
-            "status": "NO_DRAW_TODAY",
-            "scheduled_weekday": false,
-            "reason": "非该彩种常规开奖日"
-          },
-          "dlt": {
-            "status": "WAITING_DRAW",
-            "scheduled_weekday": true,
-            "reason": "常规开奖日，等待官方开奖结果"
-          }
-        },
-        "ssq": {
-          "draw_state": "NO_DRAW_TODAY",
-          "reviews": [],
-          "reason": "非该彩种常规开奖日"
         },
         "dlt": {
-          "draw_state": "DRAW_COMPLETED",
-          "reviews": [
-            {
-              "prediction_id": 2,
-              "lottery": "dlt",
-              "basis_issue": "26114",
-              "target_draw_date": "2026-10-10",
-              "actual_issue": "26115",
-              "predicted_main": [
-                2,
-                5,
-                11,
-                16,
-                19
-              ],
-              "predicted_bonus": [
-                5,
-                7
-              ],
-              "actual_main": [
-                12,
-                20,
-                32,
-                33,
-                35
-              ],
-              "actual_bonus": [
-                6,
-                7
-              ],
-              "model_version": "unified-v1.5-frozen-oos-holdout",
-              "freeze_sha256": "b467372b5384bd5ef0e2436e098e9c0cc540e557caaa166807819c0cd5afcb44",
-              "main_hits": 0,
-              "bonus_hits": 1,
-              "tier": null,
-              "prize_amount": 0,
-              "prize_status": "VERIFIED",
-              "cost": 2,
-              "net_return": -2,
-              "model_attribution": {
-                "main": {
-                  "bayes": {
-                    "brier": 0.12291599195830674,
-                    "logloss": 0.41187913189983494,
-                    "topk_recall": 0.2,
-                    "mean_hits": 1.0,
-                    "calibration_gap": 0.0
-                  },
-                  "hist_gb": {
-                    "brier": 0.12369731132228011,
-                    "logloss": 0.4149898669606277,
-                    "topk_recall": 0.0,
-                    "mean_hits": 0.0,
-                    "calibration_gap": 0.0002861216154251278
-                  },
-                  "logistic": {
-                    "brier": 0.12294029822459075,
-                    "logloss": 0.4118855470315742,
-                    "topk_recall": 0.0,
-                    "mean_hits": 0.0,
-                    "calibration_gap": 0.0009345468442142069
-                  },
-                  "uniform": {
-                    "brier": 0.12244897959183673,
-                    "logloss": 0.410116318288409,
-                    "topk_recall": 0.6,
-                    "mean_hits": 3.0,
-                    "calibration_gap": 2.7755575615628914e-17
-                  }
-                },
-                "bonus": {
-                  "bayes": {
-                    "brier": 0.13941446940104166,
-                    "logloss": 0.45246778030477186,
-                    "topk_recall": 0.5,
-                    "mean_hits": 1.0,
-                    "calibration_gap": 0.0
-                  },
-                  "hist_gb": {
-                    "brier": 0.13983270683211504,
-                    "logloss": 0.4518477426894702,
-                    "topk_recall": 0.0,
-                    "mean_hits": 0.0,
-                    "calibration_gap": 0.0036425918081332553
-                  },
-                  "logistic": {
-                    "brier": 0.1397855257170117,
-                    "logloss": 0.4536618275498738,
-                    "topk_recall": 0.0,
-                    "mean_hits": 0.0,
-                    "calibration_gap": 0.0005420539440982863
-                  },
-                  "uniform": {
-                    "brier": 0.13888888888888887,
-                    "logloss": 0.45056120886630474,
-                    "topk_recall": 0.0,
-                    "mean_hits": 0.0,
-                    "calibration_gap": 0.0
-                  }
-                }
-              },
-              "governance_action": "保持；单期结果仅增加前向样本，不触发模型晋级。下次训练更新滚动验证和留出门槛。"
-            }
-          ],
-          "reason": "官方开奖结果已入库",
-          "prediction_available": true
+          "status": "NO_DRAW_TODAY",
+          "scheduled_weekday": false,
+          "reason": "非该彩种常规开奖日"
         }
       }
     }
