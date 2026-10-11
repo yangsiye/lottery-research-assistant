@@ -1,9 +1,9 @@
 {
   "schema_version": "1.2",
-  "generated_at": "2026-10-12T00:25:44.159971+08:00",
+  "generated_at": "2026-10-12T03:16:25.216348+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 0.223621,
+    "cloud_age_seconds": 0.247759,
     "job_errors": []
   },
   "draw_states": {
@@ -46,7 +46,7 @@
   "dlt": null,
   "latest_review": null,
   "latest_cloud_run": {
-    "now": "2026-10-12T00:25:43.936350+08:00",
+    "now": "2026-10-12T03:16:24.968589+08:00",
     "actions": [
       {
         "job": "calendar-status",
