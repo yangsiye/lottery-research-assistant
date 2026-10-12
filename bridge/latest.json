@@ -1,9 +1,9 @@
 {
   "schema_version": "1.2",
-  "generated_at": "2026-10-12T14:17:34.951988+08:00",
+  "generated_at": "2026-10-12T23:13:36.445376+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 200.799325,
+    "cloud_age_seconds": 3.539738,
     "job_errors": []
   },
   "draw_states": {
@@ -14,9 +14,9 @@
       "as_of_date": "2026-10-12"
     },
     "dlt": {
-      "status": "WAITING_DRAW",
+      "status": "DRAW_COMPLETED",
       "scheduled_weekday": true,
-      "reason": "补齐此前已冻结推荐的官方对奖；当日状态按实际开奖日历显示",
+      "reason": "官方开奖结果已入库",
       "as_of_date": "2026-10-12"
     }
   },
@@ -32,9 +32,9 @@
       "primary_source_error": "SSQ official fetch failed: 403 Client Error: Forbidden for url: https://www.cwl.gov.cn/cwl_admin/kjxx/findDrawNotice?name=ssq&issueCount=500&pageNo=1&pageSize=100&systemType=PC"
     },
     "dlt": {
-      "rows": 503,
-      "latest_issue": "26115",
-      "latest_draw_date": "2026-10-10",
+      "rows": 504,
+      "latest_issue": "26116",
+      "latest_draw_date": "2026-10-12",
       "source_validation": "single-official-source",
       "sources": [
         "gstc.org.cn"
@@ -43,1062 +43,9 @@
     }
   },
   "ssq": null,
-  "dlt": {
-    "basis_issue": "26115",
-    "bet": {
-      "additional": false,
-      "cost": 2,
-      "multiplier": 1,
-      "type": "single"
-    },
-    "bonus": [
-      1,
-      9
-    ],
-    "frozen_at": "2026-10-12T14:17:34.692961+08:00",
-    "lottery": "dlt",
-    "main": [
-      23,
-      28,
-      29,
-      30,
-      31
-    ],
-    "model_probabilities": {
-      "bonus": {
-        "bayes": [
-          0.1796875,
-          0.1796875,
-          0.138671875,
-          0.1484375,
-          0.193359375,
-          0.150390625,
-          0.185546875,
-          0.17578125,
-          0.17578125,
-          0.173828125,
-          0.146484375,
-          0.15234375
-        ],
-        "hist_gb": [
-          0.13188862098140194,
-          0.12890621932327212,
-          0.09251180110633266,
-          0.1096680033668227,
-          0.2387041163019905,
-          0.13545737848923575,
-          0.1914285198404921,
-          0.1669675217803475,
-          0.17566271630714356,
-          0.17810982147490176,
-          0.2505009005028088,
-          0.13176465138861349
-        ],
-        "logistic": [
-          0.17143269200238498,
-          0.15670358153858072,
-          0.17014861651395635,
-          0.15523852134738503,
-          0.17117277238770465,
-          0.17567505401702116,
-          0.17823245060088666,
-          0.16141027927684065,
-          0.153634044556103,
-          0.17487523365526253,
-          0.1571096211894481,
-          0.16879688811980495
-        ],
-        "uniform": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
-        ]
-      },
-      "main": {
-        "bayes": [
-          0.12639508928571427,
-          0.14202008928571427,
-          0.17131696428571427,
-          0.14006696428571427,
-          0.15569196428571427,
-          0.15764508928571427,
-          0.15178571428571427,
-          0.15764508928571427,
-          0.15764508928571427,
-          0.15569196428571427,
-          0.14592633928571427,
-          0.16936383928571427,
-          0.12639508928571427,
-          0.13811383928571427,
-          0.14397321428571427,
-          0.15178571428571427,
-          0.12053571428571429,
-          0.14202008928571427,
-          0.13811383928571427,
-          0.14592633928571427,
-          0.15569196428571427,
-          0.16155133928571427,
-          0.12053571428571429,
-          0.10881696428571429,
-          0.13420758928571427,
-          0.16350446428571427,
-          0.14006696428571427,
-          0.14397321428571427,
-          0.15569196428571427,
-          0.11858258928571429,
-          0.11858258928571429,
-          0.13811383928571427,
-          0.13616071428571427,
-          0.14006696428571427,
-          0.12639508928571427
-        ],
-        "hist_gb": [
-          0.15047167279544976,
-          0.1385680585672353,
-          0.13027950042346695,
-          0.14812218347817105,
-          0.1385680585672353,
-          0.1517032583554381,
-          0.1468338300944842,
-          0.1517032583554381,
-          0.1468338300944842,
-          0.13375845826304744,
-          0.1459281986558604,
-          0.14754760236390854,
-          0.14061321370286417,
-          0.14699170419738633,
-          0.1385680585672353,
-          0.1468338300944842,
-          0.13451733884154762,
-          0.1468338300944842,
-          0.1468338300944842,
-          0.14812218347817105,
-          0.1468338300944842,
-          0.1385680585672353,
-          0.143832904874477,
-          0.17352289794014883,
-          0.13710953855635305,
-          0.15576491077102442,
-          0.1468338300944842,
-          0.1468338300944842,
-          0.14378847630879374,
-          0.143832904874477,
-          0.1513530307338601,
-          0.1385680585672353,
-          0.17521832679743168,
-          0.14899219330172714,
-          0.13451733884154762
-        ],
-        "logistic": [
-          0.1511614794727709,
-          0.12699324808805892,
-          0.12948574737583346,
-          0.15759415738514926,
-          0.15236986650871645,
-          0.14591264649750094,
-          0.15361223888430525,
-          0.15926656322612526,
-          0.13524528389093163,
-          0.1301545428634887,
-          0.134244062163779,
-          0.13484983207524484,
-          0.1273938906803164,
-          0.14226849559475843,
-          0.13521789252319932,
-          0.14851932125913808,
-          0.1524672915785785,
-          0.1392362446706997,
-          0.14613777345694529,
-          0.14666573142162478,
-          0.14618136805137857,
-          0.1359883189598042,
-          0.13750134398794356,
-          0.15798405943328062,
-          0.13754741520160135,
-          0.14199104624750172,
-          0.15262977874929287,
-          0.15117948098771386,
-          0.15548239522650795,
-          0.14878199404054165,
-          0.14914250050478556,
-          0.13083421617656338,
-          0.12782147068234392,
-          0.1537047015437101,
-          0.1483329123741294
-        ],
-        "uniform": [
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285,
-          0.14285714285714285
-        ]
-      }
-    },
-    "model_score": 0.15476190476190477,
-    "model_version": "unified-v1.5-frozen-oos-holdout",
-    "prediction_id": 4,
-    "rationale": {
-      "architecture": "six-module unified system",
-      "baseline_fallback": true,
-      "bonus_oos_metrics": {
-        "bayes": {
-          "brier": 0.1394807135454114,
-          "calibration_gap": 3.0398963769498334e-18,
-          "eligible": false,
-          "holdout": {
-            "brier": 0.13920324525522562,
-            "calibration_gap": 4.956352788505163e-18,
-            "logloss": 0.45164155282797197,
-            "mean_hits": 0.2619047619047619,
-            "n_eval": 84,
-            "topk_recall": 0.13095238095238096
-          },
-          "holdout_evidence": {
-            "brier": {
-              "blocks": 8,
-              "mean_delta": 0.0003143563663367342,
-              "upper_confidence_bound": 0.0015497246227130518
-            },
-            "logloss": {
-              "blocks": 8,
-              "mean_delta": 0.0010803439616673518,
-              "upper_confidence_bound": 0.005460073563814696
-            },
-            "passed": false,
-            "stable": false
-          },
-          "holdout_start_index": 416,
-          "logloss": 0.45274232089156513,
-          "mean_hits": 0.30952380952380953,
-          "n_eval": 420,
-          "protocol": "walk-forward-v1.5-refit30-holdout20pct-block10-bonferroni6",
-          "refit_every": 30,
-          "rolling": {
-            "10": {
-              "brier": 0.14060236056487438,
-              "calibration_gap": 8.326672684688674e-18,
-              "logloss": 0.456699051133703,
-              "mean_hits": 0.2,
-              "n_eval": 10,
-              "topk_recall": 0.1
-            },
-            "100": {
-              "brier": 0.13910037165474504,
-              "calibration_gap": 4.163336342344337e-18,
-              "logloss": 0.45132110175818324,
-              "mean_hits": 0.29,
-              "n_eval": 100,
-              "topk_recall": 0.145
-            },
-            "30": {
-              "brier": 0.13935108872097718,
-              "calibration_gap": 4.625929269271485e-18,
-              "logloss": 0.45209900106988077,
-              "mean_hits": 0.26666666666666666,
-              "n_eval": 30,
-              "topk_recall": 0.13333333333333333
-            },
-            "50": {
-              "brier": 0.13934805974768485,
-              "calibration_gap": 8.326672684688674e-18,
-              "logloss": 0.4521542093414171,
-              "mean_hits": 0.28,
-              "n_eval": 50,
-              "topk_recall": 0.14
-            }
-          },
-          "topk_recall": 0.15476190476190477,
-          "validation": {
-            "brier": 0.13955008061795782,
-            "calibration_gap": 2.560782274061001e-18,
-            "logloss": 0.45301751290746345,
-            "mean_hits": 0.32142857142857145,
-            "n_eval": 336,
-            "topk_recall": 0.16071428571428573
-          },
-          "validation_evidence": {
-            "brier": {
-              "blocks": 33,
-              "mean_delta": 0.0006611917290689376,
-              "upper_confidence_bound": 0.0015509375172458816
-            },
-            "logloss": {
-              "blocks": 33,
-              "mean_delta": 0.002456304041158732,
-              "upper_confidence_bound": 0.00581632754580408
-            },
-            "passed": false,
-            "stable": false
-          }
-        },
-        "hist_gb": {
-          "brier": 0.14742312515307743,
-          "calibration_gap": 0.023501569236061004,
-          "eligible": false,
-          "holdout": {
-            "brier": 0.13844724497529104,
-            "calibration_gap": 0.00890324999233442,
-            "logloss": 0.44882736157408276,
-            "mean_hits": 0.4523809523809524,
-            "n_eval": 84,
-            "topk_recall": 0.2261904761904762
-          },
-          "holdout_evidence": {
-            "brier": {
-              "blocks": 8,
-              "mean_delta": -0.00044164391359783874,
-              "upper_confidence_bound": 0.0016983500145388514
-            },
-            "logloss": {
-              "blocks": 8,
-              "mean_delta": -0.0017338472922220033,
-              "upper_confidence_bound": 0.006776092891609101
-            },
-            "passed": false,
-            "stable": false
-          },
-          "holdout_start_index": 416,
-          "logloss": 0.4764733545088113,
-          "mean_hits": 0.3357142857142857,
-          "n_eval": 420,
-          "protocol": "walk-forward-v1.5-refit30-holdout20pct-block10-bonferroni6",
-          "refit_every": 30,
-          "rolling": {
-            "10": {
-              "brier": 0.14043246968964182,
-              "calibration_gap": 0.007569688767122195,
-              "logloss": 0.4547249989347759,
-              "mean_hits": 0.4,
-              "n_eval": 10,
-              "topk_recall": 0.2
-            },
-            "100": {
-              "brier": 0.13914330583705467,
-              "calibration_gap": 0.008990035523847766,
-              "logloss": 0.4513229209963962,
-              "mean_hits": 0.4,
-              "n_eval": 100,
-              "topk_recall": 0.2
-            },
-            "30": {
-              "brier": 0.13913678411339792,
-              "calibration_gap": 0.009384269110191957,
-              "logloss": 0.4513832042010024,
-              "mean_hits": 0.4666666666666667,
-              "n_eval": 30,
-              "topk_recall": 0.23333333333333334
-            },
-            "50": {
-              "brier": 0.13861308843321976,
-              "calibration_gap": 0.009977540388204203,
-              "logloss": 0.44951717629919297,
-              "mean_hits": 0.48,
-              "n_eval": 50,
-              "topk_recall": 0.24
-            }
-          },
-          "topk_recall": 0.16785714285714284,
-          "validation": {
-            "brier": 0.14966709519752402,
-            "calibration_gap": 0.027151149046992652,
-            "logloss": 0.48338485274249343,
-            "mean_hits": 0.30654761904761907,
-            "n_eval": 336,
-            "topk_recall": 0.15327380952380953
-          },
-          "validation_evidence": {
-            "brier": {
-              "blocks": 33,
-              "mean_delta": 0.010778206308635128,
-              "upper_confidence_bound": 0.01691491681339173
-            },
-            "logloss": {
-              "blocks": 33,
-              "mean_delta": 0.0328236438761887,
-              "upper_confidence_bound": 0.05085299068095232
-            },
-            "passed": false,
-            "stable": false
-          }
-        },
-        "logistic": {
-          "brier": 0.13980095112182825,
-          "calibration_gap": 0.0018588923705678687,
-          "eligible": false,
-          "holdout": {
-            "brier": 0.13944516249504238,
-            "calibration_gap": 0.0011044597315361486,
-            "logloss": 0.45259673293674013,
-            "mean_hits": 0.36904761904761907,
-            "n_eval": 84,
-            "topk_recall": 0.18452380952380953
-          },
-          "holdout_evidence": {
-            "brier": {
-              "blocks": 8,
-              "mean_delta": 0.0005562736061535103,
-              "upper_confidence_bound": 0.0013372271331671321
-            },
-            "logloss": {
-              "blocks": 8,
-              "mean_delta": 0.002035524070435382,
-              "upper_confidence_bound": 0.004791248319220522
-            },
-            "passed": false,
-            "stable": false
-          },
-          "holdout_start_index": 416,
-          "logloss": 0.4536042717365808,
-          "mean_hits": 0.32142857142857145,
-          "n_eval": 420,
-          "protocol": "walk-forward-v1.5-refit30-holdout20pct-block10-bonferroni6",
-          "refit_every": 30,
-          "rolling": {
-            "10": {
-              "brier": 0.14068365798444188,
-              "calibration_gap": 0.0007043030994282439,
-              "logloss": 0.45710749474923434,
-              "mean_hits": 0.2,
-              "n_eval": 10,
-              "topk_recall": 0.1
-            },
-            "100": {
-              "brier": 0.13936131743201105,
-              "calibration_gap": 0.0011618886125992463,
-              "logloss": 0.45227294223641834,
-              "mean_hits": 0.36,
-              "n_eval": 100,
-              "topk_recall": 0.18
-            },
-            "30": {
-              "brier": 0.13983346322433213,
-              "calibration_gap": 0.0007197552026956572,
-              "logloss": 0.45399176601498864,
-              "mean_hits": 0.3,
-              "n_eval": 30,
-              "topk_recall": 0.15
-            },
-            "50": {
-              "brier": 0.13963133433236705,
-              "calibration_gap": 0.0009812623562257645,
-              "logloss": 0.45325568860744786,
-              "mean_hits": 0.3,
-              "n_eval": 50,
-              "topk_recall": 0.15
-            }
-          },
-          "topk_recall": 0.16071428571428573,
-          "validation": {
-            "brier": 0.13988989827852472,
-            "calibration_gap": 0.0020475005303257987,
-            "logloss": 0.45385615643654087,
-            "mean_hits": 0.30952380952380953,
-            "n_eval": 336,
-            "topk_recall": 0.15476190476190477
-          },
-          "validation_evidence": {
-            "brier": {
-              "blocks": 33,
-              "mean_delta": 0.0010010093896358177,
-              "upper_confidence_bound": 0.001855607661286861
-            },
-            "logloss": {
-              "blocks": 33,
-              "mean_delta": 0.0032949475702362513,
-              "upper_confidence_bound": 0.005988953840089503
-            },
-            "passed": false,
-            "stable": false
-          }
-        },
-        "uniform": {
-          "brier": 0.13888888888888887,
-          "calibration_gap": 0.0,
-          "eligible": true,
-          "holdout": {
-            "brier": 0.1388888888888889,
-            "calibration_gap": 0.0,
-            "logloss": 0.4505612088663047,
-            "mean_hits": 0.34523809523809523,
-            "n_eval": 84,
-            "topk_recall": 0.17261904761904762
-          },
-          "holdout_evidence": {
-            "brier": {
-              "blocks": 8,
-              "mean_delta": 0.0,
-              "upper_confidence_bound": 0.0
-            },
-            "logloss": {
-              "blocks": 8,
-              "mean_delta": 0.0,
-              "upper_confidence_bound": 0.0
-            },
-            "passed": false,
-            "stable": false
-          },
-          "holdout_start_index": 416,
-          "logloss": 0.45056120886630463,
-          "mean_hits": 0.2976190476190476,
-          "n_eval": 420,
-          "protocol": "walk-forward-v1.5-refit30-holdout20pct-block10-bonferroni6",
-          "refit_every": 30,
-          "rolling": {
-            "10": {
-              "brier": 0.1388888888888889,
-              "calibration_gap": 0.0,
-              "logloss": 0.4505612088663047,
-              "mean_hits": 0.1,
-              "n_eval": 10,
-              "topk_recall": 0.05
-            },
-            "100": {
-              "brier": 0.1388888888888889,
-              "calibration_gap": 0.0,
-              "logloss": 0.4505612088663047,
-              "mean_hits": 0.36,
-              "n_eval": 100,
-              "topk_recall": 0.18
-            },
-            "30": {
-              "brier": 0.1388888888888889,
-              "calibration_gap": 0.0,
-              "logloss": 0.4505612088663046,
-              "mean_hits": 0.26666666666666666,
-              "n_eval": 30,
-              "topk_recall": 0.13333333333333333
-            },
-            "50": {
-              "brier": 0.1388888888888889,
-              "calibration_gap": 0.0,
-              "logloss": 0.4505612088663047,
-              "mean_hits": 0.34,
-              "n_eval": 50,
-              "topk_recall": 0.17
-            }
-          },
-          "topk_recall": 0.1488095238095238,
-          "validation": {
-            "brier": 0.1388888888888889,
-            "calibration_gap": 0.0,
-            "logloss": 0.45056120886630474,
-            "mean_hits": 0.2857142857142857,
-            "n_eval": 336,
-            "topk_recall": 0.14285714285714285
-          },
-          "validation_evidence": {
-            "brier": {
-              "blocks": 33,
-              "mean_delta": 0.0,
-              "upper_confidence_bound": 0.0
-            },
-            "logloss": {
-              "blocks": 33,
-              "mean_delta": 0.0,
-              "upper_confidence_bound": 0.0
-            },
-            "passed": false,
-            "stable": false
-          }
-        }
-      },
-      "bonus_weights": {
-        "uniform": 1
-      },
-      "governance": {
-        "bonus": {
-          "bayes": {
-            "reason": "证据不足或退化，保持影子验证",
-            "status": "shadow",
-            "weight": 0.0
-          },
-          "hist_gb": {
-            "reason": "证据不足或退化，保持影子验证",
-            "status": "shadow",
-            "weight": 0.0
-          },
-          "logistic": {
-            "reason": "证据不足或退化，保持影子验证",
-            "status": "shadow",
-            "weight": 0.0
-          },
-          "uniform": {
-            "reason": "基线保留",
-            "status": "production",
-            "weight": 1.0
-          }
-        },
-        "main": {
-          "bayes": {
-            "reason": "证据不足或退化，保持影子验证",
-            "status": "shadow",
-            "weight": 0.0
-          },
-          "hist_gb": {
-            "reason": "证据不足或退化，保持影子验证",
-            "status": "shadow",
-            "weight": 0.0
-          },
-          "logistic": {
-            "reason": "证据不足或退化，保持影子验证",
-            "status": "shadow",
-            "weight": 0.0
-          },
-          "uniform": {
-            "reason": "基线保留",
-            "status": "production",
-            "weight": 1.0
-          }
-        }
-      },
-      "main_oos_metrics": {
-        "bayes": {
-          "brier": 0.1228325921544673,
-          "calibration_gap": 1.4406465438588342e-17,
-          "eligible": false,
-          "holdout": {
-            "brier": 0.1226166856243797,
-            "calibration_gap": 1.2886517250113425e-17,
-            "logloss": 0.41080717827968966,
-            "mean_hits": 0.7142857142857143,
-            "n_eval": 84,
-            "topk_recall": 0.14285714285714285
-          },
-          "holdout_evidence": {
-            "brier": {
-              "blocks": 8,
-              "mean_delta": 0.00016770603254294381,
-              "upper_confidence_bound": 0.0010594131322469089
-            },
-            "logloss": {
-              "blocks": 8,
-              "mean_delta": 0.0006908599912805266,
-              "upper_confidence_bound": 0.004397168693123592
-            },
-            "passed": false,
-            "stable": false
-          },
-          "holdout_start_index": 416,
-          "logloss": 0.41170548633493625,
-          "mean_hits": 0.6761904761904762,
-          "n_eval": 420,
-          "protocol": "walk-forward-v1.5-refit30-holdout20pct-block10-bonferroni6",
-          "refit_every": 30,
-          "rolling": {
-            "10": {
-              "brier": 0.12209263863546001,
-              "calibration_gap": 1.9428902930940238e-17,
-              "logloss": 0.40868785220971937,
-              "mean_hits": 0.9,
-              "n_eval": 10,
-              "topk_recall": 0.18
-            },
-            "100": {
-              "brier": 0.12254203638866713,
-              "calibration_gap": 1.2490009027033011e-17,
-              "logloss": 0.4105121367816886,
-              "mean_hits": 0.74,
-              "n_eval": 100,
-              "topk_recall": 0.148
-            },
-            "30": {
-              "brier": 0.12215078951186041,
-              "calibration_gap": 1.295260195396016e-17,
-              "logloss": 0.40893559480450187,
-              "mean_hits": 0.9,
-              "n_eval": 30,
-              "topk_recall": 0.18000000000000005
-            },
-            "50": {
-              "brier": 0.1224542968959674,
-              "calibration_gap": 1.27675647831893e-17,
-              "logloss": 0.41013687149341294,
-              "mean_hits": 0.72,
-              "n_eval": 50,
-              "topk_recall": 0.14400000000000002
-            }
-          },
-          "topk_recall": 0.13523809523809524,
-          "validation": {
-            "brier": 0.12288656878698918,
-            "calibration_gap": 1.478645248570707e-17,
-            "logloss": 0.41193006334874793,
-            "mean_hits": 0.6666666666666666,
-            "n_eval": 336,
-            "topk_recall": 0.13333333333333333
-          },
-          "validation_evidence": {
-            "brier": {
-              "blocks": 33,
-              "mean_delta": 0.00043758919515245144,
-              "upper_confidence_bound": 0.0007286827921812106
-            },
-            "logloss": {
-              "blocks": 33,
-              "mean_delta": 0.0018137450603389186,
-              "upper_confidence_bound": 0.0030561371102382335
-            },
-            "passed": false,
-            "stable": false
-          }
-        },
-        "hist_gb": {
-          "brier": 0.12530708383726846,
-          "calibration_gap": 0.009399607716357483,
-          "eligible": false,
-          "holdout": {
-            "brier": 0.12256862912274831,
-            "calibration_gap": 0.002007054064472288,
-            "logloss": 0.4105074136229384,
-            "mean_hits": 0.8452380952380952,
-            "n_eval": 84,
-            "topk_recall": 0.16904761904761903
-          },
-          "holdout_evidence": {
-            "brier": {
-              "blocks": 8,
-              "mean_delta": 0.00011964953091158696,
-              "upper_confidence_bound": 0.0004234336816676608
-            },
-            "logloss": {
-              "blocks": 8,
-              "mean_delta": 0.000391095334529389,
-              "upper_confidence_bound": 0.001610394141466524
-            },
-            "passed": false,
-            "stable": false
-          },
-          "holdout_start_index": 416,
-          "logloss": 0.41972975877087904,
-          "mean_hits": 0.7380952380952381,
-          "n_eval": 420,
-          "protocol": "walk-forward-v1.5-refit30-holdout20pct-block10-bonferroni6",
-          "refit_every": 30,
-          "rolling": {
-            "10": {
-              "brier": 0.12274830356551836,
-              "calibration_gap": 0.002451163275577528,
-              "logloss": 0.4112617059284068,
-              "mean_hits": 0.9,
-              "n_eval": 10,
-              "topk_recall": 0.18000000000000002
-            },
-            "100": {
-              "brier": 0.12253069511549215,
-              "calibration_gap": 0.0021575555309265113,
-              "logloss": 0.4103879182484445,
-              "mean_hits": 0.84,
-              "n_eval": 100,
-              "topk_recall": 0.168
-            },
-            "30": {
-              "brier": 0.12266335364978218,
-              "calibration_gap": 0.002556145980963187,
-              "logloss": 0.41089361378544065,
-              "mean_hits": 0.9,
-              "n_eval": 30,
-              "topk_recall": 0.18000000000000002
-            },
-            "50": {
-              "brier": 0.1226402577503479,
-              "calibration_gap": 0.002038096422134771,
-              "logloss": 0.4107833783036707,
-              "mean_hits": 0.82,
-              "n_eval": 50,
-              "topk_recall": 0.16400000000000003
-            }
-          },
-          "topk_recall": 0.14761904761904762,
-          "validation": {
-            "brier": 0.1259916975158985,
-            "calibration_gap": 0.011247746129328781,
-            "logloss": 0.4220353450578642,
-            "mean_hits": 0.7113095238095238,
-            "n_eval": 336,
-            "topk_recall": 0.14226190476190476
-          },
-          "validation_evidence": {
-            "brier": {
-              "blocks": 33,
-              "mean_delta": 0.0035427179240617485,
-              "upper_confidence_bound": 0.0053949061389847505
-            },
-            "logloss": {
-              "blocks": 33,
-              "mean_delta": 0.011919026769455162,
-              "upper_confidence_bound": 0.018271698795708384
-            },
-            "passed": false,
-            "stable": false
-          }
-        },
-        "logistic": {
-          "brier": 0.12308407099513678,
-          "calibration_gap": 0.0019506735119503911,
-          "eligible": false,
-          "holdout": {
-            "brier": 0.1224829058730063,
-            "calibration_gap": 0.0009316399794110919,
-            "logloss": 0.41028371805447394,
-            "mean_hits": 0.7261904761904762,
-            "n_eval": 84,
-            "topk_recall": 0.14523809523809522
-          },
-          "holdout_evidence": {
-            "brier": {
-              "blocks": 8,
-              "mean_delta": 3.3926281169574656e-05,
-              "upper_confidence_bound": 0.0005190093483982254
-            },
-            "logloss": {
-              "blocks": 8,
-              "mean_delta": 0.00016739976606500238,
-              "upper_confidence_bound": 0.0021664219276393143
-            },
-            "passed": false,
-            "stable": false
-          },
-          "holdout_start_index": 416,
-          "logloss": 0.4126370706844652,
-          "mean_hits": 0.719047619047619,
-          "n_eval": 420,
-          "protocol": "walk-forward-v1.5-refit30-holdout20pct-block10-bonferroni6",
-          "refit_every": 30,
-          "rolling": {
-            "10": {
-              "brier": 0.12272019607711462,
-              "calibration_gap": 0.0010739350214641285,
-              "logloss": 0.41127559672499336,
-              "mean_hits": 0.8,
-              "n_eval": 10,
-              "topk_recall": 0.15999999999999998
-            },
-            "100": {
-              "brier": 0.12258584597341583,
-              "calibration_gap": 0.0010089443637959455,
-              "logloss": 0.41068402257471553,
-              "mean_hits": 0.67,
-              "n_eval": 100,
-              "topk_recall": 0.13399999999999998
-            },
-            "30": {
-              "brier": 0.12247348572020154,
-              "calibration_gap": 0.0011376938235727505,
-              "logloss": 0.410225638360996,
-              "mean_hits": 0.8,
-              "n_eval": 30,
-              "topk_recall": 0.16000000000000003
-            },
-            "50": {
-              "brier": 0.12240636138487097,
-              "calibration_gap": 0.0010674557617348336,
-              "logloss": 0.40996105093471785,
-              "mean_hits": 0.78,
-              "n_eval": 50,
-              "topk_recall": 0.15600000000000003
-            }
-          },
-          "topk_recall": 0.1438095238095238,
-          "validation": {
-            "brier": 0.12323436227566942,
-            "calibration_gap": 0.002205431895085216,
-            "logloss": 0.41322540884196296,
-            "mean_hits": 0.7172619047619048,
-            "n_eval": 336,
-            "topk_recall": 0.14345238095238094
-          },
-          "validation_evidence": {
-            "brier": {
-              "blocks": 33,
-              "mean_delta": 0.0007853826838326526,
-              "upper_confidence_bound": 0.0014505301176657602
-            },
-            "logloss": {
-              "blocks": 33,
-              "mean_delta": 0.0031090905535539766,
-              "upper_confidence_bound": 0.005703950451511194
-            },
-            "passed": false,
-            "stable": false
-          }
-        },
-        "uniform": {
-          "brier": 0.12244897959183677,
-          "calibration_gap": 2.7755575615628914e-17,
-          "eligible": true,
-          "holdout": {
-            "brier": 0.1224489795918368,
-            "calibration_gap": 2.7755575615628914e-17,
-            "logloss": 0.410116318288409,
-            "mean_hits": 0.6309523809523809,
-            "n_eval": 84,
-            "topk_recall": 0.1261904761904762
-          },
-          "holdout_evidence": {
-            "brier": {
-              "blocks": 8,
-              "mean_delta": 0.0,
-              "upper_confidence_bound": 0.0
-            },
-            "logloss": {
-              "blocks": 8,
-              "mean_delta": 0.0,
-              "upper_confidence_bound": 0.0
-            },
-            "passed": false,
-            "stable": false
-          },
-          "holdout_start_index": 416,
-          "logloss": 0.41011631828840905,
-          "mean_hits": 0.6285714285714286,
-          "n_eval": 420,
-          "protocol": "walk-forward-v1.5-refit30-holdout20pct-block10-bonferroni6",
-          "refit_every": 30,
-          "rolling": {
-            "10": {
-              "brier": 0.12244897959183676,
-              "calibration_gap": 2.7755575615628914e-17,
-              "logloss": 0.410116318288409,
-              "mean_hits": 0.6,
-              "n_eval": 10,
-              "topk_recall": 0.12000000000000002
-            },
-            "100": {
-              "brier": 0.12244897959183679,
-              "calibration_gap": 2.7755575615628914e-17,
-              "logloss": 0.41011631828840905,
-              "mean_hits": 0.62,
-              "n_eval": 100,
-              "topk_recall": 0.124
-            },
-            "30": {
-              "brier": 0.12244897959183679,
-              "calibration_gap": 2.7755575615628914e-17,
-              "logloss": 0.4101163182884091,
-              "mean_hits": 0.5666666666666667,
-              "n_eval": 30,
-              "topk_recall": 0.11333333333333334
-            },
-            "50": {
-              "brier": 0.12244897959183675,
-              "calibration_gap": 2.7755575615628914e-17,
-              "logloss": 0.410116318288409,
-              "mean_hits": 0.54,
-              "n_eval": 50,
-              "topk_recall": 0.10800000000000001
-            }
-          },
-          "topk_recall": 0.1257142857142857,
-          "validation": {
-            "brier": 0.12244897959183676,
-            "calibration_gap": 2.7755575615628914e-17,
-            "logloss": 0.410116318288409,
-            "mean_hits": 0.6279761904761905,
-            "n_eval": 336,
-            "topk_recall": 0.1255952380952381
-          },
-          "validation_evidence": {
-            "brier": {
-              "blocks": 33,
-              "mean_delta": 0.0,
-              "upper_confidence_bound": 0.0
-            },
-            "logloss": {
-              "blocks": 33,
-              "mean_delta": 0.0,
-              "upper_confidence_bound": 0.0
-            },
-            "passed": false,
-            "stable": false
-          }
-        }
-      },
-      "main_weights": {
-        "uniform": 1
-      },
-      "policy": "frequency/omission/hot/cold/repeat/neighbor/transition are observations or learned features; no contradictory directional rules are applied; structure is soft-only",
-      "score_is_probability": false,
-      "structure_bonus": {
-        "ac": 1.0,
-        "big": 1.0,
-        "consecutive_pairs": 1.0,
-        "neighbor_prev": 0.368,
-        "odd": 0.368,
-        "prime": 0.368,
-        "r0": 1.0,
-        "r1": 1.0,
-        "r2": 0.368,
-        "repeat_prev": 1.0,
-        "same_tail_pairs": 1.0,
-        "span": 0.226,
-        "sum": 0.51,
-        "zone1": 1.0,
-        "zone2": 0.368,
-        "zone3": 1.0
-      },
-      "structure_main": {
-        "ac": 0.142,
-        "big": 0.066,
-        "consecutive_pairs": 0.135,
-        "neighbor_prev": 1.0,
-        "odd": 1.0,
-        "prime": 0.368,
-        "r0": 0.368,
-        "r1": 1.0,
-        "r2": 1.0,
-        "repeat_prev": 0.368,
-        "same_tail_pairs": 0.368,
-        "span": 0.069,
-        "sum": 0.093,
-        "zone1": 0.146,
-        "zone2": 0.368,
-        "zone3": 0.15
-      }
-    },
-    "target_draw_date": "2026-10-12"
-  },
+  "dlt": null,
   "latest_review": {
-    "as_of": "2026-10-12T14:14:14.152663+08:00",
+    "as_of": "2026-10-12T23:13:32.905638+08:00",
     "calendar": {
       "ssq": {
         "status": "NO_DRAW_TODAY",
@@ -1113,39 +60,44 @@
     },
     "ssq": {
       "draw_state": "NO_DRAW_TODAY",
+      "reviews": [],
+      "reason": "非该彩种常规开奖日"
+    },
+    "dlt": {
+      "draw_state": "DRAW_COMPLETED",
       "reviews": [
         {
-          "prediction_id": 3,
-          "lottery": "ssq",
-          "basis_issue": "2026115",
-          "target_draw_date": "2026-10-11",
-          "actual_issue": "2026116",
+          "prediction_id": 4,
+          "lottery": "dlt",
+          "basis_issue": "26115",
+          "target_draw_date": "2026-10-12",
+          "actual_issue": "26116",
           "predicted_main": [
-            1,
-            3,
-            9,
-            10,
-            22,
-            25
+            23,
+            28,
+            29,
+            30,
+            31
           ],
           "predicted_bonus": [
-            5
+            1,
+            9
           ],
           "actual_main": [
-            10,
-            19,
-            24,
-            27,
-            28,
-            33
+            9,
+            18,
+            22,
+            25,
+            35
           ],
           "actual_bonus": [
-            12
+            1,
+            10
           ],
           "model_version": "unified-v1.5-frozen-oos-holdout",
-          "freeze_sha256": "54700de8230a2269f02523cde6f9b172371f1f77f2746081934c7f0f2614ac83",
-          "main_hits": 1,
-          "bonus_hits": 0,
+          "freeze_sha256": "5497ecaf75069a9e76061d14934b0aa4faf79ed25215ed9e43b1a59c135270cb",
+          "main_hits": 0,
+          "bonus_hits": 1,
           "tier": null,
           "prize_amount": 0,
           "prize_status": "VERIFIED",
@@ -1154,59 +106,59 @@
           "model_attribution": {
             "main": {
               "bayes": {
-                "brier": 0.14999446396000127,
-                "logloss": 0.47824597105386923,
-                "topk_recall": 0.16666666666666666,
-                "mean_hits": 1.0,
+                "brier": 0.12225114472058353,
+                "logloss": 0.4091278044622498,
+                "topk_recall": 0.4,
+                "mean_hits": 2.0,
                 "calibration_gap": 0.0
               },
               "hist_gb": {
-                "brier": 0.147103016946928,
-                "logloss": 0.469019443662908,
-                "topk_recall": 0.3333333333333333,
-                "mean_hits": 2.0,
-                "calibration_gap": 0.0014317614975722648
-              },
-              "logistic": {
-                "brier": 0.1511453260582787,
-                "logloss": 0.48221433182798407,
+                "brier": 0.12399543395156766,
+                "logloss": 0.41622511360244485,
                 "topk_recall": 0.0,
                 "mean_hits": 0.0,
-                "calibration_gap": 0.00043051993718296044
+                "calibration_gap": 0.0030057722715040314
+              },
+              "logistic": {
+                "brier": 0.1237627156378797,
+                "logloss": 0.4152845451076655,
+                "topk_recall": 0.0,
+                "mean_hits": 0.0,
+                "calibration_gap": 0.0006828374795503911
               },
               "uniform": {
-                "brier": 0.1487603305785124,
-                "logloss": 0.47413931305783746,
-                "topk_recall": 0.3333333333333333,
-                "mean_hits": 2.0,
-                "calibration_gap": 0.0
+                "brier": 0.12244897959183676,
+                "logloss": 0.41011631828840905,
+                "topk_recall": 0.2,
+                "mean_hits": 1.0,
+                "calibration_gap": 2.7755575615628914e-17
               }
             },
             "bonus": {
               "bayes": {
-                "brier": 0.05976223945617676,
-                "logloss": 0.24332329822717244,
+                "brier": 0.13582674662272134,
+                "logloss": 0.43897171004192354,
                 "topk_recall": 0.0,
                 "mean_hits": 0.0,
                 "calibration_gap": 0.0
               },
               "hist_gb": {
-                "brier": 0.05931801416667233,
-                "logloss": 0.23788773002904062,
+                "brier": 0.14309537934144836,
+                "logloss": 0.4615557069079015,
                 "topk_recall": 0.0,
                 "mean_hits": 0.0,
-                "calibration_gap": 0.005797862867306963
+                "calibration_gap": 0.0057024774280530766
               },
               "logistic": {
-                "brier": 0.057996010142869495,
-                "logloss": 0.2282954897170183,
+                "brier": 0.13664344967222639,
+                "logloss": 0.4423968156298244,
                 "topk_recall": 0.0,
                 "mean_hits": 0.0,
-                "calibration_gap": 2.981637983476282e-05
+                "calibration_gap": 0.0004641870662184244
               },
               "uniform": {
-                "brier": 0.05859375,
-                "logloss": 0.2337916587064593,
+                "brier": 0.1388888888888889,
+                "logloss": 0.4505612088663047,
                 "topk_recall": 0.0,
                 "mean_hits": 0.0,
                 "calibration_gap": 0.0
@@ -1216,16 +168,12 @@
           "governance_action": "保持；单期结果仅增加前向样本，不触发模型晋级。下次训练更新滚动验证和留出门槛。"
         }
       ],
-      "reason": "补齐此前已冻结推荐的官方对奖；当日状态按实际开奖日历显示"
-    },
-    "dlt": {
-      "draw_state": "WAITING_DRAW",
-      "reviews": [],
-      "reason": "补齐此前已冻结推荐的官方对奖；当日状态按实际开奖日历显示"
+      "reason": "官方开奖结果已入库",
+      "prediction_available": true
     }
   },
   "latest_cloud_run": {
-    "now": "2026-10-12T14:14:14.152663+08:00",
+    "now": "2026-10-12T23:13:32.905638+08:00",
     "actions": [
       {
         "job": "calendar-status",
@@ -1244,133 +192,62 @@
         }
       },
       {
-        "job": "morning-sync",
+        "job": "night-review",
         "status": "ok",
         "details": {
-          "research": {
-            "github_candidates": [
-              {
-                "name": "zhhyowner-arch/AI-Powered-Lottery-Prediction",
-                "source_url": "https://github.com/zhhyowner-arch/AI-Powered-Lottery-Prediction",
-                "stars": 2,
-                "updated_at": "2026-10-11T19:07:21Z",
-                "method_tags": [],
-                "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
-                "decision": "pending-validation"
-              },
-              {
-                "name": "hansonDing/shuangseqiu-prediction",
-                "source_url": "https://github.com/hansonDing/shuangseqiu-prediction",
-                "stars": 0,
-                "updated_at": "2026-10-10T02:19:17Z",
-                "method_tags": [],
-                "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
-                "decision": "pending-validation"
-              },
-              {
-                "name": "longgeyyds/ssq-fusion",
-                "source_url": "https://github.com/longgeyyds/ssq-fusion",
-                "stars": 1,
-                "updated_at": "2026-09-18T02:43:59Z",
-                "method_tags": [
-                  "bayesian",
-                  "lstm_gru",
-                  "reinforcement_learning"
-                ],
-                "hypothesis": "Candidate methods: bayesian, lstm_gru, reinforcement_learning",
-                "decision": "pending-validation"
-              },
-              {
-                "name": "jiyan1989/Lottery_Prediction",
-                "source_url": "https://github.com/jiyan1989/Lottery_Prediction",
-                "stars": 0,
-                "updated_at": "2026-08-10T05:16:46Z",
-                "method_tags": [],
-                "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
-                "decision": "pending-validation"
-              },
-              {
-                "name": "dumbledoredengswufe-lang/lottery-prediction-bot",
-                "source_url": "https://github.com/dumbledoredengswufe-lang/lottery-prediction-bot",
-                "stars": 1,
-                "updated_at": "2026-06-24T06:57:18Z",
-                "method_tags": [],
-                "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
-                "decision": "pending-validation"
-              },
-              {
-                "name": "lrwei91/Lottery",
-                "source_url": "https://github.com/lrwei91/Lottery",
-                "stars": 2,
-                "updated_at": "2026-10-11T14:00:38Z",
-                "method_tags": [],
-                "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
-                "decision": "pending-validation"
-              },
-              {
-                "name": "QJHWC/football-prediction",
-                "source_url": "https://github.com/QJHWC/football-prediction",
-                "stars": 2,
-                "updated_at": "2026-09-27T08:24:05Z",
-                "method_tags": [],
-                "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
-                "decision": "pending-validation"
-              },
-              {
-                "name": "awslew/lottery-one-pick",
-                "source_url": "https://github.com/awslew/lottery-one-pick",
-                "stars": 2,
-                "updated_at": "2026-10-09T04:41:51Z",
-                "method_tags": [],
-                "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
-                "decision": "pending-validation"
-              },
-              {
-                "name": "Tony0726/daletou_yuce",
-                "source_url": "https://github.com/Tony0726/daletou_yuce",
-                "stars": 0,
-                "updated_at": "2026-09-14T06:47:43Z",
-                "method_tags": [],
-                "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
-                "decision": "pending-validation"
-              }
-            ]
+          "as_of": "2026-10-12T23:13:32.905638+08:00",
+          "calendar": {
+            "ssq": {
+              "status": "NO_DRAW_TODAY",
+              "scheduled_weekday": false,
+              "reason": "非该彩种常规开奖日"
+            },
+            "dlt": {
+              "status": "WAITING_DRAW",
+              "scheduled_weekday": true,
+              "reason": "常规开奖日，等待官方开奖结果"
+            }
           },
           "ssq": {
-            "synced": 500,
+            "draw_state": "NO_DRAW_TODAY",
+            "reviews": [],
+            "reason": "非该彩种常规开奖日"
+          },
+          "dlt": {
+            "draw_state": "DRAW_COMPLETED",
             "reviews": [
               {
-                "prediction_id": 3,
-                "lottery": "ssq",
-                "basis_issue": "2026115",
-                "target_draw_date": "2026-10-11",
-                "actual_issue": "2026116",
+                "prediction_id": 4,
+                "lottery": "dlt",
+                "basis_issue": "26115",
+                "target_draw_date": "2026-10-12",
+                "actual_issue": "26116",
                 "predicted_main": [
-                  1,
-                  3,
-                  9,
-                  10,
-                  22,
-                  25
+                  23,
+                  28,
+                  29,
+                  30,
+                  31
                 ],
                 "predicted_bonus": [
-                  5
+                  1,
+                  9
                 ],
                 "actual_main": [
-                  10,
-                  19,
-                  24,
-                  27,
-                  28,
-                  33
+                  9,
+                  18,
+                  22,
+                  25,
+                  35
                 ],
                 "actual_bonus": [
-                  12
+                  1,
+                  10
                 ],
                 "model_version": "unified-v1.5-frozen-oos-holdout",
-                "freeze_sha256": "54700de8230a2269f02523cde6f9b172371f1f77f2746081934c7f0f2614ac83",
-                "main_hits": 1,
-                "bonus_hits": 0,
+                "freeze_sha256": "5497ecaf75069a9e76061d14934b0aa4faf79ed25215ed9e43b1a59c135270cb",
+                "main_hits": 0,
+                "bonus_hits": 1,
                 "tier": null,
                 "prize_amount": 0,
                 "prize_status": "VERIFIED",
@@ -1379,59 +256,59 @@
                 "model_attribution": {
                   "main": {
                     "bayes": {
-                      "brier": 0.14999446396000127,
-                      "logloss": 0.47824597105386923,
-                      "topk_recall": 0.16666666666666666,
-                      "mean_hits": 1.0,
+                      "brier": 0.12225114472058353,
+                      "logloss": 0.4091278044622498,
+                      "topk_recall": 0.4,
+                      "mean_hits": 2.0,
                       "calibration_gap": 0.0
                     },
                     "hist_gb": {
-                      "brier": 0.147103016946928,
-                      "logloss": 0.469019443662908,
-                      "topk_recall": 0.3333333333333333,
-                      "mean_hits": 2.0,
-                      "calibration_gap": 0.0014317614975722648
-                    },
-                    "logistic": {
-                      "brier": 0.1511453260582787,
-                      "logloss": 0.48221433182798407,
+                      "brier": 0.12399543395156766,
+                      "logloss": 0.41622511360244485,
                       "topk_recall": 0.0,
                       "mean_hits": 0.0,
-                      "calibration_gap": 0.00043051993718296044
+                      "calibration_gap": 0.0030057722715040314
+                    },
+                    "logistic": {
+                      "brier": 0.1237627156378797,
+                      "logloss": 0.4152845451076655,
+                      "topk_recall": 0.0,
+                      "mean_hits": 0.0,
+                      "calibration_gap": 0.0006828374795503911
                     },
                     "uniform": {
-                      "brier": 0.1487603305785124,
-                      "logloss": 0.47413931305783746,
-                      "topk_recall": 0.3333333333333333,
-                      "mean_hits": 2.0,
-                      "calibration_gap": 0.0
+                      "brier": 0.12244897959183676,
+                      "logloss": 0.41011631828840905,
+                      "topk_recall": 0.2,
+                      "mean_hits": 1.0,
+                      "calibration_gap": 2.7755575615628914e-17
                     }
                   },
                   "bonus": {
                     "bayes": {
-                      "brier": 0.05976223945617676,
-                      "logloss": 0.24332329822717244,
+                      "brier": 0.13582674662272134,
+                      "logloss": 0.43897171004192354,
                       "topk_recall": 0.0,
                       "mean_hits": 0.0,
                       "calibration_gap": 0.0
                     },
                     "hist_gb": {
-                      "brier": 0.05931801416667233,
-                      "logloss": 0.23788773002904062,
+                      "brier": 0.14309537934144836,
+                      "logloss": 0.4615557069079015,
                       "topk_recall": 0.0,
                       "mean_hits": 0.0,
-                      "calibration_gap": 0.005797862867306963
+                      "calibration_gap": 0.0057024774280530766
                     },
                     "logistic": {
-                      "brier": 0.057996010142869495,
-                      "logloss": 0.2282954897170183,
+                      "brier": 0.13664344967222639,
+                      "logloss": 0.4423968156298244,
                       "topk_recall": 0.0,
                       "mean_hits": 0.0,
-                      "calibration_gap": 2.981637983476282e-05
+                      "calibration_gap": 0.0004641870662184244
                     },
                     "uniform": {
-                      "brier": 0.05859375,
-                      "logloss": 0.2337916587064593,
+                      "brier": 0.1388888888888889,
+                      "logloss": 0.4505612088663047,
                       "topk_recall": 0.0,
                       "mean_hits": 0.0,
                       "calibration_gap": 0.0
@@ -1440,1085 +317,116 @@
                 },
                 "governance_action": "保持；单期结果仅增加前向样本，不触发模型晋级。下次训练更新滚动验证和留出门槛。"
               }
-            ]
-          },
-          "dlt": {
-            "synced": 500,
-            "reviews": []
-          }
-        }
-      },
-      {
-        "job": "recommend-ssq",
-        "status": "skipped",
-        "draw_state": "NO_DRAW_TODAY",
-        "details": {
-          "status": "NO_DRAW_TODAY",
-          "scheduled_weekday": false,
-          "reason": "非该彩种常规开奖日"
-        }
-      },
-      {
-        "job": "recommend-dlt",
-        "status": "ok",
-        "details": {
-          "prediction_id": 4,
-          "lottery": "dlt",
-          "basis_issue": "26115",
-          "target_draw_date": "2026-10-12",
-          "frozen_at": "2026-10-12T14:17:34.692961+08:00",
-          "main": [
-            23,
-            28,
-            29,
-            30,
-            31
-          ],
-          "bonus": [
-            1,
-            9
-          ],
-          "model_version": "unified-v1.5-frozen-oos-holdout",
-          "model_score": 0.15476190476190477,
-          "bet": {
-            "type": "single",
-            "multiplier": 1,
-            "additional": false,
-            "cost": 2
-          },
-          "model_probabilities": {
-            "main": {
-              "uniform": [
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285,
-                0.14285714285714285
-              ],
-              "bayes": [
-                0.12639508928571427,
-                0.14202008928571427,
-                0.17131696428571427,
-                0.14006696428571427,
-                0.15569196428571427,
-                0.15764508928571427,
-                0.15178571428571427,
-                0.15764508928571427,
-                0.15764508928571427,
-                0.15569196428571427,
-                0.14592633928571427,
-                0.16936383928571427,
-                0.12639508928571427,
-                0.13811383928571427,
-                0.14397321428571427,
-                0.15178571428571427,
-                0.12053571428571429,
-                0.14202008928571427,
-                0.13811383928571427,
-                0.14592633928571427,
-                0.15569196428571427,
-                0.16155133928571427,
-                0.12053571428571429,
-                0.10881696428571429,
-                0.13420758928571427,
-                0.16350446428571427,
-                0.14006696428571427,
-                0.14397321428571427,
-                0.15569196428571427,
-                0.11858258928571429,
-                0.11858258928571429,
-                0.13811383928571427,
-                0.13616071428571427,
-                0.14006696428571427,
-                0.12639508928571427
-              ],
-              "logistic": [
-                0.1511614794727709,
-                0.12699324808805892,
-                0.12948574737583346,
-                0.15759415738514926,
-                0.15236986650871645,
-                0.14591264649750094,
-                0.15361223888430525,
-                0.15926656322612526,
-                0.13524528389093163,
-                0.1301545428634887,
-                0.134244062163779,
-                0.13484983207524484,
-                0.1273938906803164,
-                0.14226849559475843,
-                0.13521789252319932,
-                0.14851932125913808,
-                0.1524672915785785,
-                0.1392362446706997,
-                0.14613777345694529,
-                0.14666573142162478,
-                0.14618136805137857,
-                0.1359883189598042,
-                0.13750134398794356,
-                0.15798405943328062,
-                0.13754741520160135,
-                0.14199104624750172,
-                0.15262977874929287,
-                0.15117948098771386,
-                0.15548239522650795,
-                0.14878199404054165,
-                0.14914250050478556,
-                0.13083421617656338,
-                0.12782147068234392,
-                0.1537047015437101,
-                0.1483329123741294
-              ],
-              "hist_gb": [
-                0.15047167279544976,
-                0.1385680585672353,
-                0.13027950042346695,
-                0.14812218347817105,
-                0.1385680585672353,
-                0.1517032583554381,
-                0.1468338300944842,
-                0.1517032583554381,
-                0.1468338300944842,
-                0.13375845826304744,
-                0.1459281986558604,
-                0.14754760236390854,
-                0.14061321370286417,
-                0.14699170419738633,
-                0.1385680585672353,
-                0.1468338300944842,
-                0.13451733884154762,
-                0.1468338300944842,
-                0.1468338300944842,
-                0.14812218347817105,
-                0.1468338300944842,
-                0.1385680585672353,
-                0.143832904874477,
-                0.17352289794014883,
-                0.13710953855635305,
-                0.15576491077102442,
-                0.1468338300944842,
-                0.1468338300944842,
-                0.14378847630879374,
-                0.143832904874477,
-                0.1513530307338601,
-                0.1385680585672353,
-                0.17521832679743168,
-                0.14899219330172714,
-                0.13451733884154762
-              ]
-            },
-            "bonus": {
-              "uniform": [
-                0.16666666666666666,
-                0.16666666666666666,
-                0.16666666666666666,
-                0.16666666666666666,
-                0.16666666666666666,
-                0.16666666666666666,
-                0.16666666666666666,
-                0.16666666666666666,
-                0.16666666666666666,
-                0.16666666666666666,
-                0.16666666666666666,
-                0.16666666666666666
-              ],
-              "bayes": [
-                0.1796875,
-                0.1796875,
-                0.138671875,
-                0.1484375,
-                0.193359375,
-                0.150390625,
-                0.185546875,
-                0.17578125,
-                0.17578125,
-                0.173828125,
-                0.146484375,
-                0.15234375
-              ],
-              "logistic": [
-                0.17143269200238498,
-                0.15670358153858072,
-                0.17014861651395635,
-                0.15523852134738503,
-                0.17117277238770465,
-                0.17567505401702116,
-                0.17823245060088666,
-                0.16141027927684065,
-                0.153634044556103,
-                0.17487523365526253,
-                0.1571096211894481,
-                0.16879688811980495
-              ],
-              "hist_gb": [
-                0.13188862098140194,
-                0.12890621932327212,
-                0.09251180110633266,
-                0.1096680033668227,
-                0.2387041163019905,
-                0.13545737848923575,
-                0.1914285198404921,
-                0.1669675217803475,
-                0.17566271630714356,
-                0.17810982147490176,
-                0.2505009005028088,
-                0.13176465138861349
-              ]
-            }
-          },
-          "rationale": {
-            "architecture": "six-module unified system",
-            "baseline_fallback": true,
-            "score_is_probability": false,
-            "governance": {
-              "main": {
-                "uniform": {
-                  "status": "production",
-                  "weight": 1.0,
-                  "reason": "基线保留"
-                },
-                "bayes": {
-                  "status": "shadow",
-                  "weight": 0.0,
-                  "reason": "证据不足或退化，保持影子验证"
-                },
-                "logistic": {
-                  "status": "shadow",
-                  "weight": 0.0,
-                  "reason": "证据不足或退化，保持影子验证"
-                },
-                "hist_gb": {
-                  "status": "shadow",
-                  "weight": 0.0,
-                  "reason": "证据不足或退化，保持影子验证"
-                }
-              },
-              "bonus": {
-                "uniform": {
-                  "status": "production",
-                  "weight": 1.0,
-                  "reason": "基线保留"
-                },
-                "bayes": {
-                  "status": "shadow",
-                  "weight": 0.0,
-                  "reason": "证据不足或退化，保持影子验证"
-                },
-                "logistic": {
-                  "status": "shadow",
-                  "weight": 0.0,
-                  "reason": "证据不足或退化，保持影子验证"
-                },
-                "hist_gb": {
-                  "status": "shadow",
-                  "weight": 0.0,
-                  "reason": "证据不足或退化，保持影子验证"
-                }
-              }
-            },
-            "main_weights": {
-              "uniform": 1
-            },
-            "bonus_weights": {
-              "uniform": 1
-            },
-            "main_oos_metrics": {
-              "uniform": {
-                "brier": 0.12244897959183677,
-                "logloss": 0.41011631828840905,
-                "topk_recall": 0.1257142857142857,
-                "mean_hits": 0.6285714285714286,
-                "calibration_gap": 2.7755575615628914e-17,
-                "n_eval": 420,
-                "validation": {
-                  "brier": 0.12244897959183676,
-                  "logloss": 0.410116318288409,
-                  "topk_recall": 0.1255952380952381,
-                  "mean_hits": 0.6279761904761905,
-                  "calibration_gap": 2.7755575615628914e-17,
-                  "n_eval": 336
-                },
-                "holdout": {
-                  "brier": 0.1224489795918368,
-                  "logloss": 0.410116318288409,
-                  "topk_recall": 0.1261904761904762,
-                  "mean_hits": 0.6309523809523809,
-                  "calibration_gap": 2.7755575615628914e-17,
-                  "n_eval": 84
-                },
-                "rolling": {
-                  "10": {
-                    "brier": 0.12244897959183676,
-                    "logloss": 0.410116318288409,
-                    "topk_recall": 0.12000000000000002,
-                    "mean_hits": 0.6,
-                    "calibration_gap": 2.7755575615628914e-17,
-                    "n_eval": 10
-                  },
-                  "30": {
-                    "brier": 0.12244897959183679,
-                    "logloss": 0.4101163182884091,
-                    "topk_recall": 0.11333333333333334,
-                    "mean_hits": 0.5666666666666667,
-                    "calibration_gap": 2.7755575615628914e-17,
-                    "n_eval": 30
-                  },
-                  "50": {
-                    "brier": 0.12244897959183675,
-                    "logloss": 0.410116318288409,
-                    "topk_recall": 0.10800000000000001,
-                    "mean_hits": 0.54,
-                    "calibration_gap": 2.7755575615628914e-17,
-                    "n_eval": 50
-                  },
-                  "100": {
-                    "brier": 0.12244897959183679,
-                    "logloss": 0.41011631828840905,
-                    "topk_recall": 0.124,
-                    "mean_hits": 0.62,
-                    "calibration_gap": 2.7755575615628914e-17,
-                    "n_eval": 100
-                  }
-                },
-                "validation_evidence": {
-                  "brier": {
-                    "mean_delta": 0.0,
-                    "upper_confidence_bound": 0.0,
-                    "blocks": 33
-                  },
-                  "logloss": {
-                    "mean_delta": 0.0,
-                    "upper_confidence_bound": 0.0,
-                    "blocks": 33
-                  },
-                  "stable": false,
-                  "passed": false
-                },
-                "holdout_evidence": {
-                  "brier": {
-                    "mean_delta": 0.0,
-                    "upper_confidence_bound": 0.0,
-                    "blocks": 8
-                  },
-                  "logloss": {
-                    "mean_delta": 0.0,
-                    "upper_confidence_bound": 0.0,
-                    "blocks": 8
-                  },
-                  "stable": false,
-                  "passed": false
-                },
-                "eligible": true,
-                "protocol": "walk-forward-v1.5-refit30-holdout20pct-block10-bonferroni6",
-                "holdout_start_index": 416,
-                "refit_every": 30
-              },
-              "bayes": {
-                "brier": 0.1228325921544673,
-                "logloss": 0.41170548633493625,
-                "topk_recall": 0.13523809523809524,
-                "mean_hits": 0.6761904761904762,
-                "calibration_gap": 1.4406465438588342e-17,
-                "n_eval": 420,
-                "validation": {
-                  "brier": 0.12288656878698918,
-                  "logloss": 0.41193006334874793,
-                  "topk_recall": 0.13333333333333333,
-                  "mean_hits": 0.6666666666666666,
-                  "calibration_gap": 1.478645248570707e-17,
-                  "n_eval": 336
-                },
-                "holdout": {
-                  "brier": 0.1226166856243797,
-                  "logloss": 0.41080717827968966,
-                  "topk_recall": 0.14285714285714285,
-                  "mean_hits": 0.7142857142857143,
-                  "calibration_gap": 1.2886517250113425e-17,
-                  "n_eval": 84
-                },
-                "rolling": {
-                  "10": {
-                    "brier": 0.12209263863546001,
-                    "logloss": 0.40868785220971937,
-                    "topk_recall": 0.18,
-                    "mean_hits": 0.9,
-                    "calibration_gap": 1.9428902930940238e-17,
-                    "n_eval": 10
-                  },
-                  "30": {
-                    "brier": 0.12215078951186041,
-                    "logloss": 0.40893559480450187,
-                    "topk_recall": 0.18000000000000005,
-                    "mean_hits": 0.9,
-                    "calibration_gap": 1.295260195396016e-17,
-                    "n_eval": 30
-                  },
-                  "50": {
-                    "brier": 0.1224542968959674,
-                    "logloss": 0.41013687149341294,
-                    "topk_recall": 0.14400000000000002,
-                    "mean_hits": 0.72,
-                    "calibration_gap": 1.27675647831893e-17,
-                    "n_eval": 50
-                  },
-                  "100": {
-                    "brier": 0.12254203638866713,
-                    "logloss": 0.4105121367816886,
-                    "topk_recall": 0.148,
-                    "mean_hits": 0.74,
-                    "calibration_gap": 1.2490009027033011e-17,
-                    "n_eval": 100
-                  }
-                },
-                "validation_evidence": {
-                  "brier": {
-                    "mean_delta": 0.00043758919515245144,
-                    "upper_confidence_bound": 0.0007286827921812106,
-                    "blocks": 33
-                  },
-                  "logloss": {
-                    "mean_delta": 0.0018137450603389186,
-                    "upper_confidence_bound": 0.0030561371102382335,
-                    "blocks": 33
-                  },
-                  "stable": false,
-                  "passed": false
-                },
-                "holdout_evidence": {
-                  "brier": {
-                    "mean_delta": 0.00016770603254294381,
-                    "upper_confidence_bound": 0.0010594131322469089,
-                    "blocks": 8
-                  },
-                  "logloss": {
-                    "mean_delta": 0.0006908599912805266,
-                    "upper_confidence_bound": 0.004397168693123592,
-                    "blocks": 8
-                  },
-                  "stable": false,
-                  "passed": false
-                },
-                "eligible": false,
-                "protocol": "walk-forward-v1.5-refit30-holdout20pct-block10-bonferroni6",
-                "holdout_start_index": 416,
-                "refit_every": 30
-              },
-              "logistic": {
-                "brier": 0.12308407099513678,
-                "logloss": 0.4126370706844652,
-                "topk_recall": 0.1438095238095238,
-                "mean_hits": 0.719047619047619,
-                "calibration_gap": 0.0019506735119503911,
-                "n_eval": 420,
-                "validation": {
-                  "brier": 0.12323436227566942,
-                  "logloss": 0.41322540884196296,
-                  "topk_recall": 0.14345238095238094,
-                  "mean_hits": 0.7172619047619048,
-                  "calibration_gap": 0.002205431895085216,
-                  "n_eval": 336
-                },
-                "holdout": {
-                  "brier": 0.1224829058730063,
-                  "logloss": 0.41028371805447394,
-                  "topk_recall": 0.14523809523809522,
-                  "mean_hits": 0.7261904761904762,
-                  "calibration_gap": 0.0009316399794110919,
-                  "n_eval": 84
-                },
-                "rolling": {
-                  "10": {
-                    "brier": 0.12272019607711462,
-                    "logloss": 0.41127559672499336,
-                    "topk_recall": 0.15999999999999998,
-                    "mean_hits": 0.8,
-                    "calibration_gap": 0.0010739350214641285,
-                    "n_eval": 10
-                  },
-                  "30": {
-                    "brier": 0.12247348572020154,
-                    "logloss": 0.410225638360996,
-                    "topk_recall": 0.16000000000000003,
-                    "mean_hits": 0.8,
-                    "calibration_gap": 0.0011376938235727505,
-                    "n_eval": 30
-                  },
-                  "50": {
-                    "brier": 0.12240636138487097,
-                    "logloss": 0.40996105093471785,
-                    "topk_recall": 0.15600000000000003,
-                    "mean_hits": 0.78,
-                    "calibration_gap": 0.0010674557617348336,
-                    "n_eval": 50
-                  },
-                  "100": {
-                    "brier": 0.12258584597341583,
-                    "logloss": 0.41068402257471553,
-                    "topk_recall": 0.13399999999999998,
-                    "mean_hits": 0.67,
-                    "calibration_gap": 0.0010089443637959455,
-                    "n_eval": 100
-                  }
-                },
-                "validation_evidence": {
-                  "brier": {
-                    "mean_delta": 0.0007853826838326526,
-                    "upper_confidence_bound": 0.0014505301176657602,
-                    "blocks": 33
-                  },
-                  "logloss": {
-                    "mean_delta": 0.0031090905535539766,
-                    "upper_confidence_bound": 0.005703950451511194,
-                    "blocks": 33
-                  },
-                  "stable": false,
-                  "passed": false
-                },
-                "holdout_evidence": {
-                  "brier": {
-                    "mean_delta": 3.3926281169574656e-05,
-                    "upper_confidence_bound": 0.0005190093483982254,
-                    "blocks": 8
-                  },
-                  "logloss": {
-                    "mean_delta": 0.00016739976606500238,
-                    "upper_confidence_bound": 0.0021664219276393143,
-                    "blocks": 8
-                  },
-                  "stable": false,
-                  "passed": false
-                },
-                "eligible": false,
-                "protocol": "walk-forward-v1.5-refit30-holdout20pct-block10-bonferroni6",
-                "holdout_start_index": 416,
-                "refit_every": 30
-              },
-              "hist_gb": {
-                "brier": 0.12530708383726846,
-                "logloss": 0.41972975877087904,
-                "topk_recall": 0.14761904761904762,
-                "mean_hits": 0.7380952380952381,
-                "calibration_gap": 0.009399607716357483,
-                "n_eval": 420,
-                "validation": {
-                  "brier": 0.1259916975158985,
-                  "logloss": 0.4220353450578642,
-                  "topk_recall": 0.14226190476190476,
-                  "mean_hits": 0.7113095238095238,
-                  "calibration_gap": 0.011247746129328781,
-                  "n_eval": 336
-                },
-                "holdout": {
-                  "brier": 0.12256862912274831,
-                  "logloss": 0.4105074136229384,
-                  "topk_recall": 0.16904761904761903,
-                  "mean_hits": 0.8452380952380952,
-                  "calibration_gap": 0.002007054064472288,
-                  "n_eval": 84
-                },
-                "rolling": {
-                  "10": {
-                    "brier": 0.12274830356551836,
-                    "logloss": 0.4112617059284068,
-                    "topk_recall": 0.18000000000000002,
-                    "mean_hits": 0.9,
-                    "calibration_gap": 0.002451163275577528,
-                    "n_eval": 10
-                  },
-                  "30": {
-                    "brier": 0.12266335364978218,
-                    "logloss": 0.41089361378544065,
-                    "topk_recall": 0.18000000000000002,
-                    "mean_hits": 0.9,
-                    "calibration_gap": 0.002556145980963187,
-                    "n_eval": 30
-                  },
-                  "50": {
-                    "brier": 0.1226402577503479,
-                    "logloss": 0.4107833783036707,
-                    "topk_recall": 0.16400000000000003,
-                    "mean_hits": 0.82,
-                    "calibration_gap": 0.002038096422134771,
-                    "n_eval": 50
-                  },
-                  "100": {
-                    "brier": 0.12253069511549215,
-                    "logloss": 0.4103879182484445,
-                    "topk_recall": 0.168,
-                    "mean_hits": 0.84,
-                    "calibration_gap": 0.0021575555309265113,
-                    "n_eval": 100
-                  }
-                },
-                "validation_evidence": {
-                  "brier": {
-                    "mean_delta": 0.0035427179240617485,
-                    "upper_confidence_bound": 0.0053949061389847505,
-                    "blocks": 33
-                  },
-                  "logloss": {
-                    "mean_delta": 0.011919026769455162,
-                    "upper_confidence_bound": 0.018271698795708384,
-                    "blocks": 33
-                  },
-                  "stable": false,
-                  "passed": false
-                },
-                "holdout_evidence": {
-                  "brier": {
-                    "mean_delta": 0.00011964953091158696,
-                    "upper_confidence_bound": 0.0004234336816676608,
-                    "blocks": 8
-                  },
-                  "logloss": {
-                    "mean_delta": 0.000391095334529389,
-                    "upper_confidence_bound": 0.001610394141466524,
-                    "blocks": 8
-                  },
-                  "stable": false,
-                  "passed": false
-                },
-                "eligible": false,
-                "protocol": "walk-forward-v1.5-refit30-holdout20pct-block10-bonferroni6",
-                "holdout_start_index": 416,
-                "refit_every": 30
-              }
-            },
-            "bonus_oos_metrics": {
-              "uniform": {
-                "brier": 0.13888888888888887,
-                "logloss": 0.45056120886630463,
-                "topk_recall": 0.1488095238095238,
-                "mean_hits": 0.2976190476190476,
-                "calibration_gap": 0.0,
-                "n_eval": 420,
-                "validation": {
-                  "brier": 0.1388888888888889,
-                  "logloss": 0.45056120886630474,
-                  "topk_recall": 0.14285714285714285,
-                  "mean_hits": 0.2857142857142857,
-                  "calibration_gap": 0.0,
-                  "n_eval": 336
-                },
-                "holdout": {
-                  "brier": 0.1388888888888889,
-                  "logloss": 0.4505612088663047,
-                  "topk_recall": 0.17261904761904762,
-                  "mean_hits": 0.34523809523809523,
-                  "calibration_gap": 0.0,
-                  "n_eval": 84
-                },
-                "rolling": {
-                  "10": {
-                    "brier": 0.1388888888888889,
-                    "logloss": 0.4505612088663047,
-                    "topk_recall": 0.05,
-                    "mean_hits": 0.1,
-                    "calibration_gap": 0.0,
-                    "n_eval": 10
-                  },
-                  "30": {
-                    "brier": 0.1388888888888889,
-                    "logloss": 0.4505612088663046,
-                    "topk_recall": 0.13333333333333333,
-                    "mean_hits": 0.26666666666666666,
-                    "calibration_gap": 0.0,
-                    "n_eval": 30
-                  },
-                  "50": {
-                    "brier": 0.1388888888888889,
-                    "logloss": 0.4505612088663047,
-                    "topk_recall": 0.17,
-                    "mean_hits": 0.34,
-                    "calibration_gap": 0.0,
-                    "n_eval": 50
-                  },
-                  "100": {
-                    "brier": 0.1388888888888889,
-                    "logloss": 0.4505612088663047,
-                    "topk_recall": 0.18,
-                    "mean_hits": 0.36,
-                    "calibration_gap": 0.0,
-                    "n_eval": 100
-                  }
-                },
-                "validation_evidence": {
-                  "brier": {
-                    "mean_delta": 0.0,
-                    "upper_confidence_bound": 0.0,
-                    "blocks": 33
-                  },
-                  "logloss": {
-                    "mean_delta": 0.0,
-                    "upper_confidence_bound": 0.0,
-                    "blocks": 33
-                  },
-                  "stable": false,
-                  "passed": false
-                },
-                "holdout_evidence": {
-                  "brier": {
-                    "mean_delta": 0.0,
-                    "upper_confidence_bound": 0.0,
-                    "blocks": 8
-                  },
-                  "logloss": {
-                    "mean_delta": 0.0,
-                    "upper_confidence_bound": 0.0,
-                    "blocks": 8
-                  },
-                  "stable": false,
-                  "passed": false
-                },
-                "eligible": true,
-                "protocol": "walk-forward-v1.5-refit30-holdout20pct-block10-bonferroni6",
-                "holdout_start_index": 416,
-                "refit_every": 30
-              },
-              "bayes": {
-                "brier": 0.1394807135454114,
-                "logloss": 0.45274232089156513,
-                "topk_recall": 0.15476190476190477,
-                "mean_hits": 0.30952380952380953,
-                "calibration_gap": 3.0398963769498334e-18,
-                "n_eval": 420,
-                "validation": {
-                  "brier": 0.13955008061795782,
-                  "logloss": 0.45301751290746345,
-                  "topk_recall": 0.16071428571428573,
-                  "mean_hits": 0.32142857142857145,
-                  "calibration_gap": 2.560782274061001e-18,
-                  "n_eval": 336
-                },
-                "holdout": {
-                  "brier": 0.13920324525522562,
-                  "logloss": 0.45164155282797197,
-                  "topk_recall": 0.13095238095238096,
-                  "mean_hits": 0.2619047619047619,
-                  "calibration_gap": 4.956352788505163e-18,
-                  "n_eval": 84
-                },
-                "rolling": {
-                  "10": {
-                    "brier": 0.14060236056487438,
-                    "logloss": 0.456699051133703,
-                    "topk_recall": 0.1,
-                    "mean_hits": 0.2,
-                    "calibration_gap": 8.326672684688674e-18,
-                    "n_eval": 10
-                  },
-                  "30": {
-                    "brier": 0.13935108872097718,
-                    "logloss": 0.45209900106988077,
-                    "topk_recall": 0.13333333333333333,
-                    "mean_hits": 0.26666666666666666,
-                    "calibration_gap": 4.625929269271485e-18,
-                    "n_eval": 30
-                  },
-                  "50": {
-                    "brier": 0.13934805974768485,
-                    "logloss": 0.4521542093414171,
-                    "topk_recall": 0.14,
-                    "mean_hits": 0.28,
-                    "calibration_gap": 8.326672684688674e-18,
-                    "n_eval": 50
-                  },
-                  "100": {
-                    "brier": 0.13910037165474504,
-                    "logloss": 0.45132110175818324,
-                    "topk_recall": 0.145,
-                    "mean_hits": 0.29,
-                    "calibration_gap": 4.163336342344337e-18,
-                    "n_eval": 100
-                  }
-                },
-                "validation_evidence": {
-                  "brier": {
-                    "mean_delta": 0.0006611917290689376,
-                    "upper_confidence_bound": 0.0015509375172458816,
-                    "blocks": 33
-                  },
-                  "logloss": {
-                    "mean_delta": 0.002456304041158732,
-                    "upper_confidence_bound": 0.00581632754580408,
-                    "blocks": 33
-                  },
-                  "stable": false,
-                  "passed": false
-                },
-                "holdout_evidence": {
-                  "brier": {
-                    "mean_delta": 0.0003143563663367342,
-                    "upper_confidence_bound": 0.0015497246227130518,
-                    "blocks": 8
-                  },
-                  "logloss": {
-                    "mean_delta": 0.0010803439616673518,
-                    "upper_confidence_bound": 0.005460073563814696,
-                    "blocks": 8
-                  },
-                  "stable": false,
-                  "passed": false
-                },
-                "eligible": false,
-                "protocol": "walk-forward-v1.5-refit30-holdout20pct-block10-bonferroni6",
-                "holdout_start_index": 416,
-                "refit_every": 30
-              },
-              "logistic": {
-                "brier": 0.13980095112182825,
-                "logloss": 0.4536042717365808,
-                "topk_recall": 0.16071428571428573,
-                "mean_hits": 0.32142857142857145,
-                "calibration_gap": 0.0018588923705678687,
-                "n_eval": 420,
-                "validation": {
-                  "brier": 0.13988989827852472,
-                  "logloss": 0.45385615643654087,
-                  "topk_recall": 0.15476190476190477,
-                  "mean_hits": 0.30952380952380953,
-                  "calibration_gap": 0.0020475005303257987,
-                  "n_eval": 336
-                },
-                "holdout": {
-                  "brier": 0.13944516249504238,
-                  "logloss": 0.45259673293674013,
-                  "topk_recall": 0.18452380952380953,
-                  "mean_hits": 0.36904761904761907,
-                  "calibration_gap": 0.0011044597315361486,
-                  "n_eval": 84
-                },
-                "rolling": {
-                  "10": {
-                    "brier": 0.14068365798444188,
-                    "logloss": 0.45710749474923434,
-                    "topk_recall": 0.1,
-                    "mean_hits": 0.2,
-                    "calibration_gap": 0.0007043030994282439,
-                    "n_eval": 10
-                  },
-                  "30": {
-                    "brier": 0.13983346322433213,
-                    "logloss": 0.45399176601498864,
-                    "topk_recall": 0.15,
-                    "mean_hits": 0.3,
-                    "calibration_gap": 0.0007197552026956572,
-                    "n_eval": 30
-                  },
-                  "50": {
-                    "brier": 0.13963133433236705,
-                    "logloss": 0.45325568860744786,
-                    "topk_recall": 0.15,
-                    "mean_hits": 0.3,
-                    "calibration_gap": 0.0009812623562257645,
-                    "n_eval": 50
-                  },
-                  "100": {
-                    "brier": 0.13936131743201105,
-                    "logloss": 0.45227294223641834,
-                    "topk_recall": 0.18,
-                    "mean_hits": 0.36,
-                    "calibration_gap": 0.0011618886125992463,
-                    "n_eval": 100
-                  }
-                },
-                "validation_evidence": {
-                  "brier": {
-                    "mean_delta": 0.0010010093896358177,
-                    "upper_confidence_bound": 0.001855607661286861,
-                    "blocks": 33
-                  },
-                  "logloss": {
-                    "mean_delta": 0.0032949475702362513,
-                    "upper_confidence_bound": 0.005988953840089503,
-                    "blocks": 33
-                  },
-                  "stable": false,
-                  "passed": false
-                },
-                "holdout_evidence": {
-                  "brier": {
-                    "mean_delta": 0.0005562736061535103,
-                    "upper_confidence_bound": 0.0013372271331671321,
-                    "blocks": 8
-                  },
-                  "logloss": {
-                    "mean_delta": 0.002035524070435382,
-                    "upper_confidence_bound": 0.004791248319220522,
-                    "blocks": 8
-                  },
-                  "stable": false,
-                  "passed": false
-                },
-                "eligible": false,
-                "protocol": "walk-forward-v1.5-refit30-holdout20pct-block10-bonferroni6",
-                "holdout_start_index": 416,
-                "refit_every": 30
-              },
-              "hist_gb": {
-                "brier": 0.14742312515307743,
-                "logloss": 0.4764733545088113,
-                "topk_recall": 0.16785714285714284,
-                "mean_hits": 0.3357142857142857,
-                "calibration_gap": 0.023501569236061004,
-                "n_eval": 420,
-                "validation": {
-                  "brier": 0.14966709519752402,
-                  "logloss": 0.48338485274249343,
-                  "topk_recall": 0.15327380952380953,
-                  "mean_hits": 0.30654761904761907,
-                  "calibration_gap": 0.027151149046992652,
-                  "n_eval": 336
-                },
-                "holdout": {
-                  "brier": 0.13844724497529104,
-                  "logloss": 0.44882736157408276,
-                  "topk_recall": 0.2261904761904762,
-                  "mean_hits": 0.4523809523809524,
-                  "calibration_gap": 0.00890324999233442,
-                  "n_eval": 84
-                },
-                "rolling": {
-                  "10": {
-                    "brier": 0.14043246968964182,
-                    "logloss": 0.4547249989347759,
-                    "topk_recall": 0.2,
-                    "mean_hits": 0.4,
-                    "calibration_gap": 0.007569688767122195,
-                    "n_eval": 10
-                  },
-                  "30": {
-                    "brier": 0.13913678411339792,
-                    "logloss": 0.4513832042010024,
-                    "topk_recall": 0.23333333333333334,
-                    "mean_hits": 0.4666666666666667,
-                    "calibration_gap": 0.009384269110191957,
-                    "n_eval": 30
-                  },
-                  "50": {
-                    "brier": 0.13861308843321976,
-                    "logloss": 0.44951717629919297,
-                    "topk_recall": 0.24,
-                    "mean_hits": 0.48,
-                    "calibration_gap": 0.009977540388204203,
-                    "n_eval": 50
-                  },
-                  "100": {
-                    "brier": 0.13914330583705467,
-                    "logloss": 0.4513229209963962,
-                    "topk_recall": 0.2,
-                    "mean_hits": 0.4,
-                    "calibration_gap": 0.008990035523847766,
-                    "n_eval": 100
-                  }
-                },
-                "validation_evidence": {
-                  "brier": {
-                    "mean_delta": 0.010778206308635128,
-                    "upper_confidence_bound": 0.01691491681339173,
-                    "blocks": 33
-                  },
-                  "logloss": {
-                    "mean_delta": 0.0328236438761887,
-                    "upper_confidence_bound": 0.05085299068095232,
-                    "blocks": 33
-                  },
-                  "stable": false,
-                  "passed": false
-                },
-                "holdout_evidence": {
-                  "brier": {
-                    "mean_delta": -0.00044164391359783874,
-                    "upper_confidence_bound": 0.0016983500145388514,
-                    "blocks": 8
-                  },
-                  "logloss": {
-                    "mean_delta": -0.0017338472922220033,
-                    "upper_confidence_bound": 0.006776092891609101,
-                    "blocks": 8
-                  },
-                  "stable": false,
-                  "passed": false
-                },
-                "eligible": false,
-                "protocol": "walk-forward-v1.5-refit30-holdout20pct-block10-bonferroni6",
-                "holdout_start_index": 416,
-                "refit_every": 30
-              }
-            },
-            "structure_main": {
-              "sum": 0.093,
-              "span": 0.069,
-              "odd": 1.0,
-              "big": 0.066,
-              "consecutive_pairs": 0.135,
-              "same_tail_pairs": 0.368,
-              "r0": 0.368,
-              "r1": 1.0,
-              "r2": 1.0,
-              "zone1": 0.146,
-              "zone2": 0.368,
-              "zone3": 0.15,
-              "prime": 0.368,
-              "ac": 0.142,
-              "repeat_prev": 0.368,
-              "neighbor_prev": 1.0
-            },
-            "structure_bonus": {
-              "sum": 0.51,
-              "span": 0.226,
-              "odd": 0.368,
-              "big": 1.0,
-              "consecutive_pairs": 1.0,
-              "same_tail_pairs": 1.0,
-              "r0": 1.0,
-              "r1": 1.0,
-              "r2": 0.368,
-              "zone1": 1.0,
-              "zone2": 0.368,
-              "zone3": 1.0,
-              "prime": 0.368,
-              "ac": 1.0,
-              "repeat_prev": 1.0,
-              "neighbor_prev": 0.368
-            },
-            "policy": "frequency/omission/hot/cold/repeat/neighbor/transition are observations or learned features; no contradictory directional rules are applied; structure is soft-only"
+            ],
+            "reason": "官方开奖结果已入库",
+            "prediction_available": true
           }
         }
       }
     ]
   },
   "recent_reviews": [
+    {
+      "prediction_id": 4,
+      "lottery": "dlt",
+      "basis_issue": "26115",
+      "target_draw_date": "2026-10-12",
+      "actual_issue": "26116",
+      "predicted_main": [
+        23,
+        28,
+        29,
+        30,
+        31
+      ],
+      "predicted_bonus": [
+        1,
+        9
+      ],
+      "actual_main": [
+        9,
+        18,
+        22,
+        25,
+        35
+      ],
+      "actual_bonus": [
+        1,
+        10
+      ],
+      "model_version": "unified-v1.5-frozen-oos-holdout",
+      "freeze_sha256": "5497ecaf75069a9e76061d14934b0aa4faf79ed25215ed9e43b1a59c135270cb",
+      "main_hits": 0,
+      "bonus_hits": 1,
+      "tier": null,
+      "prize_amount": 0,
+      "prize_status": "VERIFIED",
+      "cost": 2,
+      "net_return": -2,
+      "model_attribution": {
+        "main": {
+          "bayes": {
+            "brier": 0.12225114472058353,
+            "logloss": 0.4091278044622498,
+            "topk_recall": 0.4,
+            "mean_hits": 2.0,
+            "calibration_gap": 0.0
+          },
+          "hist_gb": {
+            "brier": 0.12399543395156766,
+            "logloss": 0.41622511360244485,
+            "topk_recall": 0.0,
+            "mean_hits": 0.0,
+            "calibration_gap": 0.0030057722715040314
+          },
+          "logistic": {
+            "brier": 0.1237627156378797,
+            "logloss": 0.4152845451076655,
+            "topk_recall": 0.0,
+            "mean_hits": 0.0,
+            "calibration_gap": 0.0006828374795503911
+          },
+          "uniform": {
+            "brier": 0.12244897959183676,
+            "logloss": 0.41011631828840905,
+            "topk_recall": 0.2,
+            "mean_hits": 1.0,
+            "calibration_gap": 2.7755575615628914e-17
+          }
+        },
+        "bonus": {
+          "bayes": {
+            "brier": 0.13582674662272134,
+            "logloss": 0.43897171004192354,
+            "topk_recall": 0.0,
+            "mean_hits": 0.0,
+            "calibration_gap": 0.0
+          },
+          "hist_gb": {
+            "brier": 0.14309537934144836,
+            "logloss": 0.4615557069079015,
+            "topk_recall": 0.0,
+            "mean_hits": 0.0,
+            "calibration_gap": 0.0057024774280530766
+          },
+          "logistic": {
+            "brier": 0.13664344967222639,
+            "logloss": 0.4423968156298244,
+            "topk_recall": 0.0,
+            "mean_hits": 0.0,
+            "calibration_gap": 0.0004641870662184244
+          },
+          "uniform": {
+            "brier": 0.1388888888888889,
+            "logloss": 0.4505612088663047,
+            "topk_recall": 0.0,
+            "mean_hits": 0.0,
+            "calibration_gap": 0.0
+          }
+        }
+      },
+      "governance_action": "保持；单期结果仅增加前向样本，不触发模型晋级。下次训练更新滚动验证和留出门槛。"
+    },
     {
       "prediction_id": 3,
       "lottery": "ssq",
