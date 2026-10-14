@@ -1,9 +1,9 @@
 {
   "schema_version": "1.2",
-  "generated_at": "2026-10-14T04:26:33.638929+08:00",
+  "generated_at": "2026-10-14T13:08:02.273445+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 0.191813,
+    "cloud_age_seconds": 13.517345,
     "job_errors": []
   },
   "draw_states": {
@@ -16,12 +16,239 @@
     "dlt": {
       "status": "WAITING_DRAW",
       "scheduled_weekday": true,
-      "reason": "常规开奖日，等待官方开奖结果",
+      "reason": "补齐此前已冻结推荐的官方对奖；当日状态按实际开奖日历显示",
       "as_of_date": "2026-10-14"
     }
   },
-  "latest_review": null,
+  "latest_review": {
+    "as_of": "2026-10-14T13:07:48.756100+08:00",
+    "calendar": {
+      "ssq": {
+        "status": "NO_DRAW_TODAY",
+        "scheduled_weekday": false,
+        "reason": "非该彩种常规开奖日"
+      },
+      "dlt": {
+        "status": "WAITING_DRAW",
+        "scheduled_weekday": true,
+        "reason": "常规开奖日，等待官方开奖结果"
+      }
+    },
+    "ssq": {
+      "draw_state": "NO_DRAW_TODAY",
+      "reviews": [
+        {
+          "prediction_id": 5,
+          "lottery": "ssq",
+          "basis_issue": "2026116",
+          "target_draw_date": "2026-10-13",
+          "actual_issue": "2026117",
+          "predicted_main": [
+            4,
+            11,
+            13,
+            19,
+            28,
+            31
+          ],
+          "predicted_bonus": [
+            9
+          ],
+          "actual_main": [
+            4,
+            11,
+            14,
+            22,
+            26,
+            27
+          ],
+          "actual_bonus": [
+            4
+          ],
+          "model_version": "unified-v1.5-frozen-oos-holdout",
+          "freeze_sha256": "ab47a80a887091339f0f6d6e8dcb71b068c21c9d1c06bcbce8776cd9d2c279ec",
+          "main_hits": 2,
+          "bonus_hits": 0,
+          "tier": null,
+          "prize_amount": 0,
+          "prize_status": "VERIFIED",
+          "cost": 2,
+          "net_return": -2,
+          "model_attribution": {
+            "main": {
+              "bayes": {
+                "brier": 0.15000093738566417,
+                "logloss": 0.477899046439378,
+                "topk_recall": 0.16666666666666666,
+                "mean_hits": 1.0,
+                "calibration_gap": 0.0
+              },
+              "hist_gb": {
+                "brier": 0.14785046211829914,
+                "logloss": 0.4714351008225987,
+                "topk_recall": 0.3333333333333333,
+                "mean_hits": 2.0,
+                "calibration_gap": 0.00063549467179011
+              },
+              "logistic": {
+                "brier": 0.14853947458846023,
+                "logloss": 0.47327876399980434,
+                "topk_recall": 0.16666666666666666,
+                "mean_hits": 1.0,
+                "calibration_gap": 4.848243849037148e-05
+              },
+              "uniform": {
+                "brier": 0.14876033057851237,
+                "logloss": 0.4741393130578374,
+                "topk_recall": 0.0,
+                "mean_hits": 0.0,
+                "calibration_gap": 0.0
+              }
+            },
+            "bonus": {
+              "bayes": {
+                "brier": 0.056099653244018555,
+                "logloss": 0.21434809422000062,
+                "topk_recall": 1.0,
+                "mean_hits": 1.0,
+                "calibration_gap": 0.0
+              },
+              "hist_gb": {
+                "brier": 0.056223748955730964,
+                "logloss": 0.2138872749946496,
+                "topk_recall": 0.0,
+                "mean_hits": 0.0,
+                "calibration_gap": 0.003092999485213646
+              },
+              "logistic": {
+                "brier": 0.059011902610378295,
+                "logloss": 0.23674804737267754,
+                "topk_recall": 0.0,
+                "mean_hits": 0.0,
+                "calibration_gap": 0.00019510642756218055
+              },
+              "uniform": {
+                "brier": 0.05859375,
+                "logloss": 0.2337916587064593,
+                "topk_recall": 0.0,
+                "mean_hits": 0.0,
+                "calibration_gap": 0.0
+              }
+            }
+          },
+          "governance_action": "保持；单期结果仅增加前向样本，不触发模型晋级。下次训练更新滚动验证和留出门槛。"
+        }
+      ],
+      "reason": "补齐此前已冻结推荐的官方对奖；当日状态按实际开奖日历显示"
+    },
+    "dlt": {
+      "draw_state": "WAITING_DRAW",
+      "reviews": [],
+      "reason": "补齐此前已冻结推荐的官方对奖；当日状态按实际开奖日历显示"
+    }
+  },
   "recent_reviews": [
+    {
+      "prediction_id": 5,
+      "lottery": "ssq",
+      "basis_issue": "2026116",
+      "target_draw_date": "2026-10-13",
+      "actual_issue": "2026117",
+      "predicted_main": [
+        4,
+        11,
+        13,
+        19,
+        28,
+        31
+      ],
+      "predicted_bonus": [
+        9
+      ],
+      "actual_main": [
+        4,
+        11,
+        14,
+        22,
+        26,
+        27
+      ],
+      "actual_bonus": [
+        4
+      ],
+      "model_version": "unified-v1.5-frozen-oos-holdout",
+      "freeze_sha256": "ab47a80a887091339f0f6d6e8dcb71b068c21c9d1c06bcbce8776cd9d2c279ec",
+      "main_hits": 2,
+      "bonus_hits": 0,
+      "tier": null,
+      "prize_amount": 0,
+      "prize_status": "VERIFIED",
+      "cost": 2,
+      "net_return": -2,
+      "model_attribution": {
+        "main": {
+          "bayes": {
+            "brier": 0.15000093738566417,
+            "logloss": 0.477899046439378,
+            "topk_recall": 0.16666666666666666,
+            "mean_hits": 1.0,
+            "calibration_gap": 0.0
+          },
+          "hist_gb": {
+            "brier": 0.14785046211829914,
+            "logloss": 0.4714351008225987,
+            "topk_recall": 0.3333333333333333,
+            "mean_hits": 2.0,
+            "calibration_gap": 0.00063549467179011
+          },
+          "logistic": {
+            "brier": 0.14853947458846023,
+            "logloss": 0.47327876399980434,
+            "topk_recall": 0.16666666666666666,
+            "mean_hits": 1.0,
+            "calibration_gap": 4.848243849037148e-05
+          },
+          "uniform": {
+            "brier": 0.14876033057851237,
+            "logloss": 0.4741393130578374,
+            "topk_recall": 0.0,
+            "mean_hits": 0.0,
+            "calibration_gap": 0.0
+          }
+        },
+        "bonus": {
+          "bayes": {
+            "brier": 0.056099653244018555,
+            "logloss": 0.21434809422000062,
+            "topk_recall": 1.0,
+            "mean_hits": 1.0,
+            "calibration_gap": 0.0
+          },
+          "hist_gb": {
+            "brier": 0.056223748955730964,
+            "logloss": 0.2138872749946496,
+            "topk_recall": 0.0,
+            "mean_hits": 0.0,
+            "calibration_gap": 0.003092999485213646
+          },
+          "logistic": {
+            "brier": 0.059011902610378295,
+            "logloss": 0.23674804737267754,
+            "topk_recall": 0.0,
+            "mean_hits": 0.0,
+            "calibration_gap": 0.00019510642756218055
+          },
+          "uniform": {
+            "brier": 0.05859375,
+            "logloss": 0.2337916587064593,
+            "topk_recall": 0.0,
+            "mean_hits": 0.0,
+            "calibration_gap": 0.0
+          }
+        }
+      },
+      "governance_action": "保持；单期结果仅增加前向样本，不触发模型晋级。下次训练更新滚动验证和留出门槛。"
+    },
     {
       "prediction_id": 4,
       "lottery": "dlt",
