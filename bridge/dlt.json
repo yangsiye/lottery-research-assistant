@@ -1,9 +1,9 @@
 {
   "schema_version": "1.2",
-  "generated_at": "2026-10-15T20:32:45.297667+08:00",
+  "generated_at": "2026-10-15T23:20:12.845609+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 0.262443,
+    "cloud_age_seconds": 5.963658,
     "job_errors": []
   },
   "draw_state": {
