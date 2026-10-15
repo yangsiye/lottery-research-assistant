@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T12:58:59.086039+08:00",
+  "generated_at": "2026-10-15T19:23:16.677987+08:00",
   "candidates": [
     {
       "discovered_at": "2026-10-03 18:00:24",
@@ -67,70 +67,6 @@
   ],
   "model_states": [
     {
-      "lottery": "ssq",
-      "model_name": "main:uniform",
-      "model_version": "unified-v1.5-frozen-oos-holdout",
-      "status": "production",
-      "weight": 1.0,
-      "train_end": "2026116"
-    },
-    {
-      "lottery": "ssq",
-      "model_name": "main:bayes",
-      "model_version": "unified-v1.5-frozen-oos-holdout",
-      "status": "shadow",
-      "weight": 0.0,
-      "train_end": "2026116"
-    },
-    {
-      "lottery": "ssq",
-      "model_name": "main:logistic",
-      "model_version": "unified-v1.5-frozen-oos-holdout",
-      "status": "shadow",
-      "weight": 0.0,
-      "train_end": "2026116"
-    },
-    {
-      "lottery": "ssq",
-      "model_name": "main:hist_gb",
-      "model_version": "unified-v1.5-frozen-oos-holdout",
-      "status": "shadow",
-      "weight": 0.0,
-      "train_end": "2026116"
-    },
-    {
-      "lottery": "ssq",
-      "model_name": "bonus:uniform",
-      "model_version": "unified-v1.5-frozen-oos-holdout",
-      "status": "production",
-      "weight": 1.0,
-      "train_end": "2026116"
-    },
-    {
-      "lottery": "ssq",
-      "model_name": "bonus:bayes",
-      "model_version": "unified-v1.5-frozen-oos-holdout",
-      "status": "shadow",
-      "weight": 0.0,
-      "train_end": "2026116"
-    },
-    {
-      "lottery": "ssq",
-      "model_name": "bonus:logistic",
-      "model_version": "unified-v1.5-frozen-oos-holdout",
-      "status": "shadow",
-      "weight": 0.0,
-      "train_end": "2026116"
-    },
-    {
-      "lottery": "ssq",
-      "model_name": "bonus:hist_gb",
-      "model_version": "unified-v1.5-frozen-oos-holdout",
-      "status": "shadow",
-      "weight": 0.0,
-      "train_end": "2026116"
-    },
-    {
       "lottery": "dlt",
       "model_name": "main:uniform",
       "model_version": "unified-v1.5-frozen-oos-holdout",
@@ -193,6 +129,70 @@
       "status": "shadow",
       "weight": 0.0,
       "train_end": "26116"
+    },
+    {
+      "lottery": "ssq",
+      "model_name": "main:uniform",
+      "model_version": "unified-v1.5-frozen-oos-holdout",
+      "status": "production",
+      "weight": 1.0,
+      "train_end": "2026117"
+    },
+    {
+      "lottery": "ssq",
+      "model_name": "main:bayes",
+      "model_version": "unified-v1.5-frozen-oos-holdout",
+      "status": "shadow",
+      "weight": 0.0,
+      "train_end": "2026117"
+    },
+    {
+      "lottery": "ssq",
+      "model_name": "main:logistic",
+      "model_version": "unified-v1.5-frozen-oos-holdout",
+      "status": "shadow",
+      "weight": 0.0,
+      "train_end": "2026117"
+    },
+    {
+      "lottery": "ssq",
+      "model_name": "main:hist_gb",
+      "model_version": "unified-v1.5-frozen-oos-holdout",
+      "status": "shadow",
+      "weight": 0.0,
+      "train_end": "2026117"
+    },
+    {
+      "lottery": "ssq",
+      "model_name": "bonus:uniform",
+      "model_version": "unified-v1.5-frozen-oos-holdout",
+      "status": "production",
+      "weight": 1.0,
+      "train_end": "2026117"
+    },
+    {
+      "lottery": "ssq",
+      "model_name": "bonus:bayes",
+      "model_version": "unified-v1.5-frozen-oos-holdout",
+      "status": "shadow",
+      "weight": 0.0,
+      "train_end": "2026117"
+    },
+    {
+      "lottery": "ssq",
+      "model_name": "bonus:logistic",
+      "model_version": "unified-v1.5-frozen-oos-holdout",
+      "status": "shadow",
+      "weight": 0.0,
+      "train_end": "2026117"
+    },
+    {
+      "lottery": "ssq",
+      "model_name": "bonus:hist_gb",
+      "model_version": "unified-v1.5-frozen-oos-holdout",
+      "status": "shadow",
+      "weight": 0.0,
+      "train_end": "2026117"
     }
   ]
 }
