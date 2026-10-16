@@ -1,16 +1,16 @@
 {
   "schema_version": "1.2",
-  "generated_at": "2026-10-16T23:00:39.742284+08:00",
+  "generated_at": "2026-10-17T02:31:28.806611+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 0.217099,
+    "cloud_age_seconds": 0.210173,
     "job_errors": []
   },
   "draw_state": {
-    "status": "NO_DRAW_TODAY",
-    "scheduled_weekday": false,
-    "reason": "非该彩种常规开奖日",
-    "as_of_date": "2026-10-16"
+    "status": "WAITING_DRAW",
+    "scheduled_weekday": true,
+    "reason": "常规开奖日，等待官方开奖结果",
+    "as_of_date": "2026-10-17"
   },
   "data_health": {
     "rows": 505,
