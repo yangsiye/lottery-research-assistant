@@ -1,5 +1,5 @@
 {
-  "now": "2026-10-16T19:42:38.442557+08:00",
+  "now": "2026-10-16T20:11:19.351772+08:00",
   "actions": [
     {
       "job": "calendar-status",
@@ -15,26 +15,6 @@
           "scheduled_weekday": false,
           "reason": "非该彩种常规开奖日"
         }
-      }
-    },
-    {
-      "job": "recommend-ssq",
-      "status": "skipped",
-      "draw_state": "NO_DRAW_TODAY",
-      "details": {
-        "status": "NO_DRAW_TODAY",
-        "scheduled_weekday": false,
-        "reason": "非该彩种常规开奖日"
-      }
-    },
-    {
-      "job": "recommend-dlt",
-      "status": "skipped",
-      "draw_state": "NO_DRAW_TODAY",
-      "details": {
-        "status": "NO_DRAW_TODAY",
-        "scheduled_weekday": false,
-        "reason": "非该彩种常规开奖日"
       }
     }
   ]
