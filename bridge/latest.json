@@ -1,9 +1,9 @@
 {
   "schema_version": "1.2",
-  "generated_at": "2026-10-18T19:59:42.795526+08:00",
+  "generated_at": "2026-10-18T22:10:16.804876+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 0.219761,
+    "cloud_age_seconds": 0.222121,
     "job_errors": []
   },
   "draw_states": {
@@ -1233,7 +1233,7 @@
     }
   },
   "latest_cloud_run": {
-    "now": "2026-10-18T19:59:42.575765+08:00",
+    "now": "2026-10-18T22:10:16.582755+08:00",
     "actions": [
       {
         "job": "calendar-status",
@@ -1249,16 +1249,6 @@
             "scheduled_weekday": false,
             "reason": "非该彩种常规开奖日"
           }
-        }
-      },
-      {
-        "job": "recommend-dlt",
-        "status": "skipped",
-        "draw_state": "NO_DRAW_TODAY",
-        "details": {
-          "status": "NO_DRAW_TODAY",
-          "scheduled_weekday": false,
-          "reason": "非该彩种常规开奖日"
         }
       }
     ]
