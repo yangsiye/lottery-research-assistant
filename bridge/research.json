@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T01:37:30.534893+08:00",
+  "generated_at": "2026-10-18T12:50:36.871841+08:00",
   "candidates": [
     {
       "discovered_at": "2026-10-17 04:44:22",
@@ -33,7 +33,7 @@
       "discovered_at": "2026-10-03 18:00:22",
       "name": "lrwei91/Lottery",
       "source_url": "https://github.com/lrwei91/Lottery",
-      "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+      "hypothesis": "Candidate methods: walk_forward",
       "decision": "pending"
     },
     {

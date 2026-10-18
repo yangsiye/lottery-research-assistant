@@ -1,15 +1,15 @@
 {
   "schema_version": "1.2",
-  "generated_at": "2026-10-18T01:37:30.534893+08:00",
+  "generated_at": "2026-10-18T12:50:36.871841+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 0.203263,
+    "cloud_age_seconds": 14.001059,
     "job_errors": []
   },
   "draw_state": {
     "status": "WAITING_DRAW",
     "scheduled_weekday": true,
-    "reason": "常规开奖日，等待官方开奖结果",
+    "reason": "补齐此前已冻结推荐的官方对奖；当日状态按实际开奖日历显示",
     "as_of_date": "2026-10-18"
   },
   "data_health": {
