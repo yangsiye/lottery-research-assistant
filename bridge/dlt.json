@@ -1,16 +1,16 @@
 {
   "schema_version": "1.2",
-  "generated_at": "2026-10-19T22:28:39.870809+08:00",
+  "generated_at": "2026-10-20T01:10:18.283512+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 0.233986,
+    "cloud_age_seconds": 0.207576,
     "job_errors": []
   },
   "draw_state": {
-    "status": "WAITING_DRAW",
-    "scheduled_weekday": true,
-    "reason": "补齐此前已冻结推荐的官方对奖；当日状态按实际开奖日历显示",
-    "as_of_date": "2026-10-19"
+    "status": "NO_DRAW_TODAY",
+    "scheduled_weekday": false,
+    "reason": "非该彩种常规开奖日",
+    "as_of_date": "2026-10-20"
   },
   "data_health": {
     "rows": 506,
