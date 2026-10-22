@@ -1,123 +1,113 @@
 {
-  "as_of": "2026-10-21T23:37:47.549748+08:00",
+  "as_of": "2026-10-22T23:40:29.592040+08:00",
   "calendar": {
     "ssq": {
-      "status": "NO_DRAW_TODAY",
-      "scheduled_weekday": false,
-      "reason": "非该彩种常规开奖日"
-    },
-    "dlt": {
       "status": "WAITING_DRAW",
       "scheduled_weekday": true,
       "reason": "常规开奖日，等待官方开奖结果"
+    },
+    "dlt": {
+      "status": "NO_DRAW_TODAY",
+      "scheduled_weekday": false,
+      "reason": "非该彩种常规开奖日"
     }
   },
   "ssq": {
-    "draw_state": "NO_DRAW_TODAY",
-    "reviews": [],
-    "reason": "非该彩种常规开奖日"
-  },
-  "dlt": {
     "draw_state": "DRAW_COMPLETED",
     "reviews": [
       {
-        "prediction_id": 11,
-        "lottery": "dlt",
-        "basis_issue": "26119",
-        "target_draw_date": "2026-10-21",
-        "actual_issue": "26120",
+        "prediction_id": 12,
+        "lottery": "ssq",
+        "basis_issue": "2026120",
+        "target_draw_date": "2026-10-22",
+        "actual_issue": "2026121",
         "predicted_main": [
-          5,
+          3,
           7,
+          9,
           10,
-          15,
-          31
+          11,
+          22
         ],
         "predicted_bonus": [
-          3,
-          11
+          10
         ],
         "actual_main": [
-          1,
-          6,
-          10,
-          15,
-          32
+          2,
+          7,
+          20,
+          24,
+          26,
+          30
         ],
         "actual_bonus": [
-          3,
-          4
+          2
         ],
         "model_version": "unified-v1.5-frozen-oos-holdout",
-        "freeze_sha256": "6ddecf22ba3039e68351b84359a3f8e2ca4c8309fdb87e18f39227fac89245b4",
-        "main_hits": 2,
-        "bonus_hits": 1,
-        "tier": "七等奖",
-        "prize_amount": null,
-        "prize_status": "OFFICIAL_PRIZE_PENDING",
+        "freeze_sha256": "4cd961955e9d398bfdd19577786ab21f1452055e52b9bf37c85cda8ad560b2d3",
+        "main_hits": 1,
+        "bonus_hits": 0,
+        "tier": null,
+        "prize_amount": 0,
+        "prize_status": "VERIFIED",
         "cost": 2,
-        "net_return": null,
-        "prize_range": [
-          5,
-          7
-        ],
-        "note": "需核验当期官方奖表；不把开奖后奖池误当本期奖金阈值",
+        "net_return": -2,
         "model_attribution": {
           "main": {
             "bayes": {
-              "brier": 0.12236253388073978,
-              "logloss": 0.4094581220074689,
-              "topk_recall": 0.0,
-              "mean_hits": 0.0,
+              "brier": 0.14702477993715565,
+              "logloss": 0.46863119397674957,
+              "topk_recall": 0.5,
+              "mean_hits": 3.0,
               "calibration_gap": 0.0
             },
             "hist_gb": {
-              "brier": 0.12257401397365729,
-              "logloss": 0.4105952569380529,
-              "topk_recall": 0.0,
-              "mean_hits": 0.0,
-              "calibration_gap": 0.00015749079043919645
+              "brier": 0.14623134568965815,
+              "logloss": 0.4660223731616396,
+              "topk_recall": 0.3333333333333333,
+              "mean_hits": 2.0,
+              "calibration_gap": 0.0013689804893204094
             },
             "logistic": {
-              "brier": 0.12255873519948933,
-              "logloss": 0.410260958166918,
+              "brier": 0.14886161203266882,
+              "logloss": 0.4744028533218512,
               "topk_recall": 0.0,
               "mean_hits": 0.0,
-              "calibration_gap": 0.00024236161771282183
+              "calibration_gap": 2.308771009040811e-05
             },
             "uniform": {
-              "brier": 0.12244897959183676,
-              "logloss": 0.410116318288409,
-              "topk_recall": 0.2,
+              "brier": 0.14876033057851237,
+              "logloss": 0.4741393130578374,
+              "topk_recall": 0.16666666666666666,
               "mean_hits": 1.0,
-              "calibration_gap": 2.7755575615628914e-17
+              "calibration_gap": 0.0
             }
           },
           "bonus": {
             "bayes": {
-              "brier": 0.14688809712727866,
-              "logloss": 0.48039622881406635,
+              "brier": 0.05953097343444824,
+              "logloss": 0.2409888185833287,
               "topk_recall": 0.0,
               "mean_hits": 0.0,
               "calibration_gap": 0.0
             },
             "hist_gb": {
-              "brier": 0.14810607212164395,
-              "logloss": 0.49374205657680226,
+              "brier": 0.060567684230385846,
+              "logloss": 0.2443185563100343,
               "topk_recall": 0.0,
               "mean_hits": 0.0,
-              "calibration_gap": 0.011945142352935756
+              "calibration_gap": 0.003335095936490104
             },
             "logistic": {
-              "brier": 0.13897151725614676,
-              "logloss": 0.45076522115439066,
+              "brier": 0.06119762738800111,
+              "logloss": 0.2598727074883082,
               "topk_recall": 0.0,
               "mean_hits": 0.0,
-              "calibration_gap": 0.001554434791262188
+              "calibration_gap": 0.0006765295857836875
             },
             "uniform": {
-              "brier": 0.13888888888888887,
-              "logloss": 0.45056120886630474,
+              "brier": 0.05859375,
+              "logloss": 0.2337916587064593,
               "topk_recall": 0.0,
               "mean_hits": 0.0,
               "calibration_gap": 0.0
@@ -129,5 +119,10 @@
     ],
     "reason": "官方开奖结果已入库",
     "prediction_available": true
+  },
+  "dlt": {
+    "draw_state": "NO_DRAW_TODAY",
+    "reviews": [],
+    "reason": "非该彩种常规开奖日"
   }
 }
