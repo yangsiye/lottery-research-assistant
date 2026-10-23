@@ -1,9 +1,9 @@
 {
   "schema_version": "1.2",
-  "generated_at": "2026-10-23T20:30:35.836648+08:00",
+  "generated_at": "2026-10-23T23:28:58.014918+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 0.224417,
+    "cloud_age_seconds": 0.295683,
     "job_errors": []
   },
   "draw_states": {
@@ -20,7 +20,31 @@
       "as_of_date": "2026-10-23"
     }
   },
-  "latest_review": null,
+  "latest_review": {
+    "as_of": "2026-10-23T23:28:57.719235+08:00",
+    "calendar": {
+      "ssq": {
+        "status": "NO_DRAW_TODAY",
+        "scheduled_weekday": false,
+        "reason": "非该彩种常规开奖日"
+      },
+      "dlt": {
+        "status": "NO_DRAW_TODAY",
+        "scheduled_weekday": false,
+        "reason": "非该彩种常规开奖日"
+      }
+    },
+    "ssq": {
+      "draw_state": "NO_DRAW_TODAY",
+      "reviews": [],
+      "reason": "非该彩种常规开奖日"
+    },
+    "dlt": {
+      "draw_state": "NO_DRAW_TODAY",
+      "reviews": [],
+      "reason": "非该彩种常规开奖日"
+    }
+  },
   "recent_reviews": [
     {
       "prediction_id": 12,
