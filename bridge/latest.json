@@ -1,9 +1,9 @@
 {
   "schema_version": "1.2",
-  "generated_at": "2026-10-24T19:55:24.035947+08:00",
+  "generated_at": "2026-10-24T22:07:42.283120+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 0.231863,
+    "cloud_age_seconds": 0.502236,
     "job_errors": []
   },
   "draw_states": {
@@ -1099,7 +1099,7 @@
   },
   "latest_review": null,
   "latest_cloud_run": {
-    "now": "2026-10-24T19:55:23.804084+08:00",
+    "now": "2026-10-24T22:07:41.780884+08:00",
     "actions": [
       {
         "job": "calendar-status",
@@ -1115,16 +1115,6 @@
             "scheduled_weekday": true,
             "reason": "常规开奖日，等待官方开奖结果"
           }
-        }
-      },
-      {
-        "job": "recommend-ssq",
-        "status": "skipped",
-        "draw_state": "NO_DRAW_TODAY",
-        "details": {
-          "status": "NO_DRAW_TODAY",
-          "scheduled_weekday": false,
-          "reason": "非该彩种常规开奖日"
         }
       }
     ]
