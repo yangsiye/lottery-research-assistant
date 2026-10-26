@@ -1,9 +1,9 @@
 {
   "schema_version": "1.2",
-  "generated_at": "2026-10-26T01:58:08.433384+08:00",
+  "generated_at": "2026-10-26T13:04:30.024705+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 0.236161,
+    "cloud_age_seconds": 13.674571,
     "job_errors": []
   },
   "draw_state": {
@@ -13,9 +13,9 @@
     "as_of_date": "2026-10-26"
   },
   "data_health": {
-    "rows": 508,
-    "latest_issue": "2026121",
-    "latest_draw_date": "2026-10-22",
+    "rows": 509,
+    "latest_issue": "2026122",
+    "latest_draw_date": "2026-10-25",
     "source_validation": "single-official-source",
     "sources": [
       "swlc.net.cn"
