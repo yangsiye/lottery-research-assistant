@@ -72,7 +72,9 @@ def fetch_shanghai_ssq(periods):
             if not batch: raise FetchError('上海福彩未返回可识别官方历史表格')
             new=[row for row in batch if row['issue'] not in seen]
             if not new: raise FetchError('上海福彩分页未前进')
-            out.extend(new);seen.update(row['issue'] for row in new)
+            # Keep overlapping page rows for conflict validation instead of silently
+            # discarding a changed number/date for an already-seen official issue.
+            out.extend(batch);seen.update(row['issue'] for row in new)
             if len(seen)>=periods: break
             end=str(int(min(row['issue'] for row in new))-1)
     return validate_archive(out,'ssq',periods)

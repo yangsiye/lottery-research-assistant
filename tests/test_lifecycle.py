@@ -143,6 +143,10 @@ def test_morning_sync_catches_late_review_on_non_draw_day(tmp_path,monkeypatch):
     monkeypatch.setattr(cloud,'DB_PATH',path)
     monkeypatch.setattr(cloud,'REPORT_DIR',tmp_path/'reports')
     monkeypatch.setattr(cloud,'sync',lambda lot,periods:500)
+    # Morning freezes now run here too; isolate that path from this review-only test.
+    def disabled_recommend(*args,**kwargs):
+        raise RuntimeError('recommendation disabled in isolated review fixture')
+    monkeypatch.setattr(cloud,'recommend',disabled_recommend)
     from lottery_assistant import cloud_research
     monkeypatch.setattr(cloud_research,'discover_github_candidates',lambda:[])
     run=cloud.run_due(datetime(2026,10,6,9,tzinfo=TZ))

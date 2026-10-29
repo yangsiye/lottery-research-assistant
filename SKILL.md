@@ -116,4 +116,4 @@ python -m lottery_assistant.cli daily --periods 500
 
 ## Cloud execution (v1.2)
 
-When this project is deployed without GitHub, the authoritative persistent runtime is PythonAnywhere. Use `python -m lottery_assistant.cloud` as the single scheduler entrypoint. It persists state in SQLite, generates draw-day recommendations at 18:30 Beijing time, reviews at 23:30, and writes JSON reports under `reports/`. ChatGPT research tasks remain a separate cloud research layer and must not bypass model-governance gates.
+When this project is deployed without GitHub, the authoritative persistent runtime is PythonAnywhere. Use `python -m lottery_assistant.cloud` as the single scheduler entrypoint. It persists state in SQLite and writes JSON reports under `reports/`. On GitHub Actions use the current schedule in GITHUB_ACTIONS_DEPLOY.md: prepare a verified same-day freeze after08:30, retry through15:45 (including15:30), recover before20:00, and review after23:00. Existing immutable freezes are reused; no generation or late publication after20:00. ChatGPT research tasks remain a separate cloud research layer and must not bypass model-governance gates.

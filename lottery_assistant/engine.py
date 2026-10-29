@@ -7,7 +7,7 @@ from .governance import record_training
 from pathlib import Path
 import numpy as np
 from .db import DB
-from .fetchers import fetch_ssq, fetch_dlt
+from .fetchers import fetch_ssq, fetch_dlt, validate_sync_archive, ArchiveConflictError
 from .models import fit_models, predict_probs
 from .backtest import walk_forward_metrics, weights_from_metrics
 from .features import historical_structure, structure_features
@@ -19,10 +19,31 @@ VERSION='unified-v1.5-frozen-oos-holdout'
 
 
 def sync(lottery,periods=200):
-    rows=fetch_ssq(periods) if lottery=='ssq' else fetch_dlt(periods)
     db=DB(DB_PATH)
-    for r in rows:
-        db.upsert_draw(lottery,r['issue'],r['draw_date'],r['main'],r['bonus'],r['source'],r.get('prize_data'))
+    flag=db.get_data_quality_flag(lottery)
+    if flag and flag['status']=='BLOCKED':
+        raise ArchiveConflictError(f"unresolved official data-quality conflict: {flag['reason']}",flag['evidence'])
+    rows=fetch_ssq(periods) if lottery=='ssq' else fetch_dlt(periods)
+    existing=db.get_draws(lottery)
+    try:
+        rows=validate_sync_archive(rows,existing,lottery,periods)
+    except ArchiveConflictError as error:
+        db.block_data_quality(lottery,str(error),error.evidence)
+        raise
+    by_issue={r['issue']:r for r in existing}
+    with db.conn:
+        for r in rows:
+            prize_data=r.get('prize_data')
+            previous=by_issue.get(r['issue']) or {}
+            old_meta=previous.get('prize_data') or {}
+            old_record=old_meta.get('official_record') or {}
+            incoming=(prize_data or {}).get('official_record') or {}
+            if incoming.get('prize_table_complete') is False and old_record and old_record.get('prize_table_complete',True):
+                # The provincial summary must not erase a previously verified full prize table.
+                prize_data={**prize_data,'latest_source_official_record':incoming,
+                            'official_record':old_record,
+                            'official_record_source':old_meta.get('official_record_source',previous.get('source'))}
+            db.upsert_draw(lottery,r['issue'],r['draw_date'],r['main'],r['bonus'],r['source'],prize_data,commit=False)
     db.log('sync',{'rows':len(rows),'sources':sorted({r['source'] for r in rows}), 'latest_issue':rows[-1]['issue'],'version':VERSION},lottery)
     return len(rows)
 
@@ -89,6 +110,9 @@ def recommend(lottery,seed=None,candidates=5000,now=None,clock=None):
     if draw_status(lottery,target)['status']!='WAITING_DRAW':
         raise RuntimeError('当日不是可开奖日，不能发布推荐')
     db=DB(DB_PATH)
+    quality=db.get_data_quality_flag(lottery)
+    if quality and quality['status']=='BLOCKED':
+        raise ArchiveConflictError(f"unresolved official data-quality conflict: {quality['reason']}",quality['evidence'])
     existing=db.get_frozen_recommendation(lottery,target.isoformat())
     if existing:
         return existing

@@ -70,11 +70,11 @@ python -m lottery_assistant.cli recommend dlt
 ## GitHub Actions Cloud Edition v1.3
 
 本版本不需要 PythonAnywhere，也不依赖 ChatGPT 的 GitHub Connector。
-只要把仓库内容上传到 GitHub，`.github/workflows/lottery-cloud.yml` 会在北京时间 08:30 / 15:30 / 23:00 自动运行六模块系统并持久化 SQLite 状态。
+只要把仓库内容上传到 GitHub，`.github/workflows/lottery-cloud.yml` 按北京时间08:37准备、12:07至15:45多次重试（含15:30）、18:45恢复、23:07/23:37复盘的计划运行六模块系统并持久化SQLite状态；GitHub调度可能延迟。
 
 详见 `GITHUB_ACTIONS_DEPLOY.md`。
 
 
 ## 1.5 冻结与复盘闭环
 
-规则依据见 `research/RULES_REFERENCE.md`，验收协议见 `research/ACCEPTANCE_V1_5.md`。官方数据不足时停止推荐；同一开奖日保持同一份冻结记录。bridge 1.2 区分休市、未开奖、数据错误和过期。
+规则依据见 `research/RULES_REFERENCE.md`，验收协议见 `research/ACCEPTANCE_V1_5.md`。官方数据不足时停止推荐；同一开奖日保持同一份冻结记录。bridge 1.3独立报告运行健康与正式冻结的发布资格，保留休市、未开奖、数据错误和过期的区别。

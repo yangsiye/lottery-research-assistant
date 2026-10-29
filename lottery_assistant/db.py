@@ -83,6 +83,14 @@ CREATE TABLE IF NOT EXISTS cloud_job_runs(
   status TEXT NOT NULL,
   details TEXT NOT NULL
 );
+CREATE TABLE IF NOT EXISTS data_quality_flags(
+  lottery TEXT PRIMARY KEY,
+  status TEXT NOT NULL,
+  reason TEXT NOT NULL,
+  observed_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  evidence TEXT NOT NULL,
+  resolution TEXT
+);
 """
 
 class DB:
@@ -112,7 +120,7 @@ class DB:
         """)
         self.conn.commit()
 
-    def upsert_draw(self, lottery, issue, draw_date, main, bonus, source, prize_data=None):
+    def upsert_draw(self, lottery, issue, draw_date, main, bonus, source, prize_data=None, *, commit=True):
         self.conn.execute(
             """INSERT INTO draws(lottery,issue,draw_date,main_numbers,bonus_numbers,source)
                VALUES(?,?,?,?,?,?) ON CONFLICT(lottery,issue) DO UPDATE SET
@@ -123,7 +131,8 @@ class DB:
         if prize_data is not None:
             self.conn.execute('UPDATE draws SET prize_data=? WHERE lottery=? AND issue=?',
                               (json.dumps(prize_data,ensure_ascii=False),lottery,issue))
-        self.conn.commit()
+        if commit:
+            self.conn.commit()
 
     def get_draws(self, lottery):
         rows = self.conn.execute(
@@ -215,6 +224,40 @@ class DB:
     def job_has_run(self, job_key):
         row=self.conn.execute("SELECT 1 FROM cloud_job_runs WHERE job_key=? AND status='ok'",(job_key,)).fetchone()
         return row is not None
+
+    def get_data_quality_flag(self, lottery):
+        row=self.conn.execute('SELECT * FROM data_quality_flags WHERE lottery=?',(lottery,)).fetchone()
+        if not row: return None
+        flag=dict(row)
+        flag['evidence']=json.loads(flag['evidence'])
+        flag['resolution']=json.loads(flag['resolution']) if flag['resolution'] else None
+        return flag
+
+    def block_data_quality(self, lottery, reason, evidence):
+        self.conn.execute('''INSERT INTO data_quality_flags(lottery,status,reason,evidence)
+            VALUES(?,'BLOCKED',?,?) ON CONFLICT(lottery) DO UPDATE SET
+            status='BLOCKED',reason=excluded.reason,evidence=excluded.evidence,
+            observed_at=CURRENT_TIMESTAMP,resolution=NULL''',
+            (lottery,reason,json.dumps(evidence,ensure_ascii=False)))
+        self.conn.commit()
+        self.log('data-quality-blocked',{'reason':reason,'evidence':evidence},lottery)
+
+    def resolve_data_quality_flag(self, lottery, *, resolution, evidence_urls):
+        """Explicit audited resolution only; ordinary successful syncs never clear a conflict."""
+        from urllib.parse import urlparse
+        if (not isinstance(resolution,str) or not resolution.strip() or
+            not isinstance(evidence_urls,list) or not evidence_urls or
+            any(not isinstance(url,str) or urlparse(url).scheme not in ('http','https') or
+                not urlparse(url).netloc for url in evidence_urls)):
+            raise ValueError('audited resolution and evidence URLs are required')
+        flag=self.get_data_quality_flag(lottery)
+        if not flag or flag['status']!='BLOCKED':
+            raise ValueError('no unresolved data-quality conflict')
+        audit={'resolution':resolution.strip(),'evidence_urls':evidence_urls}
+        self.conn.execute("UPDATE data_quality_flags SET status='RESOLVED',resolution=? WHERE lottery=?",
+                          (json.dumps(audit,ensure_ascii=False),lottery))
+        self.conn.commit()
+        self.log('data-quality-resolved',audit,lottery)
 
     def record_job_run(self, job_key, status, details):
         self.conn.execute(

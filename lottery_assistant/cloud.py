@@ -1,12 +1,13 @@
 from __future__ import annotations
 import json
-from dataclasses import dataclass
+import os
+from dataclasses import dataclass, field
 from datetime import datetime, date, time
 from pathlib import Path
 from .db import DB
 from .engine import DB_PATH, CONFIG, sync, recommend
 from .rules import draw_status
-from .lifecycle import TZ, digest, before_deadline, timestamp
+from .lifecycle import TZ, PUBLICATION_DEADLINE, digest, before_deadline, timestamp
 from .governance import attribute_prediction
 from .evaluator import evaluate_official
 
@@ -17,6 +18,16 @@ REPORT_DIR=ROOT/'reports'
 class RunResult:
     now: str
     actions: list[dict]
+    trigger: dict = field(default_factory=dict)
+
+
+def _trigger_context():
+    """Keep scheduler evidence; runner time alone cannot identify the intended cron."""
+    return {key: os.environ.get(env) for key, env in (
+        ('event', 'GITHUB_EVENT_NAME'), ('schedule_utc', 'LOTTERY_TRIGGER_SCHEDULE'),
+        ('run_id', 'GITHUB_RUN_ID'), ('run_attempt', 'GITHUB_RUN_ATTEMPT'),
+        ('event_sha', 'GITHUB_SHA'), ('checkout_sha', 'LOTTERY_CHECKOUT_SHA'),
+    ) if os.environ.get(env)}
 
 
 def _write_report(name,payload):
@@ -100,13 +111,16 @@ def run_due(now=None,force=False):
         status='ok' if all('synced' in result[l] for l in ('ssq','dlt')) else 'partial'
         db.record_job_run(key,status,result)
         actions.append({'job':'morning-sync','status':status,'details':result})
-    if force or time(14,0)<=local_time<time(20):
+    # A valid same-day freeze can be prepared after the morning official-data sync.
+    # Do not wait until 15:30: GitHub schedule creation has arrived hours late.
+    if force or time(8,30)<=local_time<PUBLICATION_DEADLINE:
         for lot in ('ssq','dlt'):
             if calendar[lot]['status']!='WAITING_DRAW':
                 actions.append({'job':f'recommend-{lot}','status':'skipped','draw_state':calendar[lot]['status'],'details':calendar[lot]})
                 continue
             key=f'recommend-{lot}:{now.date()}'
-            if not force and db.job_has_run(key): continue
+            existing=db.get_frozen_recommendation(lot,now.date().isoformat())
+            if not force and db.job_has_run(key) and existing: continue
             try:
                 if not db.get_frozen_recommendation(lot,now.date().isoformat()): sync(lot,500)
                 rec=recommend(lot,now=now,clock=lambda:datetime.now(TZ))
@@ -116,6 +130,25 @@ def run_due(now=None,force=False):
                 status='error';detail={'error':str(e)}
             db.record_job_run(key,status,detail)
             actions.append({'job':f'recommend-{lot}','status':status,'details':detail})
+    # A late invocation used to report success while silently missing the entire
+    # generation window. Report readiness separately from unrelated sync failures.
+    for lot in ('ssq','dlt'):
+        if calendar[lot]['status']!='WAITING_DRAW': continue
+        frozen=db.get_frozen_recommendation(lot,now.date().isoformat())
+        quality=db.get_data_quality_flag(lot)
+        if quality and quality['status']=='BLOCKED':
+            actions.append({'job':f'delivery-readiness-{lot}','status':'error',
+                            'details':{'code':'DATA_QUALITY_CONFLICT','quality_flag':quality,
+                                       'prediction_id':frozen.get('prediction_id') if frozen else None}})
+            continue
+        overdue=local_time>=time(15,45)
+        actions.append({'job':f'delivery-readiness-{lot}',
+                        'status':'ok' if frozen else ('error' if overdue else 'pending'),
+                        'details':{'target_draw_date':now.date().isoformat(),
+                                   'prediction_id':frozen.get('prediction_id') if frozen else None,
+                                   'code':'FROZEN_AVAILABLE' if frozen else ('RECOMMENDATION_MISSING' if overdue else 'AWAITING_FREEZE'),
+                                   'reason':'正式冻结记录已存在；后续运行复用，不重新选号' if frozen else
+                                            ('16:00推送前尚无正式冻结记录；需告警并在截止前重试，截止后禁止补预测' if overdue else '尚未生成正式冻结记录')}})
     if force or local_time>=time(23):
         key=f'night-review:{now.date()}'
         if force or not db.job_has_run(key):
@@ -137,7 +170,7 @@ def run_due(now=None,force=False):
             db.record_job_run(key,status,result)
             _write_report('latest_review.json',result)
             actions.append({'job':'night-review','status':status,'details':result})
-    payload={'now':now.isoformat(),'actions':actions}
+    payload={'now':now.isoformat(),'actions':actions,'trigger':_trigger_context()}
     _write_report('latest_cloud_run.json',payload)
     db.checkpoint()
     return RunResult(**payload)
