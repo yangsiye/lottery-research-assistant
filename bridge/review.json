@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.2",
-  "generated_at": "2026-10-29T14:06:24.253892+08:00",
+  "schema_version": "1.3",
+  "generated_at": "2026-10-29T20:36:01.759841+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 46.553806,
+    "cloud_age_seconds": 17.900945,
     "job_errors": [
       {
         "job": "morning-sync",
@@ -1553,5 +1553,5 @@
       "governance_action": "保持；单期结果仅增加前向样本，不触发模型晋级。下次训练更新滚动验证和留出门槛。"
     }
   ],
-  "frontend_instruction": "Check bridge_health and draw_states first. HOLIDAY_SUSPENDED/NO_DRAW_TODAY are normal. Only publish a current verified frozen recommendation. Only push new official reviews. Never treat model_score as winning probability. Explain BACKEND_ERROR/BRIDGE_STALE/data errors. User interaction and results stay in ChatGPT."
+  "frontend_instruction": "Read ssq.json and latest.json from the same main commit. Use publication/publications for eligibility. READY requires current local date, identical freeze hashes and now < valid_until. Bridge liveness is diagnostic: do not impose a post-15:30 run or an arbitrary age veto on a verified freeze. Check delivery history by lottery + target_issue_key/target_draw_date and prediction_id/dedupe_key; recent_reviews are NOT delivery receipts. Never invent numbers or reuse an old target. HOLIDAY_SUSPENDED/NO_DRAW_TODAY are normal. Never treat model_score as winning probability. Report missing output and data failures explicitly; READY is not proof of delivery."
 }
