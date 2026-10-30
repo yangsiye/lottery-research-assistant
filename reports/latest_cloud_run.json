@@ -1,5 +1,5 @@
 {
-  "now": "2026-10-30T18:49:42.180184+08:00",
+  "now": "2026-10-30T21:26:23.805294+08:00",
   "actions": [
     {
       "job": "calendar-status",
@@ -117,40 +117,21 @@
           ]
         },
         "ssq": {
-          "error": "SSQ official fetch failed: 403 Client Error: Forbidden for url: https://www.cwl.gov.cn/cwl_admin/kjxx/findDrawNotice?name=ssq&issueCount=500&pageNo=1&pageSize=100&systemType=PC; provincial official fallback failed: HTTPSConnectionPool(host='www.swlc.net.cn', port=443): Max retries exceeded with url: /lottery/ssq.html?view=previous&limit=100 (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='www.swlc.net.cn', port=443): Read timed out. (read timeout=20)\"))"
+          "synced": 500,
+          "reviews": []
         },
         "dlt": {
           "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates"
         }
       }
-    },
-    {
-      "job": "recommend-ssq",
-      "status": "skipped",
-      "draw_state": "NO_DRAW_TODAY",
-      "details": {
-        "status": "NO_DRAW_TODAY",
-        "scheduled_weekday": false,
-        "reason": "非该彩种常规开奖日"
-      }
-    },
-    {
-      "job": "recommend-dlt",
-      "status": "skipped",
-      "draw_state": "NO_DRAW_TODAY",
-      "details": {
-        "status": "NO_DRAW_TODAY",
-        "scheduled_weekday": false,
-        "reason": "非该彩种常规开奖日"
-      }
     }
   ],
   "trigger": {
     "event": "schedule",
-    "schedule_utc": "7 4,6 * * *",
-    "run_id": "41043518286",
+    "schedule_utc": "37 6 * * *",
+    "run_id": "41063178136",
     "run_attempt": "1",
-    "event_sha": "2c61410f2490e361641026299f0105a662e2788f",
-    "checkout_sha": "2c61410f2490e361641026299f0105a662e2788f"
+    "event_sha": "c14c4d3df380d289729ebb7ed6cb74e09e805da4",
+    "checkout_sha": "c14c4d3df380d289729ebb7ed6cb74e09e805da4"
   }
 }
