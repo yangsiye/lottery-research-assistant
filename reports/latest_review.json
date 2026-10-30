@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-26T13:04:16.350134+08:00",
+  "as_of": "2026-10-30T14:21:03.137987+08:00",
   "calendar": {
     "ssq": {
       "status": "NO_DRAW_TODAY",
@@ -7,44 +7,44 @@
       "reason": "非该彩种常规开奖日"
     },
     "dlt": {
-      "status": "WAITING_DRAW",
-      "scheduled_weekday": true,
-      "reason": "常规开奖日，等待官方开奖结果"
+      "status": "NO_DRAW_TODAY",
+      "scheduled_weekday": false,
+      "reason": "非该彩种常规开奖日"
     }
   },
   "ssq": {
     "draw_state": "NO_DRAW_TODAY",
     "reviews": [
       {
-        "prediction_id": 14,
+        "prediction_id": 15,
         "lottery": "ssq",
-        "basis_issue": "2026121",
-        "target_draw_date": "2026-10-25",
-        "actual_issue": "2026122",
+        "basis_issue": "2026123",
+        "target_draw_date": "2026-10-29",
+        "actual_issue": "2026124",
         "predicted_main": [
-          17,
-          18,
-          20,
-          24,
-          29,
-          32
-        ],
-        "predicted_bonus": [
-          13
-        ],
-        "actual_main": [
-          1,
           2,
           4,
-          17,
+          8,
+          18,
           19,
-          30
+          23
+        ],
+        "predicted_bonus": [
+          5
+        ],
+        "actual_main": [
+          3,
+          11,
+          17,
+          22,
+          23,
+          29
         ],
         "actual_bonus": [
           9
         ],
         "model_version": "unified-v1.5-frozen-oos-holdout",
-        "freeze_sha256": "1a3fe8fe0717faa1fd3192af3232220fc82eabafaf07ea9d503fb3e03fe2b528",
+        "freeze_sha256": "1745f69972e363e87adffee2ccaec2362d3b32fea6413c1d8230d71da3fbe8e1",
         "main_hits": 1,
         "bonus_hits": 0,
         "tier": null,
@@ -55,29 +55,29 @@
         "model_attribution": {
           "main": {
             "bayes": {
-              "brier": 0.14513014696189522,
-              "logloss": 0.46195497341790037,
-              "topk_recall": 0.3333333333333333,
-              "mean_hits": 2.0,
+              "brier": 0.1497475490097172,
+              "logloss": 0.478040189357195,
+              "topk_recall": 0.16666666666666666,
+              "mean_hits": 1.0,
               "calibration_gap": 0.0
             },
             "hist_gb": {
-              "brier": 0.14786848914717635,
-              "logloss": 0.47126697784640625,
-              "topk_recall": 0.3333333333333333,
-              "mean_hits": 2.0,
-              "calibration_gap": 0.00046492333235359506
-            },
-            "logistic": {
-              "brier": 0.1490165446882113,
-              "logloss": 0.4749003672135572,
+              "brier": 0.14918044309334788,
+              "logloss": 0.4754544951111404,
               "topk_recall": 0.0,
               "mean_hits": 0.0,
-              "calibration_gap": 7.163894467143717e-06
+              "calibration_gap": 0.00019219018315486114
+            },
+            "logistic": {
+              "brier": 0.14813738614199012,
+              "logloss": 0.47199257173832243,
+              "topk_recall": 0.3333333333333333,
+              "mean_hits": 2.0,
+              "calibration_gap": 0.00015090093365807689
             },
             "uniform": {
               "brier": 0.14876033057851237,
-              "logloss": 0.47413931305783746,
+              "logloss": 0.4741393130578374,
               "topk_recall": 0.16666666666666666,
               "mean_hits": 1.0,
               "calibration_gap": 0.0
@@ -85,25 +85,25 @@
           },
           "bonus": {
             "bayes": {
-              "brier": 0.06196856498718262,
-              "logloss": 0.2689820145452294,
+              "brier": 0.06196713447570801,
+              "logloss": 0.26898120495646,
               "topk_recall": 0.0,
               "mean_hits": 0.0,
               "calibration_gap": 0.0
             },
             "hist_gb": {
-              "brier": 0.061215046771048075,
-              "logloss": 0.2594774473549219,
+              "brier": 0.060687845544905056,
+              "logloss": 0.24677092331122488,
               "topk_recall": 0.0,
               "mean_hits": 0.0,
-              "calibration_gap": 0.004497555635792114
+              "calibration_gap": 0.003579405709019573
             },
             "logistic": {
-              "brier": 0.05962015581470803,
-              "logloss": 0.2423075813455016,
+              "brier": 0.057375544570797035,
+              "logloss": 0.2234518713637375,
               "topk_recall": 0.0,
               "mean_hits": 0.0,
-              "calibration_gap": 0.0005827561819956723
+              "calibration_gap": 0.0004433394831045642
             },
             "uniform": {
               "brier": 0.05859375,
@@ -120,7 +120,7 @@
     "reason": "补齐此前已冻结推荐的官方对奖；当日状态按实际开奖日历显示"
   },
   "dlt": {
-    "draw_state": "WAITING_DRAW",
+    "draw_state": "NO_DRAW_TODAY",
     "reviews": [],
     "reason": "补齐此前已冻结推荐的官方对奖；当日状态按实际开奖日历显示"
   }
