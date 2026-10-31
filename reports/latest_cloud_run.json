@@ -1,5 +1,5 @@
 {
-  "now": "2026-10-31T14:12:47.285546+08:00",
+  "now": "2026-10-31T18:19:47.243069+08:00",
   "actions": [
     {
       "job": "calendar-status",
@@ -144,21 +144,21 @@
     },
     {
       "job": "delivery-readiness-dlt",
-      "status": "pending",
+      "status": "error",
       "details": {
         "target_draw_date": "2026-10-31",
         "prediction_id": null,
-        "code": "AWAITING_FREEZE",
-        "reason": "尚未生成正式冻结记录"
+        "code": "RECOMMENDATION_MISSING",
+        "reason": "16:00推送前尚无正式冻结记录；需告警并在截止前重试，截止后禁止补预测"
       }
     }
   ],
   "trigger": {
     "event": "schedule",
-    "schedule_utc": "37 0 * * *",
-    "run_id": "41175617342",
+    "schedule_utc": "7 4,6 * * *",
+    "run_id": "41192258300",
     "run_attempt": "1",
-    "event_sha": "bf202ffcd9dfb5bd7467ebce0c3c66488400efae",
-    "checkout_sha": "bf202ffcd9dfb5bd7467ebce0c3c66488400efae"
+    "event_sha": "4ecfa002638493ba274a73c2a00978276f47e96a",
+    "checkout_sha": "4ecfa002638493ba274a73c2a00978276f47e96a"
   }
 }

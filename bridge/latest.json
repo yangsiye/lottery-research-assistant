@@ -1,9 +1,9 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-10-31T14:15:48.372522+08:00",
+  "generated_at": "2026-10-31T18:20:03.887269+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 181.086976,
+    "cloud_age_seconds": 16.6442,
     "job_errors": [
       {
         "job": "morning-sync",
@@ -119,6 +119,16 @@
         "details": {
           "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates"
         }
+      },
+      {
+        "job": "delivery-readiness-dlt",
+        "status": "error",
+        "details": {
+          "target_draw_date": "2026-10-31",
+          "prediction_id": null,
+          "code": "RECOMMENDATION_MISSING",
+          "reason": "16:00推送前尚无正式冻结记录；需告警并在截止前重试，截止后禁止补预测"
+        }
       }
     ]
   },
@@ -165,7 +175,7 @@
       "status": "WITHHELD",
       "reason": "NO_DRAW_TODAY",
       "lottery": "ssq",
-      "evaluated_at": "2026-10-31T14:15:48.372522+08:00",
+      "evaluated_at": "2026-10-31T18:20:03.887269+08:00",
       "target_draw_date": "2026-10-31",
       "valid_until": "2026-10-31T20:00:00+08:00",
       "checks": {},
@@ -177,7 +187,7 @@
       "status": "WITHHELD",
       "reason": "RECOMMENDATION_MISSING",
       "lottery": "dlt",
-      "evaluated_at": "2026-10-31T14:15:48.372522+08:00",
+      "evaluated_at": "2026-10-31T18:20:03.887269+08:00",
       "target_draw_date": "2026-10-31",
       "valid_until": "2026-10-31T20:00:00+08:00",
       "checks": {},
@@ -191,7 +201,7 @@
   "dlt": null,
   "latest_review": null,
   "latest_cloud_run": {
-    "now": "2026-10-31T14:12:47.285546+08:00",
+    "now": "2026-10-31T18:19:47.243069+08:00",
     "actions": [
       {
         "job": "calendar-status",
@@ -336,22 +346,22 @@
       },
       {
         "job": "delivery-readiness-dlt",
-        "status": "pending",
+        "status": "error",
         "details": {
           "target_draw_date": "2026-10-31",
           "prediction_id": null,
-          "code": "AWAITING_FREEZE",
-          "reason": "尚未生成正式冻结记录"
+          "code": "RECOMMENDATION_MISSING",
+          "reason": "16:00推送前尚无正式冻结记录；需告警并在截止前重试，截止后禁止补预测"
         }
       }
     ],
     "trigger": {
       "event": "schedule",
-      "schedule_utc": "37 0 * * *",
-      "run_id": "41175617342",
+      "schedule_utc": "7 4,6 * * *",
+      "run_id": "41192258300",
       "run_attempt": "1",
-      "event_sha": "bf202ffcd9dfb5bd7467ebce0c3c66488400efae",
-      "checkout_sha": "bf202ffcd9dfb5bd7467ebce0c3c66488400efae"
+      "event_sha": "4ecfa002638493ba274a73c2a00978276f47e96a",
+      "checkout_sha": "4ecfa002638493ba274a73c2a00978276f47e96a"
     }
   },
   "recent_reviews": [
