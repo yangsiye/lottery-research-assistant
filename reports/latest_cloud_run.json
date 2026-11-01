@@ -1,5 +1,5 @@
 {
-  "now": "2026-11-01T19:12:59.686945+08:00",
+  "now": "2026-11-01T21:43:54.431494+08:00",
   "actions": [
     {
       "job": "calendar-status",
@@ -80,7 +80,7 @@
               "name": "lrwei91/Lottery",
               "source_url": "https://github.com/lrwei91/Lottery",
               "stars": 3,
-              "updated_at": "2026-10-31T14:10:23Z",
+              "updated_at": "2026-11-01T13:40:25Z",
               "method_tags": [
                 "walk_forward"
               ],
@@ -126,16 +126,6 @@
       }
     },
     {
-      "job": "recommend-dlt",
-      "status": "skipped",
-      "draw_state": "NO_DRAW_TODAY",
-      "details": {
-        "status": "NO_DRAW_TODAY",
-        "scheduled_weekday": false,
-        "reason": "非该彩种常规开奖日"
-      }
-    },
-    {
       "job": "delivery-readiness-ssq",
       "status": "ok",
       "details": {
@@ -148,10 +138,10 @@
   ],
   "trigger": {
     "event": "schedule",
-    "schedule_utc": "7 4,6 * * *",
-    "run_id": "41300856290",
+    "schedule_utc": "37 6 * * *",
+    "run_id": "41312630221",
     "run_attempt": "1",
-    "event_sha": "225c6550698e928589ff1a636172f5b4696158a5",
-    "checkout_sha": "225c6550698e928589ff1a636172f5b4696158a5"
+    "event_sha": "4bcff4d11857e6e288365ce313a837a1aa7217ca",
+    "checkout_sha": "4bcff4d11857e6e288365ce313a837a1aa7217ca"
   }
 }
