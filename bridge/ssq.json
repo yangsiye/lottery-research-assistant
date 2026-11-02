@@ -1,9 +1,9 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-11-02T14:46:17.065381+08:00",
+  "generated_at": "2026-11-02T20:19:03.779775+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 178.215377,
+    "cloud_age_seconds": 176.693425,
     "job_errors": [
       {
         "job": "morning-sync",
@@ -106,109 +106,7 @@
           },
           "ssq": {
             "synced": 500,
-            "reviews": [
-              {
-                "prediction_id": 16,
-                "lottery": "ssq",
-                "basis_issue": "2026124",
-                "target_draw_date": "2026-11-01",
-                "actual_issue": "2026125",
-                "predicted_main": [
-                  11,
-                  13,
-                  25,
-                  27,
-                  30,
-                  33
-                ],
-                "predicted_bonus": [
-                  2
-                ],
-                "actual_main": [
-                  4,
-                  6,
-                  10,
-                  15,
-                  26,
-                  27
-                ],
-                "actual_bonus": [
-                  11
-                ],
-                "model_version": "unified-v1.5-frozen-oos-holdout",
-                "freeze_sha256": "15ad5b316d31532308f953a2d58991e04d11e6c3d734a22ff4a34f407cfb8a27",
-                "main_hits": 1,
-                "bonus_hits": 0,
-                "tier": null,
-                "prize_amount": 0,
-                "prize_status": "VERIFIED",
-                "cost": 2,
-                "net_return": -2,
-                "model_attribution": {
-                  "main": {
-                    "bayes": {
-                      "brier": 0.1505717548128659,
-                      "logloss": 0.479827628372537,
-                      "topk_recall": 0.0,
-                      "mean_hits": 0.0,
-                      "calibration_gap": 0.0
-                    },
-                    "hist_gb": {
-                      "brier": 0.14934412608614747,
-                      "logloss": 0.47607905362683967,
-                      "topk_recall": 0.16666666666666666,
-                      "mean_hits": 1.0,
-                      "calibration_gap": 4.559764590864046e-05
-                    },
-                    "logistic": {
-                      "brier": 0.14995790025563363,
-                      "logloss": 0.4782121636089898,
-                      "topk_recall": 0.16666666666666666,
-                      "mean_hits": 1.0,
-                      "calibration_gap": 0.0001853555887401659
-                    },
-                    "uniform": {
-                      "brier": 0.14876033057851237,
-                      "logloss": 0.4741393130578374,
-                      "topk_recall": 0.0,
-                      "mean_hits": 0.0,
-                      "calibration_gap": 0.0
-                    }
-                  },
-                  "bonus": {
-                    "bayes": {
-                      "brier": 0.05732274055480957,
-                      "logloss": 0.22278596021045668,
-                      "topk_recall": 0.0,
-                      "mean_hits": 0.0,
-                      "calibration_gap": 0.0
-                    },
-                    "hist_gb": {
-                      "brier": 0.06163503061571744,
-                      "logloss": 0.2619177302570729,
-                      "topk_recall": 0.0,
-                      "mean_hits": 0.0,
-                      "calibration_gap": 0.0009204556235173772
-                    },
-                    "logistic": {
-                      "brier": 0.05698959003879492,
-                      "logloss": 0.22056069577617848,
-                      "topk_recall": 1.0,
-                      "mean_hits": 1.0,
-                      "calibration_gap": 0.0009071775116808178
-                    },
-                    "uniform": {
-                      "brier": 0.05859375,
-                      "logloss": 0.2337916587064593,
-                      "topk_recall": 0.0,
-                      "mean_hits": 0.0,
-                      "calibration_gap": 0.0
-                    }
-                  }
-                },
-                "governance_action": "保持；单期结果仅增加前向样本，不触发模型晋级。下次训练更新滚动验证和留出门槛。"
-              }
-            ]
+            "reviews": []
           },
           "dlt": {
             "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates"
@@ -216,10 +114,13 @@
         }
       },
       {
-        "job": "recommend-dlt",
+        "job": "delivery-readiness-dlt",
         "status": "error",
         "details": {
-          "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates"
+          "target_draw_date": "2026-11-02",
+          "prediction_id": null,
+          "code": "RECOMMENDATION_MISSING",
+          "reason": "16:00推送前尚无正式冻结记录；需告警并在截止前重试，截止后禁止补预测"
         }
       }
     ]
@@ -245,7 +146,7 @@
     "status": "WITHHELD",
     "reason": "NO_DRAW_TODAY",
     "lottery": "ssq",
-    "evaluated_at": "2026-11-02T14:46:17.065381+08:00",
+    "evaluated_at": "2026-11-02T20:19:03.779775+08:00",
     "target_draw_date": "2026-11-02",
     "valid_until": "2026-11-02T20:00:00+08:00",
     "checks": {},
