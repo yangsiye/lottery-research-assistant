@@ -1,6 +1,13 @@
 {
-  "generated_at": "2026-11-03T07:04:32.765353+08:00",
+  "generated_at": "2026-11-03T15:11:59.494247+08:00",
   "candidates": [
+    {
+      "discovered_at": "2026-11-03 07:11:20",
+      "name": "bbsx123321/lottery-predictions",
+      "source_url": "https://github.com/bbsx123321/lottery-predictions",
+      "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+      "decision": "pending"
+    },
     {
       "discovered_at": "2026-10-17 04:44:22",
       "name": "Andyt2666/ssq-prediction-ai",
@@ -143,7 +150,7 @@
       "model_version": "unified-v1.5-frozen-oos-holdout",
       "status": "production",
       "weight": 1.0,
-      "train_end": "2026124"
+      "train_end": "2026125"
     },
     {
       "lottery": "ssq",
@@ -151,7 +158,7 @@
       "model_version": "unified-v1.5-frozen-oos-holdout",
       "status": "shadow",
       "weight": 0.0,
-      "train_end": "2026124"
+      "train_end": "2026125"
     },
     {
       "lottery": "ssq",
@@ -159,7 +166,7 @@
       "model_version": "unified-v1.5-frozen-oos-holdout",
       "status": "shadow",
       "weight": 0.0,
-      "train_end": "2026124"
+      "train_end": "2026125"
     },
     {
       "lottery": "ssq",
@@ -167,7 +174,7 @@
       "model_version": "unified-v1.5-frozen-oos-holdout",
       "status": "shadow",
       "weight": 0.0,
-      "train_end": "2026124"
+      "train_end": "2026125"
     },
     {
       "lottery": "ssq",
@@ -175,7 +182,7 @@
       "model_version": "unified-v1.5-frozen-oos-holdout",
       "status": "production",
       "weight": 1.0,
-      "train_end": "2026124"
+      "train_end": "2026125"
     },
     {
       "lottery": "ssq",
@@ -183,7 +190,7 @@
       "model_version": "unified-v1.5-frozen-oos-holdout",
       "status": "shadow",
       "weight": 0.0,
-      "train_end": "2026124"
+      "train_end": "2026125"
     },
     {
       "lottery": "ssq",
@@ -191,7 +198,7 @@
       "model_version": "unified-v1.5-frozen-oos-holdout",
       "status": "shadow",
       "weight": 0.0,
-      "train_end": "2026124"
+      "train_end": "2026125"
     },
     {
       "lottery": "ssq",
@@ -199,7 +206,7 @@
       "model_version": "unified-v1.5-frozen-oos-holdout",
       "status": "shadow",
       "weight": 0.0,
-      "train_end": "2026124"
+      "train_end": "2026125"
     }
   ]
 }
