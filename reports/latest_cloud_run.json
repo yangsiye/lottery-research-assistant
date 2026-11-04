@@ -1,5 +1,5 @@
 {
-  "now": "2026-11-04T14:55:50.269768+08:00",
+  "now": "2026-11-04T20:00:31.023814+08:00",
   "actions": [
     {
       "job": "calendar-status",
@@ -117,39 +117,22 @@
       }
     },
     {
-      "job": "recommend-ssq",
-      "status": "skipped",
-      "draw_state": "NO_DRAW_TODAY",
-      "details": {
-        "status": "NO_DRAW_TODAY",
-        "scheduled_weekday": false,
-        "reason": "非该彩种常规开奖日"
-      }
-    },
-    {
-      "job": "recommend-dlt",
-      "status": "error",
-      "details": {
-        "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates"
-      }
-    },
-    {
       "job": "delivery-readiness-dlt",
-      "status": "pending",
+      "status": "error",
       "details": {
         "target_draw_date": "2026-11-04",
         "prediction_id": null,
-        "code": "AWAITING_FREEZE",
-        "reason": "尚未生成正式冻结记录"
+        "code": "RECOMMENDATION_MISSING",
+        "reason": "16:00推送前尚无正式冻结记录；需告警并在截止前重试，截止后禁止补预测"
       }
     }
   ],
   "trigger": {
     "event": "schedule",
-    "schedule_utc": "37 0 * * *",
-    "run_id": "41788728263",
+    "schedule_utc": "7 4,6 * * *",
+    "run_id": "41825464812",
     "run_attempt": "1",
-    "event_sha": "84485d9b4aa40a85b24002087573d5220e001c80",
-    "checkout_sha": "84485d9b4aa40a85b24002087573d5220e001c80"
+    "event_sha": "d911141023d2a064bcff09316d4df15ad504e000",
+    "checkout_sha": "d911141023d2a064bcff09316d4df15ad504e000"
   }
 }
