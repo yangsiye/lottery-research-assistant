@@ -1,5 +1,5 @@
 {
-  "now": "2026-11-05T22:54:51.669856+08:00",
+  "now": "2026-11-05T23:22:50.624255+08:00",
   "actions": [
     {
       "job": "calendar-status",
@@ -125,14 +125,44 @@
         "code": "FROZEN_AVAILABLE",
         "reason": "正式冻结记录已存在；后续运行复用，不重新选号"
       }
+    },
+    {
+      "job": "night-review",
+      "status": "partial",
+      "details": {
+        "as_of": "2026-11-05T23:22:50.624255+08:00",
+        "calendar": {
+          "ssq": {
+            "status": "WAITING_DRAW",
+            "scheduled_weekday": true,
+            "reason": "常规开奖日，等待官方开奖结果"
+          },
+          "dlt": {
+            "status": "NO_DRAW_TODAY",
+            "scheduled_weekday": false,
+            "reason": "非该彩种常规开奖日"
+          }
+        },
+        "ssq": {
+          "draw_state": "WAITING_DRAW",
+          "reviews": [],
+          "reason": "未发现当日官方结果，保持等待并允许重试",
+          "prediction_available": true
+        },
+        "dlt": {
+          "draw_state": "NO_DRAW_TODAY",
+          "reviews": [],
+          "reason": "非该彩种常规开奖日"
+        }
+      }
     }
   ],
   "trigger": {
     "event": "schedule",
-    "schedule_utc": "37 6 * * *",
-    "run_id": "42049563094",
+    "schedule_utc": "7,30,45 7 * * *",
+    "run_id": "42054271957",
     "run_attempt": "1",
-    "event_sha": "135047f9819333da69eb244d65f881ebc18ebe57",
-    "checkout_sha": "135047f9819333da69eb244d65f881ebc18ebe57"
+    "event_sha": "7d75eb10d7d9570961ec467929a8a8d3f227833e",
+    "checkout_sha": "7d75eb10d7d9570961ec467929a8a8d3f227833e"
   }
 }
