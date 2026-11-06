@@ -1,9 +1,9 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-11-06T15:21:45.516859+08:00",
+  "generated_at": "2026-11-06T19:59:54.064241+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 173.885259,
+    "cloud_age_seconds": 15.218912,
     "job_errors": [
       {
         "job": "morning-sync",
@@ -78,8 +78,8 @@
               {
                 "name": "QJHWC/football-prediction",
                 "source_url": "https://github.com/QJHWC/football-prediction",
-                "stars": 2,
-                "updated_at": "2026-09-27T08:24:05Z",
+                "stars": 4,
+                "updated_at": "2026-11-06T09:20:15Z",
                 "method_tags": [],
                 "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
                 "decision": "pending-validation"
@@ -97,109 +97,7 @@
           },
           "ssq": {
             "synced": 500,
-            "reviews": [
-              {
-                "prediction_id": 18,
-                "lottery": "ssq",
-                "basis_issue": "2026126",
-                "target_draw_date": "2026-11-05",
-                "actual_issue": "2026127",
-                "predicted_main": [
-                  2,
-                  3,
-                  16,
-                  22,
-                  25,
-                  31
-                ],
-                "predicted_bonus": [
-                  6
-                ],
-                "actual_main": [
-                  13,
-                  14,
-                  19,
-                  25,
-                  29,
-                  32
-                ],
-                "actual_bonus": [
-                  12
-                ],
-                "model_version": "unified-v1.5-frozen-oos-holdout",
-                "freeze_sha256": "3edbcbeecb33347a1ad5994aae2a5d7a9fe903f9aa7187da7e2693d4fce2b2fd",
-                "main_hits": 1,
-                "bonus_hits": 0,
-                "tier": null,
-                "prize_amount": 0,
-                "prize_status": "VERIFIED",
-                "cost": 2,
-                "net_return": -2,
-                "model_attribution": {
-                  "main": {
-                    "bayes": {
-                      "brier": 0.15021687237027592,
-                      "logloss": 0.47913391459967575,
-                      "topk_recall": 0.16666666666666666,
-                      "mean_hits": 1.0,
-                      "calibration_gap": 0.0
-                    },
-                    "hist_gb": {
-                      "brier": 0.14856061716779712,
-                      "logloss": 0.4732808579683712,
-                      "topk_recall": 0.16666666666666666,
-                      "mean_hits": 1.0,
-                      "calibration_gap": 0.0021894541015676783
-                    },
-                    "logistic": {
-                      "brier": 0.14981512835596533,
-                      "logloss": 0.47754993094286946,
-                      "topk_recall": 0.0,
-                      "mean_hits": 0.0,
-                      "calibration_gap": 0.0008842910190479947
-                    },
-                    "uniform": {
-                      "brier": 0.14876033057851237,
-                      "logloss": 0.4741393130578374,
-                      "topk_recall": 0.3333333333333333,
-                      "mean_hits": 2.0,
-                      "calibration_gap": 0.0
-                    }
-                  },
-                  "bonus": {
-                    "bayes": {
-                      "brier": 0.059036970138549805,
-                      "logloss": 0.23652319100030958,
-                      "topk_recall": 0.0,
-                      "mean_hits": 0.0,
-                      "calibration_gap": 0.0
-                    },
-                    "hist_gb": {
-                      "brier": 0.0440334255087658,
-                      "logloss": 0.15832571411390706,
-                      "topk_recall": 1.0,
-                      "mean_hits": 1.0,
-                      "calibration_gap": 0.0036982303555885554
-                    },
-                    "logistic": {
-                      "brier": 0.05728833941645845,
-                      "logloss": 0.22241216835217262,
-                      "topk_recall": 0.0,
-                      "mean_hits": 0.0,
-                      "calibration_gap": 0.0005063593038415054
-                    },
-                    "uniform": {
-                      "brier": 0.05859375,
-                      "logloss": 0.2337916587064593,
-                      "topk_recall": 0.0,
-                      "mean_hits": 0.0,
-                      "calibration_gap": 0.0
-                    }
-                  }
-                },
-                "governance_action": "保持；单期结果仅增加前向样本，不触发模型晋级。下次训练更新滚动验证和留出门槛。"
-              }
-            ]
+            "reviews": []
           },
           "dlt": {
             "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates"
@@ -229,7 +127,7 @@
     "status": "WITHHELD",
     "reason": "NO_DRAW_TODAY",
     "lottery": "ssq",
-    "evaluated_at": "2026-11-06T15:21:45.516859+08:00",
+    "evaluated_at": "2026-11-06T19:59:54.064241+08:00",
     "target_draw_date": "2026-11-06",
     "valid_until": "2026-11-06T20:00:00+08:00",
     "checks": {},
