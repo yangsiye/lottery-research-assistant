@@ -1,5 +1,5 @@
 {
-  "now": "2026-11-08T19:13:21.357153+08:00",
+  "now": "2026-11-08T21:48:10.875555+08:00",
   "actions": [
     {
       "job": "calendar-status",
@@ -117,16 +117,6 @@
       }
     },
     {
-      "job": "recommend-dlt",
-      "status": "skipped",
-      "draw_state": "NO_DRAW_TODAY",
-      "details": {
-        "status": "NO_DRAW_TODAY",
-        "scheduled_weekday": false,
-        "reason": "非该彩种常规开奖日"
-      }
-    },
-    {
       "job": "delivery-readiness-ssq",
       "status": "ok",
       "details": {
@@ -139,10 +129,10 @@
   ],
   "trigger": {
     "event": "schedule",
-    "schedule_utc": "7 4,6 * * *",
-    "run_id": "42474755432",
+    "schedule_utc": "37 6 * * *",
+    "run_id": "42486622352",
     "run_attempt": "1",
-    "event_sha": "5626d38950d5dc4a5e5672b50d3a9a449af42006",
-    "checkout_sha": "5626d38950d5dc4a5e5672b50d3a9a449af42006"
+    "event_sha": "28495d5106064ce53166a7909ce72d4687595547",
+    "checkout_sha": "28495d5106064ce53166a7909ce72d4687595547"
   }
 }
