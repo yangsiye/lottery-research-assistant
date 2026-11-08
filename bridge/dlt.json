@@ -1,9 +1,9 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-11-09T00:47:31.700172+08:00",
+  "generated_at": "2026-11-09T03:28:21.886381+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 0.186257,
+    "cloud_age_seconds": 0.252852,
     "job_errors": []
   },
   "draw_state": {
@@ -27,7 +27,7 @@
     "status": "WITHHELD",
     "reason": "RECOMMENDATION_MISSING",
     "lottery": "dlt",
-    "evaluated_at": "2026-11-09T00:47:31.700172+08:00",
+    "evaluated_at": "2026-11-09T03:28:21.886381+08:00",
     "target_draw_date": "2026-11-09",
     "valid_until": "2026-11-09T20:00:00+08:00",
     "checks": {},
