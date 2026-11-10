@@ -1,138 +1,39 @@
 {
-  "now": "2026-11-10T23:32:22.320654+08:00",
+  "now": "2026-11-11T02:17:30.625406+08:00",
   "actions": [
     {
       "job": "calendar-status",
       "status": "ok",
       "details": {
         "ssq": {
-          "status": "WAITING_DRAW",
-          "scheduled_weekday": true,
-          "reason": "常规开奖日，等待官方开奖结果"
-        },
-        "dlt": {
           "status": "NO_DRAW_TODAY",
           "scheduled_weekday": false,
           "reason": "非该彩种常规开奖日"
-        }
-      }
-    },
-    {
-      "job": "morning-sync",
-      "status": "partial",
-      "details": {
-        "research": {
-          "github_candidates": [
-            {
-              "name": "bbsx123321/lottery-predictions",
-              "source_url": "https://github.com/bbsx123321/lottery-predictions",
-              "stars": 0,
-              "updated_at": "2026-11-03T00:39:49Z",
-              "method_tags": [],
-              "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
-              "decision": "pending-validation"
-            },
-            {
-              "name": "zhhyowner-arch/AI-Powered-Lottery-Prediction",
-              "source_url": "https://github.com/zhhyowner-arch/AI-Powered-Lottery-Prediction",
-              "stars": 4,
-              "updated_at": "2026-10-27T12:46:15Z",
-              "method_tags": [],
-              "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
-              "decision": "pending-validation"
-            },
-            {
-              "name": "Andyt2666/ssq-prediction-ai",
-              "source_url": "https://github.com/Andyt2666/ssq-prediction-ai",
-              "stars": 0,
-              "updated_at": "2026-10-16T10:17:14Z",
-              "method_tags": [
-                "markov",
-                "monte_carlo",
-                "walk_forward"
-              ],
-              "hypothesis": "Candidate methods: markov, monte_carlo, walk_forward",
-              "decision": "pending-validation"
-            },
-            {
-              "name": "hansonDing/shuangseqiu-prediction",
-              "source_url": "https://github.com/hansonDing/shuangseqiu-prediction",
-              "stars": 0,
-              "updated_at": "2026-10-10T02:19:17Z",
-              "method_tags": [],
-              "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
-              "decision": "pending-validation"
-            },
-            {
-              "name": "longgeyyds/ssq-fusion",
-              "source_url": "https://github.com/longgeyyds/ssq-fusion",
-              "stars": 2,
-              "updated_at": "2026-11-09T09:33:13Z",
-              "method_tags": [
-                "bayesian",
-                "lstm_gru",
-                "reinforcement_learning"
-              ],
-              "hypothesis": "Candidate methods: bayesian, lstm_gru, reinforcement_learning",
-              "decision": "pending-validation"
-            },
-            {
-              "name": "lrwei91/Lottery",
-              "source_url": "https://github.com/lrwei91/Lottery",
-              "stars": 3,
-              "updated_at": "2026-11-10T14:00:59Z",
-              "method_tags": [
-                "walk_forward"
-              ],
-              "hypothesis": "Candidate methods: walk_forward",
-              "decision": "pending-validation"
-            },
-            {
-              "name": "veriyoung/super-lotto-tool",
-              "source_url": "https://github.com/veriyoung/super-lotto-tool",
-              "stars": 0,
-              "updated_at": "2026-11-10T01:32:07Z",
-              "method_tags": [],
-              "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
-              "decision": "pending-validation"
-            },
-            {
-              "name": "QJHWC/football-prediction",
-              "source_url": "https://github.com/QJHWC/football-prediction",
-              "stars": 4,
-              "updated_at": "2026-11-06T09:20:15Z",
-              "method_tags": [],
-              "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
-              "decision": "pending-validation"
-            }
-          ]
-        },
-        "ssq": {
-          "synced": 500,
-          "reviews": []
         },
         "dlt": {
-          "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates"
+          "status": "WAITING_DRAW",
+          "scheduled_weekday": true,
+          "reason": "常规开奖日，等待官方开奖结果"
         }
       }
     },
     {
-      "job": "delivery-readiness-ssq",
-      "status": "ok",
+      "job": "delivery-readiness-dlt",
+      "status": "pending",
       "details": {
-        "target_draw_date": "2026-11-10",
-        "prediction_id": 20,
-        "code": "FROZEN_AVAILABLE",
-        "reason": "正式冻结记录已存在；后续运行复用，不重新选号"
+        "target_draw_date": "2026-11-11",
+        "prediction_id": null,
+        "code": "AWAITING_FREEZE",
+        "reason": "尚未生成正式冻结记录"
       }
     }
   ],
   "trigger": {
     "event": "schedule",
-    "schedule_utc": "7,30,45 7 * * *",
-    "run_id": "42845259743",
+    "schedule_utc": "45 10 * * *",
+    "run_id": "42873593970",
     "run_attempt": "1",
-    "event_sha": "9d6f2265fdd2c6fa2cb412b437a79bfc12d20020",
-    "checkout_sha": "9d6f2265fdd2c6fa2cb412b437a79bfc12d20020"
+    "event_sha": "c2e337766e3f3d2d3319875af00692a777f9df98",
+    "checkout_sha": "c2e337766e3f3d2d3319875af00692a777f9df98"
   }
 }
