@@ -1,9 +1,9 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-11-12T23:32:15.891957+08:00",
+  "generated_at": "2026-11-12T23:56:12.886195+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 20.006562,
+    "cloud_age_seconds": 35.839585,
     "job_errors": [
       {
         "job": "morning-sync",
@@ -97,112 +97,10 @@
           },
           "ssq": {
             "synced": 500,
-            "reviews": [
-              {
-                "prediction_id": 21,
-                "lottery": "ssq",
-                "basis_issue": "2026129",
-                "target_draw_date": "2026-11-12",
-                "actual_issue": "2026130",
-                "predicted_main": [
-                  11,
-                  12,
-                  18,
-                  22,
-                  24,
-                  27
-                ],
-                "predicted_bonus": [
-                  7
-                ],
-                "actual_main": [
-                  1,
-                  2,
-                  6,
-                  16,
-                  20,
-                  28
-                ],
-                "actual_bonus": [
-                  2
-                ],
-                "model_version": "unified-v1.5-frozen-oos-holdout",
-                "freeze_sha256": "aca16e60a030154d8ab64243ab21965c879cd7ee4f3b1642c3c2221b027cd150",
-                "main_hits": 0,
-                "bonus_hits": 0,
-                "tier": null,
-                "prize_amount": 0,
-                "prize_status": "VERIFIED",
-                "cost": 2,
-                "net_return": -2,
-                "model_attribution": {
-                  "main": {
-                    "bayes": {
-                      "brier": 0.14903847770585832,
-                      "logloss": 0.4752024569532449,
-                      "topk_recall": 0.16666666666666666,
-                      "mean_hits": 1.0,
-                      "calibration_gap": 0.0
-                    },
-                    "hist_gb": {
-                      "brier": 0.15007990307558253,
-                      "logloss": 0.47864027281891786,
-                      "topk_recall": 0.0,
-                      "mean_hits": 0.0,
-                      "calibration_gap": 0.0015581694374181554
-                    },
-                    "logistic": {
-                      "brier": 0.14923215461509795,
-                      "logloss": 0.4757215799401429,
-                      "topk_recall": 0.16666666666666666,
-                      "mean_hits": 1.0,
-                      "calibration_gap": 9.701053224439593e-05
-                    },
-                    "uniform": {
-                      "brier": 0.14876033057851237,
-                      "logloss": 0.4741393130578374,
-                      "topk_recall": 0.16666666666666666,
-                      "mean_hits": 1.0,
-                      "calibration_gap": 0.0
-                    }
-                  },
-                  "bonus": {
-                    "bayes": {
-                      "brier": 0.05928206443786621,
-                      "logloss": 0.2387197597952066,
-                      "topk_recall": 0.0,
-                      "mean_hits": 0.0,
-                      "calibration_gap": 0.0
-                    },
-                    "hist_gb": {
-                      "brier": 0.06252801740686374,
-                      "logloss": 0.2622040217915531,
-                      "topk_recall": 0.0,
-                      "mean_hits": 0.0,
-                      "calibration_gap": 0.006007030275275466
-                    },
-                    "logistic": {
-                      "brier": 0.06101000808590794,
-                      "logloss": 0.2569099625706921,
-                      "topk_recall": 0.0,
-                      "mean_hits": 0.0,
-                      "calibration_gap": 0.0005308316283935341
-                    },
-                    "uniform": {
-                      "brier": 0.05859375,
-                      "logloss": 0.2337916587064593,
-                      "topk_recall": 0.0,
-                      "mean_hits": 0.0,
-                      "calibration_gap": 0.0
-                    }
-                  }
-                },
-                "governance_action": "保持；单期结果仅增加前向样本，不触发模型晋级。下次训练更新滚动验证和留出门槛。"
-              }
-            ]
+            "reviews": []
           },
           "dlt": {
-            "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates"
+            "error": "DLT official fetch failed: HTTPSConnectionPool(host='webapi.sporttery.cn', port=443): Max retries exceeded with url: /gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='webapi.sporttery.cn', port=443) at 0x75c90f5f38c0>, 'Connection to webapi.sporttery.cn timed out. (connect timeout=20)')); provincial official fallback failed: duplicate/non-increasing draw dates"
           }
         }
       }
@@ -229,7 +127,7 @@
     "status": "WITHHELD",
     "reason": "PUBLICATION_CLOSED",
     "lottery": "ssq",
-    "evaluated_at": "2026-11-12T23:32:15.891957+08:00",
+    "evaluated_at": "2026-11-12T23:56:12.886195+08:00",
     "target_draw_date": "2026-11-12",
     "valid_until": "2026-11-12T20:00:00+08:00",
     "checks": {},
