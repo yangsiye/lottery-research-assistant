@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T05:50:49.012938+08:00",
+  "generated_at": "2026-11-12T15:39:43.886289+08:00",
   "candidates": [
     {
       "discovered_at": "2026-11-10 07:42:06",
@@ -164,7 +164,7 @@
       "model_version": "unified-v1.5-frozen-oos-holdout",
       "status": "production",
       "weight": 1.0,
-      "train_end": "2026128"
+      "train_end": "2026129"
     },
     {
       "lottery": "ssq",
@@ -172,7 +172,7 @@
       "model_version": "unified-v1.5-frozen-oos-holdout",
       "status": "shadow",
       "weight": 0.0,
-      "train_end": "2026128"
+      "train_end": "2026129"
     },
     {
       "lottery": "ssq",
@@ -180,7 +180,7 @@
       "model_version": "unified-v1.5-frozen-oos-holdout",
       "status": "shadow",
       "weight": 0.0,
-      "train_end": "2026128"
+      "train_end": "2026129"
     },
     {
       "lottery": "ssq",
@@ -188,7 +188,7 @@
       "model_version": "unified-v1.5-frozen-oos-holdout",
       "status": "shadow",
       "weight": 0.0,
-      "train_end": "2026128"
+      "train_end": "2026129"
     },
     {
       "lottery": "ssq",
@@ -196,7 +196,7 @@
       "model_version": "unified-v1.5-frozen-oos-holdout",
       "status": "production",
       "weight": 1.0,
-      "train_end": "2026128"
+      "train_end": "2026129"
     },
     {
       "lottery": "ssq",
@@ -204,7 +204,7 @@
       "model_version": "unified-v1.5-frozen-oos-holdout",
       "status": "shadow",
       "weight": 0.0,
-      "train_end": "2026128"
+      "train_end": "2026129"
     },
     {
       "lottery": "ssq",
@@ -212,7 +212,7 @@
       "model_version": "unified-v1.5-frozen-oos-holdout",
       "status": "shadow",
       "weight": 0.0,
-      "train_end": "2026128"
+      "train_end": "2026129"
     },
     {
       "lottery": "ssq",
@@ -220,7 +220,7 @@
       "model_version": "unified-v1.5-frozen-oos-holdout",
       "status": "shadow",
       "weight": 0.0,
-      "train_end": "2026128"
+      "train_end": "2026129"
     }
   ]
 }
