@@ -1,25 +1,26 @@
 {
-  "as_of": "2026-11-11T23:04:50.646505+08:00",
+  "as_of": "2026-11-12T23:31:55.885395+08:00",
   "calendar": {
     "ssq": {
-      "status": "NO_DRAW_TODAY",
-      "scheduled_weekday": false,
-      "reason": "非该彩种常规开奖日"
-    },
-    "dlt": {
       "status": "WAITING_DRAW",
       "scheduled_weekday": true,
       "reason": "常规开奖日，等待官方开奖结果"
+    },
+    "dlt": {
+      "status": "NO_DRAW_TODAY",
+      "scheduled_weekday": false,
+      "reason": "非该彩种常规开奖日"
     }
   },
   "ssq": {
+    "draw_state": "DRAW_COMPLETED",
+    "reviews": [],
+    "reason": "官方开奖结果已入库",
+    "prediction_available": true
+  },
+  "dlt": {
     "draw_state": "NO_DRAW_TODAY",
     "reviews": [],
     "reason": "非该彩种常规开奖日"
-  },
-  "dlt": {
-    "draw_state": "BACKEND_ERROR",
-    "reviews": [],
-    "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates"
   }
 }
