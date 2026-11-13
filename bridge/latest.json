@@ -1,9 +1,9 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-11-13T22:54:28.633025+08:00",
+  "generated_at": "2026-11-13T23:18:02.701084+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 177.795496,
+    "cloud_age_seconds": 12.386105,
     "job_errors": [
       {
         "job": "morning-sync",
@@ -149,7 +149,7 @@
       "status": "WITHHELD",
       "reason": "NO_DRAW_TODAY",
       "lottery": "ssq",
-      "evaluated_at": "2026-11-13T22:54:28.633025+08:00",
+      "evaluated_at": "2026-11-13T23:18:02.701084+08:00",
       "target_draw_date": "2026-11-13",
       "valid_until": "2026-11-13T20:00:00+08:00",
       "checks": {},
@@ -161,7 +161,7 @@
       "status": "WITHHELD",
       "reason": "NO_DRAW_TODAY",
       "lottery": "dlt",
-      "evaluated_at": "2026-11-13T22:54:28.633025+08:00",
+      "evaluated_at": "2026-11-13T23:18:02.701084+08:00",
       "target_draw_date": "2026-11-13",
       "valid_until": "2026-11-13T20:00:00+08:00",
       "checks": {},
@@ -172,9 +172,33 @@
   },
   "ssq": null,
   "dlt": null,
-  "latest_review": null,
+  "latest_review": {
+    "as_of": "2026-11-13T23:17:50.314979+08:00",
+    "calendar": {
+      "ssq": {
+        "status": "NO_DRAW_TODAY",
+        "scheduled_weekday": false,
+        "reason": "非该彩种常规开奖日"
+      },
+      "dlt": {
+        "status": "NO_DRAW_TODAY",
+        "scheduled_weekday": false,
+        "reason": "非该彩种常规开奖日"
+      }
+    },
+    "ssq": {
+      "draw_state": "NO_DRAW_TODAY",
+      "reviews": [],
+      "reason": "非该彩种常规开奖日"
+    },
+    "dlt": {
+      "draw_state": "NO_DRAW_TODAY",
+      "reviews": [],
+      "reason": "非该彩种常规开奖日"
+    }
+  },
   "latest_cloud_run": {
-    "now": "2026-11-13T22:51:30.837529+08:00",
+    "now": "2026-11-13T23:17:50.314979+08:00",
     "actions": [
       {
         "job": "calendar-status",
@@ -290,15 +314,44 @@
             "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates"
           }
         }
+      },
+      {
+        "job": "night-review",
+        "status": "ok",
+        "details": {
+          "as_of": "2026-11-13T23:17:50.314979+08:00",
+          "calendar": {
+            "ssq": {
+              "status": "NO_DRAW_TODAY",
+              "scheduled_weekday": false,
+              "reason": "非该彩种常规开奖日"
+            },
+            "dlt": {
+              "status": "NO_DRAW_TODAY",
+              "scheduled_weekday": false,
+              "reason": "非该彩种常规开奖日"
+            }
+          },
+          "ssq": {
+            "draw_state": "NO_DRAW_TODAY",
+            "reviews": [],
+            "reason": "非该彩种常规开奖日"
+          },
+          "dlt": {
+            "draw_state": "NO_DRAW_TODAY",
+            "reviews": [],
+            "reason": "非该彩种常规开奖日"
+          }
+        }
       }
     ],
     "trigger": {
       "event": "schedule",
-      "schedule_utc": "37 6 * * *",
-      "run_id": "43446674240",
+      "schedule_utc": "7,30,45 7 * * *",
+      "run_id": "43451068769",
       "run_attempt": "1",
-      "event_sha": "8b3074a6caab9f2d7a114ef4f0b83407f13e962f",
-      "checkout_sha": "8b3074a6caab9f2d7a114ef4f0b83407f13e962f"
+      "event_sha": "6aeba5d7554830c66a8fb635ce8ac015e03b4337",
+      "checkout_sha": "6aeba5d7554830c66a8fb635ce8ac015e03b4337"
     }
   },
   "recent_reviews": [

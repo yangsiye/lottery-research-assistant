@@ -1,10 +1,10 @@
 {
-  "as_of": "2026-11-12T23:31:55.885395+08:00",
+  "as_of": "2026-11-13T23:17:50.314979+08:00",
   "calendar": {
     "ssq": {
-      "status": "WAITING_DRAW",
-      "scheduled_weekday": true,
-      "reason": "常规开奖日，等待官方开奖结果"
+      "status": "NO_DRAW_TODAY",
+      "scheduled_weekday": false,
+      "reason": "非该彩种常规开奖日"
     },
     "dlt": {
       "status": "NO_DRAW_TODAY",
@@ -13,10 +13,9 @@
     }
   },
   "ssq": {
-    "draw_state": "DRAW_COMPLETED",
+    "draw_state": "NO_DRAW_TODAY",
     "reviews": [],
-    "reason": "官方开奖结果已入库",
-    "prediction_available": true
+    "reason": "非该彩种常规开奖日"
   },
   "dlt": {
     "draw_state": "NO_DRAW_TODAY",
