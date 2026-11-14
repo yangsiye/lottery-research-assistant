@@ -1,5 +1,5 @@
 {
-  "now": "2026-11-14T19:23:29.472029+08:00",
+  "now": "2026-11-14T21:45:37.219141+08:00",
   "actions": [
     {
       "job": "calendar-status",
@@ -117,23 +117,6 @@
       }
     },
     {
-      "job": "recommend-ssq",
-      "status": "skipped",
-      "draw_state": "NO_DRAW_TODAY",
-      "details": {
-        "status": "NO_DRAW_TODAY",
-        "scheduled_weekday": false,
-        "reason": "非该彩种常规开奖日"
-      }
-    },
-    {
-      "job": "recommend-dlt",
-      "status": "error",
-      "details": {
-        "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates"
-      }
-    },
-    {
       "job": "delivery-readiness-dlt",
       "status": "error",
       "details": {
@@ -146,10 +129,10 @@
   ],
   "trigger": {
     "event": "schedule",
-    "schedule_utc": "7 4,6 * * *",
-    "run_id": "43589749957",
+    "schedule_utc": "37 6 * * *",
+    "run_id": "43601314451",
     "run_attempt": "1",
-    "event_sha": "0ad816a9d1ad909ca33653d7f9299b808268f0d2",
-    "checkout_sha": "0ad816a9d1ad909ca33653d7f9299b808268f0d2"
+    "event_sha": "9e54f68e9e505efa6854e07b6b987d6ce2528418",
+    "checkout_sha": "9e54f68e9e505efa6854e07b6b987d6ce2528418"
   }
 }
