@@ -1,9 +1,9 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-11-17T00:20:18.420078+08:00",
+  "generated_at": "2026-11-17T00:57:03.786801+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 0.174293,
+    "cloud_age_seconds": 0.199545,
     "job_errors": []
   },
   "draw_states": {
@@ -49,7 +49,7 @@
       "status": "WITHHELD",
       "reason": "RECOMMENDATION_MISSING",
       "lottery": "ssq",
-      "evaluated_at": "2026-11-17T00:20:18.420078+08:00",
+      "evaluated_at": "2026-11-17T00:57:03.786801+08:00",
       "target_draw_date": "2026-11-17",
       "valid_until": "2026-11-17T20:00:00+08:00",
       "checks": {},
@@ -62,7 +62,7 @@
       "status": "WITHHELD",
       "reason": "NO_DRAW_TODAY",
       "lottery": "dlt",
-      "evaluated_at": "2026-11-17T00:20:18.420078+08:00",
+      "evaluated_at": "2026-11-17T00:57:03.786801+08:00",
       "target_draw_date": "2026-11-17",
       "valid_until": "2026-11-17T20:00:00+08:00",
       "checks": {},
@@ -75,7 +75,7 @@
   "dlt": null,
   "latest_review": null,
   "latest_cloud_run": {
-    "now": "2026-11-17T00:20:18.245785+08:00",
+    "now": "2026-11-17T00:57:03.587256+08:00",
     "actions": [
       {
         "job": "calendar-status",
@@ -106,11 +106,11 @@
     ],
     "trigger": {
       "event": "schedule",
-      "schedule_utc": "37 6 * * *",
-      "run_id": "43906245058",
+      "schedule_utc": "7,30,45 7 * * *",
+      "run_id": "43912992738",
       "run_attempt": "1",
-      "event_sha": "dc86bbfee700e3eed950211e2206423a21c26a38",
-      "checkout_sha": "dc86bbfee700e3eed950211e2206423a21c26a38"
+      "event_sha": "167cf3407db25c2e024c380cf3d0096204da099a",
+      "checkout_sha": "167cf3407db25c2e024c380cf3d0096204da099a"
     }
   },
   "recent_reviews": [
