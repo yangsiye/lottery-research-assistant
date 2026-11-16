@@ -1,5 +1,5 @@
 {
-  "now": "2026-11-16T15:11:23.865503+08:00",
+  "now": "2026-11-16T20:38:34.315768+08:00",
   "actions": [
     {
       "job": "calendar-status",
@@ -112,44 +112,27 @@
           "reviews": []
         },
         "dlt": {
-          "error": "DLT official fetch failed: HTTPSConnectionPool(host='webapi.sporttery.cn', port=443): Max retries exceeded with url: /gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='webapi.sporttery.cn', port=443) at 0x7453f0073a10>, 'Connection to webapi.sporttery.cn timed out. (connect timeout=20)')); provincial official fallback failed: duplicate/non-increasing draw dates"
+          "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates"
         }
       }
     },
     {
-      "job": "recommend-ssq",
-      "status": "skipped",
-      "draw_state": "NO_DRAW_TODAY",
-      "details": {
-        "status": "NO_DRAW_TODAY",
-        "scheduled_weekday": false,
-        "reason": "非该彩种常规开奖日"
-      }
-    },
-    {
-      "job": "recommend-dlt",
-      "status": "error",
-      "details": {
-        "error": "DLT official fetch failed: HTTPSConnectionPool(host='webapi.sporttery.cn', port=443): Max retries exceeded with url: /gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='webapi.sporttery.cn', port=443) at 0x7453f000e1e0>, 'Connection to webapi.sporttery.cn timed out. (connect timeout=20)')); provincial official fallback failed: duplicate/non-increasing draw dates"
-      }
-    },
-    {
       "job": "delivery-readiness-dlt",
-      "status": "pending",
+      "status": "error",
       "details": {
         "target_draw_date": "2026-11-16",
         "prediction_id": null,
-        "code": "AWAITING_FREEZE",
-        "reason": "尚未生成正式冻结记录"
+        "code": "RECOMMENDATION_MISSING",
+        "reason": "16:00推送前尚无正式冻结记录；需告警并在截止前重试，截止后禁止补预测"
       }
     }
   ],
   "trigger": {
     "event": "schedule",
-    "schedule_utc": "37 0 * * *",
-    "run_id": "43821966146",
+    "schedule_utc": "7 4,6 * * *",
+    "run_id": "43868343671",
     "run_attempt": "1",
-    "event_sha": "6b71ac4df1d8250bb0bb3d83c65ad20f128a6e71",
-    "checkout_sha": "6b71ac4df1d8250bb0bb3d83c65ad20f128a6e71"
+    "event_sha": "78b0613cbaa8f516782ab2dc711fc6008509ddc2",
+    "checkout_sha": "78b0613cbaa8f516782ab2dc711fc6008509ddc2"
   }
 }
