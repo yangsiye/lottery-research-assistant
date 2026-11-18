@@ -1,10 +1,229 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-11-18T06:50:31.357650+08:00",
+  "generated_at": "2026-11-18T15:53:41.498556+08:00",
   "bridge_health": {
     "status": "CURRENT",
-    "cloud_age_seconds": 0.190002,
-    "job_errors": []
+    "cloud_age_seconds": 20.772978,
+    "job_errors": [
+      {
+        "job": "morning-sync",
+        "status": "partial",
+        "details": {
+          "research": {
+            "github_candidates": [
+              {
+                "name": "bbsx123321/lottery-predictions",
+                "source_url": "https://github.com/bbsx123321/lottery-predictions",
+                "stars": 0,
+                "updated_at": "2026-11-03T00:39:49Z",
+                "method_tags": [],
+                "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+                "decision": "pending-validation"
+              },
+              {
+                "name": "zhhyowner-arch/AI-Powered-Lottery-Prediction",
+                "source_url": "https://github.com/zhhyowner-arch/AI-Powered-Lottery-Prediction",
+                "stars": 4,
+                "updated_at": "2026-10-27T12:46:15Z",
+                "method_tags": [],
+                "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+                "decision": "pending-validation"
+              },
+              {
+                "name": "Andyt2666/ssq-prediction-ai",
+                "source_url": "https://github.com/Andyt2666/ssq-prediction-ai",
+                "stars": 0,
+                "updated_at": "2026-10-16T10:17:14Z",
+                "method_tags": [
+                  "markov",
+                  "monte_carlo",
+                  "walk_forward"
+                ],
+                "hypothesis": "Candidate methods: markov, monte_carlo, walk_forward",
+                "decision": "pending-validation"
+              },
+              {
+                "name": "hansonDing/shuangseqiu-prediction",
+                "source_url": "https://github.com/hansonDing/shuangseqiu-prediction",
+                "stars": 0,
+                "updated_at": "2026-10-10T02:19:17Z",
+                "method_tags": [],
+                "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+                "decision": "pending-validation"
+              },
+              {
+                "name": "longgeyyds/ssq-fusion",
+                "source_url": "https://github.com/longgeyyds/ssq-fusion",
+                "stars": 2,
+                "updated_at": "2026-11-09T09:33:13Z",
+                "method_tags": [
+                  "bayesian",
+                  "lstm_gru",
+                  "reinforcement_learning"
+                ],
+                "hypothesis": "Candidate methods: bayesian, lstm_gru, reinforcement_learning",
+                "decision": "pending-validation"
+              },
+              {
+                "name": "lrwei91/Lottery",
+                "source_url": "https://github.com/lrwei91/Lottery",
+                "stars": 3,
+                "updated_at": "2026-11-12T14:40:56Z",
+                "method_tags": [
+                  "walk_forward"
+                ],
+                "hypothesis": "Candidate methods: walk_forward",
+                "decision": "pending-validation"
+              },
+              {
+                "name": "veriyoung/super-lotto-tool",
+                "source_url": "https://github.com/veriyoung/super-lotto-tool",
+                "stars": 0,
+                "updated_at": "2026-11-11T01:48:46Z",
+                "method_tags": [],
+                "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+                "decision": "pending-validation"
+              },
+              {
+                "name": "QJHWC/football-prediction",
+                "source_url": "https://github.com/QJHWC/football-prediction",
+                "stars": 4,
+                "updated_at": "2026-11-06T09:20:15Z",
+                "method_tags": [],
+                "hypothesis": "Lottery-related repository; requires manual/LLM method extraction",
+                "decision": "pending-validation"
+              }
+            ]
+          },
+          "ssq": {
+            "synced": 500,
+            "reviews": [
+              {
+                "prediction_id": 23,
+                "lottery": "ssq",
+                "basis_issue": "2026131",
+                "target_draw_date": "2026-11-17",
+                "actual_issue": "2026132",
+                "predicted_main": [
+                  7,
+                  15,
+                  17,
+                  19,
+                  26,
+                  27
+                ],
+                "predicted_bonus": [
+                  6
+                ],
+                "actual_main": [
+                  5,
+                  9,
+                  13,
+                  17,
+                  18,
+                  21
+                ],
+                "actual_bonus": [
+                  11
+                ],
+                "model_version": "unified-v1.5-frozen-oos-holdout",
+                "freeze_sha256": "3d0c12da483492772bf36a2f10b4435419589d06e7a76fb7cf4aea308a574245",
+                "main_hits": 1,
+                "bonus_hits": 0,
+                "tier": null,
+                "prize_amount": 0,
+                "prize_status": "VERIFIED",
+                "cost": 2,
+                "net_return": -2,
+                "model_attribution": {
+                  "main": {
+                    "bayes": {
+                      "brier": 0.14784343708973616,
+                      "logloss": 0.4710668704978818,
+                      "topk_recall": 0.16666666666666666,
+                      "mean_hits": 1.0,
+                      "calibration_gap": 0.0
+                    },
+                    "hist_gb": {
+                      "brier": 0.14939410219627008,
+                      "logloss": 0.4760704833196694,
+                      "topk_recall": 0.16666666666666666,
+                      "mean_hits": 1.0,
+                      "calibration_gap": 0.00090278709251157
+                    },
+                    "logistic": {
+                      "brier": 0.14985212021858038,
+                      "logloss": 0.47772890684828584,
+                      "topk_recall": 0.0,
+                      "mean_hits": 0.0,
+                      "calibration_gap": 8.465047683073323e-05
+                    },
+                    "uniform": {
+                      "brier": 0.14876033057851237,
+                      "logloss": 0.47413931305783746,
+                      "topk_recall": 0.0,
+                      "mean_hits": 0.0,
+                      "calibration_gap": 0.0
+                    }
+                  },
+                  "bonus": {
+                    "bayes": {
+                      "brier": 0.05684161186218262,
+                      "logloss": 0.21929939519227137,
+                      "topk_recall": 0.0,
+                      "mean_hits": 0.0,
+                      "calibration_gap": 0.0
+                    },
+                    "hist_gb": {
+                      "brier": 0.05813277993878383,
+                      "logloss": 0.22798693202524817,
+                      "topk_recall": 0.0,
+                      "mean_hits": 0.0,
+                      "calibration_gap": 0.009622831034565724
+                    },
+                    "logistic": {
+                      "brier": 0.05698210218500708,
+                      "logloss": 0.2204951582011292,
+                      "topk_recall": 1.0,
+                      "mean_hits": 1.0,
+                      "calibration_gap": 0.0010675965101414192
+                    },
+                    "uniform": {
+                      "brier": 0.05859375,
+                      "logloss": 0.2337916587064593,
+                      "topk_recall": 0.0,
+                      "mean_hits": 0.0,
+                      "calibration_gap": 0.0
+                    }
+                  }
+                },
+                "governance_action": "保持；单期结果仅增加前向样本，不触发模型晋级。下次训练更新滚动验证和留出门槛。"
+              }
+            ]
+          },
+          "dlt": {
+            "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates"
+          }
+        }
+      },
+      {
+        "job": "recommend-dlt",
+        "status": "error",
+        "details": {
+          "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates"
+        }
+      },
+      {
+        "job": "delivery-readiness-dlt",
+        "status": "error",
+        "details": {
+          "target_draw_date": "2026-11-18",
+          "prediction_id": null,
+          "code": "RECOMMENDATION_MISSING",
+          "reason": "16:00推送前尚无正式冻结记录；需告警并在截止前重试，截止后禁止补预测"
+        }
+      }
+    ]
   },
   "draw_states": {
     "ssq": {
@@ -14,14 +233,241 @@
       "as_of_date": "2026-11-18"
     },
     "dlt": {
-      "status": "WAITING_DRAW",
+      "status": "BACKEND_ERROR",
       "scheduled_weekday": true,
-      "reason": "常规开奖日，等待官方开奖结果",
+      "reason": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates",
       "as_of_date": "2026-11-18"
     }
   },
-  "latest_review": null,
+  "latest_review": {
+    "as_of": "2026-11-18T15:53:20.725578+08:00",
+    "calendar": {
+      "ssq": {
+        "status": "NO_DRAW_TODAY",
+        "scheduled_weekday": false,
+        "reason": "非该彩种常规开奖日"
+      },
+      "dlt": {
+        "status": "WAITING_DRAW",
+        "scheduled_weekday": true,
+        "reason": "常规开奖日，等待官方开奖结果"
+      }
+    },
+    "ssq": {
+      "draw_state": "NO_DRAW_TODAY",
+      "reviews": [
+        {
+          "prediction_id": 23,
+          "lottery": "ssq",
+          "basis_issue": "2026131",
+          "target_draw_date": "2026-11-17",
+          "actual_issue": "2026132",
+          "predicted_main": [
+            7,
+            15,
+            17,
+            19,
+            26,
+            27
+          ],
+          "predicted_bonus": [
+            6
+          ],
+          "actual_main": [
+            5,
+            9,
+            13,
+            17,
+            18,
+            21
+          ],
+          "actual_bonus": [
+            11
+          ],
+          "model_version": "unified-v1.5-frozen-oos-holdout",
+          "freeze_sha256": "3d0c12da483492772bf36a2f10b4435419589d06e7a76fb7cf4aea308a574245",
+          "main_hits": 1,
+          "bonus_hits": 0,
+          "tier": null,
+          "prize_amount": 0,
+          "prize_status": "VERIFIED",
+          "cost": 2,
+          "net_return": -2,
+          "model_attribution": {
+            "main": {
+              "bayes": {
+                "brier": 0.14784343708973616,
+                "logloss": 0.4710668704978818,
+                "topk_recall": 0.16666666666666666,
+                "mean_hits": 1.0,
+                "calibration_gap": 0.0
+              },
+              "hist_gb": {
+                "brier": 0.14939410219627008,
+                "logloss": 0.4760704833196694,
+                "topk_recall": 0.16666666666666666,
+                "mean_hits": 1.0,
+                "calibration_gap": 0.00090278709251157
+              },
+              "logistic": {
+                "brier": 0.14985212021858038,
+                "logloss": 0.47772890684828584,
+                "topk_recall": 0.0,
+                "mean_hits": 0.0,
+                "calibration_gap": 8.465047683073323e-05
+              },
+              "uniform": {
+                "brier": 0.14876033057851237,
+                "logloss": 0.47413931305783746,
+                "topk_recall": 0.0,
+                "mean_hits": 0.0,
+                "calibration_gap": 0.0
+              }
+            },
+            "bonus": {
+              "bayes": {
+                "brier": 0.05684161186218262,
+                "logloss": 0.21929939519227137,
+                "topk_recall": 0.0,
+                "mean_hits": 0.0,
+                "calibration_gap": 0.0
+              },
+              "hist_gb": {
+                "brier": 0.05813277993878383,
+                "logloss": 0.22798693202524817,
+                "topk_recall": 0.0,
+                "mean_hits": 0.0,
+                "calibration_gap": 0.009622831034565724
+              },
+              "logistic": {
+                "brier": 0.05698210218500708,
+                "logloss": 0.2204951582011292,
+                "topk_recall": 1.0,
+                "mean_hits": 1.0,
+                "calibration_gap": 0.0010675965101414192
+              },
+              "uniform": {
+                "brier": 0.05859375,
+                "logloss": 0.2337916587064593,
+                "topk_recall": 0.0,
+                "mean_hits": 0.0,
+                "calibration_gap": 0.0
+              }
+            }
+          },
+          "governance_action": "保持；单期结果仅增加前向样本，不触发模型晋级。下次训练更新滚动验证和留出门槛。"
+        }
+      ],
+      "reason": "补齐此前已冻结推荐的官方对奖；当日状态按实际开奖日历显示"
+    },
+    "dlt": {
+      "draw_state": "WAITING_DRAW",
+      "reviews": [],
+      "reason": "补齐此前已冻结推荐的官方对奖；当日状态按实际开奖日历显示"
+    }
+  },
   "recent_reviews": [
+    {
+      "prediction_id": 23,
+      "lottery": "ssq",
+      "basis_issue": "2026131",
+      "target_draw_date": "2026-11-17",
+      "actual_issue": "2026132",
+      "predicted_main": [
+        7,
+        15,
+        17,
+        19,
+        26,
+        27
+      ],
+      "predicted_bonus": [
+        6
+      ],
+      "actual_main": [
+        5,
+        9,
+        13,
+        17,
+        18,
+        21
+      ],
+      "actual_bonus": [
+        11
+      ],
+      "model_version": "unified-v1.5-frozen-oos-holdout",
+      "freeze_sha256": "3d0c12da483492772bf36a2f10b4435419589d06e7a76fb7cf4aea308a574245",
+      "main_hits": 1,
+      "bonus_hits": 0,
+      "tier": null,
+      "prize_amount": 0,
+      "prize_status": "VERIFIED",
+      "cost": 2,
+      "net_return": -2,
+      "model_attribution": {
+        "main": {
+          "bayes": {
+            "brier": 0.14784343708973616,
+            "logloss": 0.4710668704978818,
+            "topk_recall": 0.16666666666666666,
+            "mean_hits": 1.0,
+            "calibration_gap": 0.0
+          },
+          "hist_gb": {
+            "brier": 0.14939410219627008,
+            "logloss": 0.4760704833196694,
+            "topk_recall": 0.16666666666666666,
+            "mean_hits": 1.0,
+            "calibration_gap": 0.00090278709251157
+          },
+          "logistic": {
+            "brier": 0.14985212021858038,
+            "logloss": 0.47772890684828584,
+            "topk_recall": 0.0,
+            "mean_hits": 0.0,
+            "calibration_gap": 8.465047683073323e-05
+          },
+          "uniform": {
+            "brier": 0.14876033057851237,
+            "logloss": 0.47413931305783746,
+            "topk_recall": 0.0,
+            "mean_hits": 0.0,
+            "calibration_gap": 0.0
+          }
+        },
+        "bonus": {
+          "bayes": {
+            "brier": 0.05684161186218262,
+            "logloss": 0.21929939519227137,
+            "topk_recall": 0.0,
+            "mean_hits": 0.0,
+            "calibration_gap": 0.0
+          },
+          "hist_gb": {
+            "brier": 0.05813277993878383,
+            "logloss": 0.22798693202524817,
+            "topk_recall": 0.0,
+            "mean_hits": 0.0,
+            "calibration_gap": 0.009622831034565724
+          },
+          "logistic": {
+            "brier": 0.05698210218500708,
+            "logloss": 0.2204951582011292,
+            "topk_recall": 1.0,
+            "mean_hits": 1.0,
+            "calibration_gap": 0.0010675965101414192
+          },
+          "uniform": {
+            "brier": 0.05859375,
+            "logloss": 0.2337916587064593,
+            "topk_recall": 0.0,
+            "mean_hits": 0.0,
+            "calibration_gap": 0.0
+          }
+        }
+      },
+      "governance_action": "保持；单期结果仅增加前向样本，不触发模型晋级。下次训练更新滚动验证和留出门槛。"
+    },
     {
       "prediction_id": 22,
       "lottery": "ssq",
@@ -1940,107 +2386,6 @@
           "uniform": {
             "brier": 0.1388888888888889,
             "logloss": 0.4505612088663047,
-            "topk_recall": 0.0,
-            "mean_hits": 0.0,
-            "calibration_gap": 0.0
-          }
-        }
-      },
-      "governance_action": "保持；单期结果仅增加前向样本，不触发模型晋级。下次训练更新滚动验证和留出门槛。"
-    },
-    {
-      "prediction_id": 3,
-      "lottery": "ssq",
-      "basis_issue": "2026115",
-      "target_draw_date": "2026-10-11",
-      "actual_issue": "2026116",
-      "predicted_main": [
-        1,
-        3,
-        9,
-        10,
-        22,
-        25
-      ],
-      "predicted_bonus": [
-        5
-      ],
-      "actual_main": [
-        10,
-        19,
-        24,
-        27,
-        28,
-        33
-      ],
-      "actual_bonus": [
-        12
-      ],
-      "model_version": "unified-v1.5-frozen-oos-holdout",
-      "freeze_sha256": "54700de8230a2269f02523cde6f9b172371f1f77f2746081934c7f0f2614ac83",
-      "main_hits": 1,
-      "bonus_hits": 0,
-      "tier": null,
-      "prize_amount": 0,
-      "prize_status": "VERIFIED",
-      "cost": 2,
-      "net_return": -2,
-      "model_attribution": {
-        "main": {
-          "bayes": {
-            "brier": 0.14999446396000127,
-            "logloss": 0.47824597105386923,
-            "topk_recall": 0.16666666666666666,
-            "mean_hits": 1.0,
-            "calibration_gap": 0.0
-          },
-          "hist_gb": {
-            "brier": 0.147103016946928,
-            "logloss": 0.469019443662908,
-            "topk_recall": 0.3333333333333333,
-            "mean_hits": 2.0,
-            "calibration_gap": 0.0014317614975722648
-          },
-          "logistic": {
-            "brier": 0.1511453260582787,
-            "logloss": 0.48221433182798407,
-            "topk_recall": 0.0,
-            "mean_hits": 0.0,
-            "calibration_gap": 0.00043051993718296044
-          },
-          "uniform": {
-            "brier": 0.1487603305785124,
-            "logloss": 0.47413931305783746,
-            "topk_recall": 0.3333333333333333,
-            "mean_hits": 2.0,
-            "calibration_gap": 0.0
-          }
-        },
-        "bonus": {
-          "bayes": {
-            "brier": 0.05976223945617676,
-            "logloss": 0.24332329822717244,
-            "topk_recall": 0.0,
-            "mean_hits": 0.0,
-            "calibration_gap": 0.0
-          },
-          "hist_gb": {
-            "brier": 0.05931801416667233,
-            "logloss": 0.23788773002904062,
-            "topk_recall": 0.0,
-            "mean_hits": 0.0,
-            "calibration_gap": 0.005797862867306963
-          },
-          "logistic": {
-            "brier": 0.057996010142869495,
-            "logloss": 0.2282954897170183,
-            "topk_recall": 0.0,
-            "mean_hits": 0.0,
-            "calibration_gap": 2.981637983476282e-05
-          },
-          "uniform": {
-            "brier": 0.05859375,
-            "logloss": 0.2337916587064593,
             "topk_recall": 0.0,
             "mean_hits": 0.0,
             "calibration_gap": 0.0
