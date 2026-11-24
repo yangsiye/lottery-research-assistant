@@ -1,5 +1,5 @@
 {
-  "now": "2026-11-24T18:21:22.307539+08:00",
+  "now": "2026-11-24T22:45:11.981392+08:00",
   "actions": [
     {
       "job": "calendar-status",
@@ -108,22 +108,11 @@
           ]
         },
         "ssq": {
-          "synced": 500,
-          "reviews": []
+          "error": "SSQ official fetch failed: 403 Client Error: Forbidden for url: https://www.cwl.gov.cn/cwl_admin/kjxx/findDrawNotice?name=ssq&issueCount=500&pageNo=1&pageSize=100&systemType=PC; provincial official fallback failed: HTTPSConnectionPool(host='www.swlc.net.cn', port=443): Max retries exceeded with url: /lottery/ssq.html?view=previous&limit=100 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.swlc.net.cn', port=443) at 0x7e54f74e1940>, 'Connection to www.swlc.net.cn timed out. (connect timeout=20)'))"
         },
         "dlt": {
           "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates"
         }
-      }
-    },
-    {
-      "job": "recommend-dlt",
-      "status": "skipped",
-      "draw_state": "NO_DRAW_TODAY",
-      "details": {
-        "status": "NO_DRAW_TODAY",
-        "scheduled_weekday": false,
-        "reason": "非该彩种常规开奖日"
       }
     },
     {
@@ -139,10 +128,10 @@
   ],
   "trigger": {
     "event": "schedule",
-    "schedule_utc": "37 0 * * *",
-    "run_id": "45373907918",
+    "schedule_utc": "7 4,6 * * *",
+    "run_id": "45417473725",
     "run_attempt": "1",
-    "event_sha": "99e50fb3e150c12b482ea41137c43b02469676b0",
-    "checkout_sha": "99e50fb3e150c12b482ea41137c43b02469676b0"
+    "event_sha": "992f53febbcbcc2256fd7279d8ea6d2e09723587",
+    "checkout_sha": "992f53febbcbcc2256fd7279d8ea6d2e09723587"
   }
 }
