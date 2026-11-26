@@ -1,5 +1,5 @@
 {
-  "now": "2026-11-27T03:50:22.937820+08:00",
+  "now": "2026-11-27T07:40:46.617585+08:00",
   "actions": [
     {
       "job": "calendar-status",
@@ -20,10 +20,10 @@
   ],
   "trigger": {
     "event": "schedule",
-    "schedule_utc": "45 10 * * *",
-    "run_id": "45886537326",
+    "schedule_utc": "7,37 15 * * *",
+    "run_id": "45912284726",
     "run_attempt": "1",
-    "event_sha": "03adf32628faa8294c4e869e39caa2261b113349",
-    "checkout_sha": "03adf32628faa8294c4e869e39caa2261b113349"
+    "event_sha": "8d84c4dc2f3b4d4a951ca5db06f9342f33776d97",
+    "checkout_sha": "8d84c4dc2f3b4d4a951ca5db06f9342f33776d97"
   }
 }
