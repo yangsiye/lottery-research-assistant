@@ -1,5 +1,5 @@
 {
-  "now": "2026-11-27T16:59:27.307567+08:00",
+  "now": "2026-11-27T21:43:48.523439+08:00",
   "actions": [
     {
       "job": "calendar-status",
@@ -109,142 +109,20 @@
         },
         "ssq": {
           "synced": 500,
-          "reviews": [
-            {
-              "prediction_id": 27,
-              "lottery": "ssq",
-              "basis_issue": "2026135",
-              "target_draw_date": "2026-11-26",
-              "actual_issue": "2026136",
-              "predicted_main": [
-                3,
-                4,
-                8,
-                17,
-                23,
-                32
-              ],
-              "predicted_bonus": [
-                12
-              ],
-              "actual_main": [
-                9,
-                11,
-                22,
-                27,
-                30,
-                33
-              ],
-              "actual_bonus": [
-                5
-              ],
-              "model_version": "unified-v1.5-frozen-oos-holdout",
-              "freeze_sha256": "dda107ee8f2a5a4036bd19c296ff19fa26ea85f46551f185687486e77b1fbc7c",
-              "main_hits": 0,
-              "bonus_hits": 0,
-              "tier": null,
-              "prize_amount": 0,
-              "prize_status": "VERIFIED",
-              "cost": 2,
-              "net_return": -2,
-              "model_attribution": {
-                "main": {
-                  "bayes": {
-                    "brier": 0.14548156149788008,
-                    "logloss": 0.4630130102634288,
-                    "topk_recall": 0.3333333333333333,
-                    "mean_hits": 2.0,
-                    "calibration_gap": 0.0
-                  },
-                  "hist_gb": {
-                    "brier": 0.15043019194820034,
-                    "logloss": 0.47933118782278644,
-                    "topk_recall": 0.16666666666666666,
-                    "mean_hits": 1.0,
-                    "calibration_gap": 0.0007835720352546982
-                  },
-                  "logistic": {
-                    "brier": 0.1471471763725174,
-                    "logloss": 0.4685914350220348,
-                    "topk_recall": 0.3333333333333333,
-                    "mean_hits": 2.0,
-                    "calibration_gap": 0.0003058568026763908
-                  },
-                  "uniform": {
-                    "brier": 0.1487603305785124,
-                    "logloss": 0.4741393130578374,
-                    "topk_recall": 0.3333333333333333,
-                    "mean_hits": 2.0,
-                    "calibration_gap": 0.0
-                  }
-                },
-                "bonus": {
-                  "bayes": {
-                    "brier": 0.05781865119934082,
-                    "logloss": 0.22645557848603515,
-                    "topk_recall": 0.0,
-                    "mean_hits": 0.0,
-                    "calibration_gap": 0.0
-                  },
-                  "hist_gb": {
-                    "brier": 0.06055784682025668,
-                    "logloss": 0.2509173853026332,
-                    "topk_recall": 0.0,
-                    "mean_hits": 0.0,
-                    "calibration_gap": 0.004013311694283789
-                  },
-                  "logistic": {
-                    "brier": 0.05949825853454669,
-                    "logloss": 0.24134811922049057,
-                    "topk_recall": 0.0,
-                    "mean_hits": 0.0,
-                    "calibration_gap": 0.000720788336688219
-                  },
-                  "uniform": {
-                    "brier": 0.05859375,
-                    "logloss": 0.2337916587064593,
-                    "topk_recall": 0.0,
-                    "mean_hits": 0.0,
-                    "calibration_gap": 0.0
-                  }
-                }
-              },
-              "governance_action": "保持；单期结果仅增加前向样本，不触发模型晋级。下次训练更新滚动验证和留出门槛。"
-            }
-          ]
+          "reviews": []
         },
         "dlt": {
           "error": "DLT official fetch failed: 567 Server Error: Unknown Status for url: https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1; provincial official fallback failed: duplicate/non-increasing draw dates"
         }
       }
-    },
-    {
-      "job": "recommend-ssq",
-      "status": "skipped",
-      "draw_state": "NO_DRAW_TODAY",
-      "details": {
-        "status": "NO_DRAW_TODAY",
-        "scheduled_weekday": false,
-        "reason": "非该彩种常规开奖日"
-      }
-    },
-    {
-      "job": "recommend-dlt",
-      "status": "skipped",
-      "draw_state": "NO_DRAW_TODAY",
-      "details": {
-        "status": "NO_DRAW_TODAY",
-        "scheduled_weekday": false,
-        "reason": "非该彩种常规开奖日"
-      }
     }
   ],
   "trigger": {
     "event": "schedule",
-    "schedule_utc": "37 0 * * *",
-    "run_id": "45969896675",
+    "schedule_utc": "7 4,6 * * *",
+    "run_id": "46009532764",
     "run_attempt": "1",
-    "event_sha": "0cc473c126e8de697583ff6f35d218d0a033c65c",
-    "checkout_sha": "0cc473c126e8de697583ff6f35d218d0a033c65c"
+    "event_sha": "35cc2d394534cc03af2a2c76077a4ab57caa3ad4",
+    "checkout_sha": "35cc2d394534cc03af2a2c76077a4ab57caa3ad4"
   }
 }
